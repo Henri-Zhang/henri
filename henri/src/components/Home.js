@@ -5,7 +5,6 @@ class Home extends Component {
   render() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
-        <h1>Honolulu.</h1>
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="/">
