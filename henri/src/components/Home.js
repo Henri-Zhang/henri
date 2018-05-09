@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './../styles/Home.css';
+import './../styles/Home.scss';
 
 class Home extends Component {
   render() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
+        <h1>Honolulu.</h1>
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="/">
@@ -12,7 +13,7 @@ class Home extends Component {
               <i className="icon-logo5"></i>
             </a>
           </div>
-          <div className="collapse navbar-collapse hide">
+          <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
               <li><a className="btn btn-one" href="/login/">Sign In</a></li>
               <li><a className="btn btn-two" href="/management-software/">JOIN TOPVET</a></li>
