@@ -5,20 +5,56 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {scrolled : false}
-    this.handleClick = this.handleClick.bind(this);
+    this.navbarScroll = this.navbarScroll.bind(this);
   }
 
-  handleClick = (event) => {
-    this.setState(prevState => ({
-      scrolled: !prevState.scrolled
-    }));
+  componentDidMount() {
+    window.addEventListener('scroll', this.navbarScroll);
+  }
+
+  navbarScroll = (event) => {
+    console.log('xxxxxxxxx');
+    let distance = document.documentElement.scrollTop;
+    if (distance > 100 && !this.state.scrolled) {
+      this.setState(prevState => ({
+        scrolled: !prevState.scrolled
+      }));
+    } else if (distance < 100 && this.state.scrolled) {
+      this.setState(prevState => ({
+        scrolled: !prevState.scrolled
+      }));
+    }
   }
 
   render() {
     return (
-      <nav className={this.state.scrolled ? "navbar navbar-default navbar-fixed-top scrolled" : "navbar navbar-default navbar-fixed-top"} onClick={this.handleClick}>
-        <h1>Welcome to Lanchow.</h1>
-      </nav>
+      <div>
+        <nav className={this.state.scrolled ? "navbar navbar-default fixed-top scrolled" : "navbar navbar-default fixed-top"} onScroll={this.navbarScroll}>
+          <h1 className="hide">Welcome to my site.</h1>
+        </nav>
+        <div className="home-main">
+          <div className="background">
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-12 item">
+                  <h1>Nice to meet you.</h1>
+                  <h2>And my name is henri.</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="slide-pictures">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="title">The places I've been to</div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
     );
   }
   

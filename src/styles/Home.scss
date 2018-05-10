@@ -1,6 +1,7 @@
-nav {
-  background-color: rgba(0,0,0,.5);
+nav.navbar {
+  background-color: rgba(0,0,0,.1);
   transition: all .4s ease-in-out;
+  padding: 1.5rem 1rem;
 
   h1 {
     color: white;
@@ -10,7 +11,41 @@ nav {
 }
 
 nav.scrolled {
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .6);
   transition: all .4s ease-in-out;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.home-main {
+  .background {
+    min-height: 800px;
+    background: url('./../asserts/images/1.jpg');
+  }
+
+  h1 {
+    font-family: Avenir-Light,sans-serif;
+    font-size: 52px;
+    color: #fff;
+    line-height: 1.2;
+    margin-top: 300px;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.slide-pictures {
+  padding-top: 90px;
+  padding-bottom: 160px;
+
+  .title {
+    font-family: 'Avenir LT 86 Heavy Oblique';
+    font-size: 32px;
+    color: #000;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 30px;
+  }
 }
