@@ -37,8 +37,8 @@ nav.scrolled {
   }
 }
 
-.carousel {
-  padding-top: 90px;
+.hobbies-interests {
+  padding-top: 60px;
   padding-bottom: 160px;
 
   .title {
@@ -47,11 +47,11 @@ nav.scrolled {
     color: #000;
     line-height: 1.2;
     text-align: center;
-    margin-top: 30px;
+    margin-bottom: 60px;
   }
 
   .slide-arrow {
-    position: absolute;
+    margin: auto;
     font: 2em "ws-ctrl-rhomb";
     width: 2em;
     height: 2em;
@@ -61,21 +61,11 @@ nav.scrolled {
     box-shadow: inset 0 0 0 2px rgb(131, 197, 92);
     transition: background-color .2s ease-in-out, transform .2s ease-in-out;
 
-    & + .prev {
-      left: 100px;
-    }
-  
-    & + .next {
-      right: 100px;
-    }
-
     &:hover {
       background-color: rgb(131, 197, 92);
-      transform: rotate(45deg);
 
       span {
         color: white;
-        transform: rotate(-45deg);
       }
     }
     
@@ -83,6 +73,61 @@ nav.scrolled {
       color: rgb(131, 197, 92);
       line-height: 2em;
       transition: transform .2s ease-in-out;
+    }
+  }
+  .slide-arrow.prev {
+
+    &:hover {
+      transform: rotate(-45deg);
+
+      span {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .slide-arrow.next {
+    vertical-align: middle;
+
+    &:hover {
+      transform: rotate(45deg);
+
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: space-between;
+
+    > .item {
+      margin: auto;
+      padding: 0;
+      box-shadow: 2px 1px 15px rgb(0, 0, 0);
+      border-radius: 5px;
+
+      img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        min-height: 240px;
+        max-width: 240px;
+      }
+
+      div.name {
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-family: Avenir-Black,sans-serif;
+        background-color: #ffb400;
+        color: #fff;
+      }
     }
   }
 
