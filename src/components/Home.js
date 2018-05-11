@@ -13,7 +13,6 @@ class Home extends Component {
   }
 
   navbarScroll = (event) => {
-    console.log('xxxxxxxxx');
     let distance = document.documentElement.scrollTop;
     if (distance > 100 && !this.state.scrolled) {
       this.setState(prevState => ({
