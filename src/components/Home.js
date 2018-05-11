@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 import './../styles/Home.scss';
 
 class Home extends Component {
@@ -43,14 +44,25 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="slide-pictures">
+        <div className="carousel">
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
-                <div className="title">The places I've been to</div>
+                <div className="title">My hobbies and interests</div>
               </div>
             </div>
-            <div></div>
+            <div>
+              <a className="slide-arrow prev">
+                <span>
+                  <FontAwesome name="arrow-left" />
+                </span>
+              </a>
+              <a className="slide-arrow next">
+                <span>
+                  <FontAwesome name="arrow-right" />
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

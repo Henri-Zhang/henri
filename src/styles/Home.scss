@@ -37,7 +37,7 @@ nav.scrolled {
   }
 }
 
-.slide-pictures {
+.carousel {
   padding-top: 90px;
   padding-bottom: 160px;
 
@@ -49,4 +49,41 @@ nav.scrolled {
     text-align: center;
     margin-top: 30px;
   }
+
+  .slide-arrow {
+    position: absolute;
+    font: 2em "ws-ctrl-rhomb";
+    width: 2em;
+    height: 2em;
+    border-radius: 0.15em;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: inset 0 0 0 2px rgb(131, 197, 92);
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+
+    & + .prev {
+      left: 100px;
+    }
+  
+    & + .next {
+      right: 100px;
+    }
+
+    &:hover {
+      background-color: rgb(131, 197, 92);
+      transform: rotate(45deg);
+
+      span {
+        color: white;
+        transform: rotate(-45deg);
+      }
+    }
+    
+    span {
+      color: rgb(131, 197, 92);
+      line-height: 2em;
+      transition: transform .2s ease-in-out;
+    }
+  }
+
 }
