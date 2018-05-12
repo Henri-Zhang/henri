@@ -33,7 +33,15 @@ class Home extends Component {
   }
 
   backToTop = (event) => {
-    console.log('xxxxxxx');
+    let timer = setInterval(() => {
+      let currentScrollTop = document.documentElement.scrollTop;
+      let distance = Math.ceil(currentScrollTop / 10);
+      document.documentElement.scrollTop = currentScrollTop - distance;
+
+      if (document.documentElement.scrollTop <= 0) {
+        clearInterval(timer);
+      }
+    }, 20);
   }
 
   render() {
@@ -149,7 +157,8 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-        <div id="top" className={this.state.scrolled ? "top rounded-circle fade show" : "top rounded-circle fade-out"} onClick={this.backToTop}>
+        <div id="top" className={this.state.scrolled ? "top rounded-circle fade-in" : "top rounded-circle fade-out"} onClick={this.backToTop}>
+          <FontAwesome name="chevron-up" />
           <span>TOP</span>
         </div>
       </div>
