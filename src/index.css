@@ -10,6 +10,11 @@ body {
 }
 
 @font-face {
+  font-family: 'Avenir LT 65 Medium';
+  src: url('./asserts/fonts/Avenir LT 65 Medium.ttf');
+}
+
+@font-face {
   font-family: 'Avenir LT 85 Heavy';
   src: url('./asserts/fonts/Avenir LT 85 Heavy.ttf');
 }
