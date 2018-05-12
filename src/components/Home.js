@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import emailIcon from './../asserts/icons/email.svg';
+import githubIcon from './../asserts/icons/github.svg';
+import qzoneIcon from './../asserts/icons/qzone.svg';
+import wechatIcon from './../asserts/icons/wechat.svg';
+import weiboIcon from './../asserts/icons/weibo.svg';
+import zhihuIcon from './../asserts/icons/zhihu.svg';
 import './../styles/Home.scss';
 
 class Home extends Component {
@@ -26,11 +32,21 @@ class Home extends Component {
     }
   }
 
+  backToTop = (event) => {
+    console.log('xxxxxxx');
+  }
+
   render() {
     return (
       <div>
         <nav className={this.state.scrolled ? "navbar navbar-default fixed-top scrolled" : "navbar navbar-default fixed-top"} onScroll={this.navbarScroll}>
-          <h1 className="hide">Welcome to my site.</h1>
+          <a className="brand" href="/" target="_blank">
+            <img alt="henri.ren" src={require("./../asserts/images/logo.png")} />
+            <span>
+              <strong>henri</strong>.ren
+            </span>
+          </a>
+          <h1 className="nav navbar-nav navbar-right">Welcome to my site.</h1>
         </nav>
         <div className="home-main">
           <div className="background">
@@ -60,11 +76,11 @@ class Home extends Component {
                 <div className="name">Jog</div>
               </div>
               <div className="item">
-                <img alt="delicacy" src={require("./../asserts/images/jog.png")} />
+                <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
                 <div className="name">Delicacy</div>
               </div>
               <div className="item">
-                <img alt="travel" src={require("./../asserts/images/jog.png")} />
+                <img alt="travel" src={require("./../asserts/images/travel.png")} />
                 <div className="name">Travel</div>
               </div>
               <a className="slide-arrow next">
@@ -72,6 +88,69 @@ class Home extends Component {
               </a>
             </div>
           </div>
+        </div>
+        <footer>
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="title">Make firends with me</div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4 d-flex justify-content-center">
+                <img alt="henri" className="portrait rounded-circle" src={require("./../asserts/images/portrait.jpg")} />
+                <div className="brief-introduction">
+                  <p>Screen name: 漫长。</p>
+                  <p>Age: 23</p>
+                  <p>Region: Shanghai</p>
+                </div>
+              </div>
+              <div className="col-sm-8 d-flex">
+                <ul className="personal-links">
+                  <li>
+                    <a rel="noopener noreferrer" href="mailto:371595867@qq.com" target="_blank">
+                      <img className="icon" alt="email" src={emailIcon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="https://github.com/LikedBlack" target="_blank">
+                      <img className="icon" alt="github" src={githubIcon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="https://www.zhihu.com/people/zhang-heng-78-10/activities" target="_blank">
+                      <img className="icon" alt="zhihu" src={zhihuIcon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
+                      <img className="icon" alt="qzone" src={qzoneIcon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="" target="_blank">
+                      <img className="icon" alt="wechat" src={wechatIcon} />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="https://weibo.com/5214776283/profile"  target="_blank">
+                      <img className="icon" alt="weibo" src={weiboIcon} />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="copyright">
+                  <span>© 2018 henri.ren All Rights Reserved.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div id="top" className={this.state.scrolled ? "top rounded-circle fade show" : "top rounded-circle fade-out"} onClick={this.backToTop}>
+          <span>TOP</span>
         </div>
       </div>
     );

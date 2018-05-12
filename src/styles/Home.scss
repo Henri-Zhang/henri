@@ -1,19 +1,31 @@
 nav.navbar {
   background-color: rgba(0,0,0,.1);
   transition: all .4s ease-in-out;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 5rem;
+
+  .brand {
+    text-decoration: none;
+
+    span {
+      color: white;
+      font-size: 2rem;
+      vertical-align: middle;
+    }
+
+    img {
+      max-width: 50px;
+    }
+  }
 
   h1 {
     color: white;
-    text-align: center;
-    width: 100%;
   }
 }
 
 nav.scrolled {
   background-color: rgba(0, 0, 0, .6);
   transition: all .4s ease-in-out;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 5rem;
 }
 
 .home-main {
@@ -21,6 +33,7 @@ nav.scrolled {
     min-height: 800px;
     background: url('./../asserts/images/2.jpg');
     background-size: cover;
+    background-attachment: fixed;
   }
 
   h1 {
@@ -44,7 +57,7 @@ nav.scrolled {
   .title {
     font-family: 'Avenir LT 86 Heavy Oblique';
     font-size: 32px;
-    color: #000;
+    color: black;
     line-height: 1.2;
     text-align: center;
     margin-bottom: 60px;
@@ -52,7 +65,7 @@ nav.scrolled {
 
   .slide-arrow {
     margin: auto;
-    font: 2em "ws-ctrl-rhomb";
+    font-size: 2em;
     width: 2em;
     height: 2em;
     border-radius: 0.15em;
@@ -130,5 +143,109 @@ nav.scrolled {
       }
     }
   }
+}
 
+footer {
+  background-color: rgb(131, 197, 92);
+  padding: 30px 0;
+
+  .title {
+    font-family: 'Avenir LT 86 Heavy Oblique';
+    font-size: 32px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .portrait {
+    max-height: 100px;
+    max-width: 100px;
+  }
+
+  .brief-introduction {
+    font-family: 'Avenir LT 86 Heavy Oblique';
+    color: white;
+    margin-left: 10px;
+  }
+
+  .personal-links {
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+
+    li {
+      margin: auto;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+
+      .icon {
+        width: 40px;
+        transition: all .1s ease-in;
+
+        &:hover {
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    color: rgba(66, 66, 66, 0.8);
+    border-top: rgba(255, 255, 255, 0.5) solid 1px;
+    padding-top: 10px;
+    margin-top: 20px;
+
+    span:hover {
+      color: black;
+    }
+  }
+}
+
+.top {
+  display: block;
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  line-height: 60px;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  span {
+    display: block;
+    text-align: center;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1 1s linear;
+}
+
+.fade-out {
+  animation: fade-out 1 1s linear;
+}
+
+@keyframes fade-in {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+@keyframes fade-out {
+  from { opacity: 1;}
+  to { opacity: 0;}
 }
