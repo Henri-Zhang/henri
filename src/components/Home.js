@@ -21,11 +21,11 @@ class Home extends Component {
 
   navbarScroll = (event) => {
     let distance = document.documentElement.scrollTop;
-    if (distance > 100 && !this.state.scrolled) {
+    if (distance > 200 && !this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
       }));
-    } else if (distance < 100 && this.state.scrolled) {
+    } else if (distance < 200 && this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
       }));
@@ -94,6 +94,32 @@ class Home extends Component {
               <a className="slide-arrow next">
                 <FontAwesome name="arrow-right" />
               </a>
+            </div>
+          </div>
+        </div>
+        <div className="learn-more">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="title">Wanna know more about me?</div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="tip">Click here</div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <ul>
+                  <li>
+                    <a href="/places">The places I've been to</a>
+                  </li>
+                  <li>
+                    <a href="/running-story">My running story</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

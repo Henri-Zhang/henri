@@ -46,6 +46,7 @@ nav.scrolled {
   }
 
   h2 {
+    font-family: Avenir-Light,sans-serif;
     color: #fff;
   }
 }
@@ -55,7 +56,7 @@ nav.scrolled {
   padding-bottom: 160px;
 
   .title {
-    font-family: 'Avenir LT 86 Heavy Oblique';
+    font-family: 'Avenir LT 85 Heavy';
     font-size: 32px;
     color: black;
     line-height: 1.2;
@@ -145,12 +146,45 @@ nav.scrolled {
   }
 }
 
+.learn-more {
+  color: white;
+  font-family: 'Avenir LT 85 Heavy';
+  padding: 60px;
+  min-height: 400px;
+  background-size: cover;
+  background-image: url('./../asserts/images/3.jpg');
+  background-attachment: fixed;
+
+  .title {
+    font-family: 'Avenir LT 85 Heavy';
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .tip {
+    font-size: 24px;
+  }
+
+  ul {
+    list-style: none;
+
+    a {
+      font-family: 'Geomanist-Light';
+      font-style: oblique;
+      font-size: 1.5rem;
+      color: #ffb400;
+    }
+  }
+}
+
 footer {
   background-color: rgb(131, 197, 92);
   padding: 30px 0;
 
   .title {
-    font-family: 'Avenir LT 86 Heavy Oblique';
+    font-family: 'Avenir LT 85 Heavy';
     font-size: 32px;
     color: white;
     line-height: 1.2;
@@ -164,7 +198,7 @@ footer {
   }
 
   .brief-introduction {
-    font-family: 'Avenir LT 86 Heavy Oblique';
+    font-family: 'Avenir LT 85 Heavy';
     color: white;
     margin-left: 10px;
   }

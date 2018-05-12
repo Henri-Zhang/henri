@@ -8,3 +8,18 @@ body {
   font-family: 'Avenir LT 86 Heavy Oblique';
   src: url('./asserts/fonts/Avenir LT 86 Heavy Oblique.ttf');
 }
+
+@font-face {
+  font-family: 'Avenir LT 85 Heavy';
+  src: url('./asserts/fonts/Avenir LT 85 Heavy.ttf');
+}
+
+@font-face {
+  font-family: 'Geomanist-Light';
+  src: url('./asserts/fonts/Geomanist-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Geomanist-ExtraLight';
+  src: url('./asserts/fonts/Geomanist-ExtraLight.ttf');
+}
