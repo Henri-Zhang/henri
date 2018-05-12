@@ -218,6 +218,20 @@ footer {
       width: 50px;
       text-align: center;
 
+      .popover {
+        display: none;
+
+        img {
+          max-width: 200px;
+        }
+      }
+
+      &:hover {
+        .popover {
+          display: block;
+        }
+      }
+
       .icon {
         width: 40px;
         transition: all .1s ease-in;

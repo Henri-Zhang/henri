@@ -162,7 +162,10 @@ class Home extends Component {
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="" target="_blank">
+                    <div className="popover">
+                      <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
+                    </div>
+                    <a rel="noopener noreferrer" href="javascript:;" target="_blank" data-toggle="popover">
                       <img className="icon" alt="wechat" src={wechatIcon} />
                     </a>
                   </li>
