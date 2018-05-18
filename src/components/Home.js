@@ -79,18 +79,50 @@ class Home extends Component {
               <a className="slide-arrow prev">
                 <FontAwesome name="arrow-left" />
               </a>
-              <div className="item">
-                <img alt="jog" src={require("./../asserts/images/jog.png")} />
-                <div className="name">Jog</div>
-              </div>
-              <div className="item">
-                <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
-                <div className="name">Delicacy</div>
-              </div>
-              <div className="item">
-                <img alt="travel" src={require("./../asserts/images/travel.png")} />
-                <div className="name">Travel</div>
-              </div>
+              <ul className="items-container">
+                <li className="item">
+                  <div>
+                    <img alt="jog" src={require("./../asserts/images/jog.png")} />
+                    <div className="name">Jog</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
+                    <div className="name">Delicacy</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="travel" src={require("./../asserts/images/travel.png")} />
+                    <div className="name">Travel</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="movie" src={require("./../asserts/images/movie.png")} />
+                    <div className="name">Movie</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="swim" src={require("./../asserts/images/swim.png")} />
+                    <div className="name">Swim</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="music" src={require("./../asserts/images/music.png")} />
+                    <div className="name">Music</div>
+                  </div>
+                </li>
+                <li className="item">
+                  <div>
+                    <img alt="cycling" src={require("./../asserts/images/cycling.png")} />
+                    <div className="name">Cycling</div>
+                  </div>
+                </li>
+              </ul>
               <a className="slide-arrow next">
                 <FontAwesome name="arrow-right" />
               </a>

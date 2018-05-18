@@ -89,6 +89,7 @@ nav.scrolled {
       transition: transform .2s ease-in-out;
     }
   }
+
   .slide-arrow.prev {
 
     &:hover {
@@ -116,7 +117,16 @@ nav.scrolled {
     display: flex;
     justify-content: space-between;
 
-    > .item {
+    .items-container {
+      padding: 0;
+      width: 900px;
+      list-style: none;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+    }
+    .item {
+      width: 300px;
       margin: auto;
       padding: 0;
       box-shadow: 2px 1px 15px rgb(0, 0, 0);
