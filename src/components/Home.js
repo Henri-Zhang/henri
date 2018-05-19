@@ -17,6 +17,9 @@ class Home extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.navbarScroll);
+    this.refs.carousel_ul.childNodes.forEach(item => {
+      item.addEventListener('click', this.carouselChange);
+    });
   }
 
   navbarScroll = (event) => {
@@ -33,7 +36,6 @@ class Home extends Component {
   }
 
   backToTop = (event) => {
-    console.log(this.refs.carousel_ul);
     let timer = setInterval(() => {
       let currentScrollTop = document.documentElement.scrollTop;
       let distance = Math.ceil(currentScrollTop / 10);
@@ -45,15 +47,34 @@ class Home extends Component {
     }, 20);
   }
 
-  carouselPrev = (event) => {
+  carouselPrev = event => {
     let fisrtChild = this.refs.carousel_ul.children[0];
     this.refs.carousel_ul.appendChild(fisrtChild);
   }
 
-  carouselNext = (event) => {
+  carouselNext = event => {
     let fisrtChild = this.refs.carousel_ul.children[0];
     let lastChild = this.refs.carousel_ul.children[this.refs.carousel_ul.children.length - 1];
     this.refs.carousel_ul.insertBefore(lastChild, fisrtChild);
+  }
+
+  carouselChange = event => {
+    let index;
+    this.refs.carousel_ul.childNodes.forEach((item, i) => {
+      if (event.target.parentNode == item) {
+        index = i;
+      }
+    })
+
+    while (index != 3) {
+      if (index < 3) {
+        this.carouselNext();
+        index++;
+      } else {
+        this.carouselPrev();
+        index--;
+      }
+    }
   }
 
   render() {
@@ -93,46 +114,32 @@ class Home extends Component {
               </a>
               <ul className="items-container" ref="carousel_ul">
                 <li className="item">
-                  <div>
-                    <img alt="jog" src={require("./../asserts/images/jog.png")} />
-                    <div className="name">Jog</div>
-                  </div>
+                  <img alt="jog" src={require("./../asserts/images/jog.png")} />
+                  <div className="name">Jog</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
-                    <div className="name">Delicacy</div>
-                  </div>
+                  <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
+                  <div className="name">Delicacy</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="travel" src={require("./../asserts/images/travel.png")} />
-                    <div className="name">Travel</div>
-                  </div>
+                  <img alt="travel" src={require("./../asserts/images/travel.png")} />
+                  <div className="name">Travel</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="movie" src={require("./../asserts/images/movie.png")} />
-                    <div className="name">Movie</div>
-                  </div>
+                  <img alt="movie" src={require("./../asserts/images/movie.png")} />
+                  <div className="name">Movie</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="swim" src={require("./../asserts/images/swim.png")} />
-                    <div className="name">Swim</div>
-                  </div>
+                  <img alt="swim" src={require("./../asserts/images/swim.png")} />
+                  <div className="name">Swim</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="music" src={require("./../asserts/images/music.png")} />
-                    <div className="name">Music</div>
-                  </div>
+                  <img alt="music" src={require("./../asserts/images/music.png")} />
+                  <div className="name">Music</div>
                 </li>
                 <li className="item">
-                  <div>
-                    <img alt="cycling" src={require("./../asserts/images/cycling.png")} />
-                    <div className="name">Cycling</div>
-                  </div>
+                  <img alt="cycling" src={require("./../asserts/images/cycling.png")} />
+                  <div className="name">Cycling</div>
                 </li>
               </ul>
               <a className="slide-arrow next" onClick={this.carouselNext}>
