@@ -33,6 +33,7 @@ class Home extends Component {
   }
 
   backToTop = (event) => {
+    console.log(this.refs.carousel_ul);
     let timer = setInterval(() => {
       let currentScrollTop = document.documentElement.scrollTop;
       let distance = Math.ceil(currentScrollTop / 10);
@@ -42,6 +43,17 @@ class Home extends Component {
         clearInterval(timer);
       }
     }, 20);
+  }
+
+  carouselPrev = (event) => {
+    let fisrtChild = this.refs.carousel_ul.children[0];
+    this.refs.carousel_ul.appendChild(fisrtChild);
+  }
+
+  carouselNext = (event) => {
+    let fisrtChild = this.refs.carousel_ul.children[0];
+    let lastChild = this.refs.carousel_ul.children[this.refs.carousel_ul.children.length - 1];
+    this.refs.carousel_ul.insertBefore(lastChild, fisrtChild);
   }
 
   render() {
@@ -76,10 +88,10 @@ class Home extends Component {
               </div>
             </div>
             <div className="row carousel">
-              <a className="slide-arrow prev">
+              <a className="slide-arrow prev" onClick={this.carouselPrev}>
                 <FontAwesome name="arrow-left" />
               </a>
-              <ul className="items-container">
+              <ul className="items-container" ref="carousel_ul">
                 <li className="item">
                   <div>
                     <img alt="jog" src={require("./../asserts/images/jog.png")} />
@@ -123,7 +135,7 @@ class Home extends Component {
                   </div>
                 </li>
               </ul>
-              <a className="slide-arrow next">
+              <a className="slide-arrow next" onClick={this.carouselNext}>
                 <FontAwesome name="arrow-right" />
               </a>
             </div>

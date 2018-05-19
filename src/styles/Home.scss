@@ -53,7 +53,7 @@ nav.scrolled {
 
 .hobbies-interests {
   padding-top: 60px;
-  padding-bottom: 160px;
+  padding-bottom: 100px;
 
   .title {
     font-family: 'Avenir LT 65 Medium';
@@ -116,21 +116,24 @@ nav.scrolled {
   .carousel {
     display: flex;
     justify-content: space-between;
+    padding-top: 40px;
 
-    .items-container {
+    ul.items-container {
       padding: 0;
-      width: 900px;
+      width: 888px;
+      height: 300px;
       list-style: none;
-      overflow: hidden;
       position: relative;
-      display: flex;
     }
-    .item {
-      width: 300px;
+    
+    li.item {
+      display: block;
+      position: absolute;
       margin: auto;
       padding: 0;
       box-shadow: 2px 1px 15px rgb(0, 0, 0);
       border-radius: 5px;
+      transition: all .2s ease-in-out;
 
       img {
         border-top-left-radius: 5px;
@@ -140,18 +143,56 @@ nav.scrolled {
       }
 
       div.name {
-        font-size: 12px;
+        height: 60px;
+        font-size: 16px;
         text-transform: uppercase;
         line-height: 1.2;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 22px 0;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         font-family: Avenir-Black,sans-serif;
         background-color: #ffb400;
         color: #fff;
       }
+    }
+
+    li.item:nth-of-type(1) {
+      left: 0;
+      z-index: 0;
+      box-shadow: none;
+    }
+    
+    li.item:nth-of-type(2) {
+      left: 0;
+      z-index: 1;
+    }
+    
+    li.item:nth-of-type(3) {
+      left: 120px;
+      z-index: 2;
+    }
+    
+    li.item:nth-of-type(4) {
+      transform: scale(1.2);
+      left: 300px;
+      z-index: 3;
+    }
+    
+    li.item:nth-of-type(5) {
+      left: 528px;
+      z-index: 2;
+    }
+    
+    li.item:nth-of-type(6) {
+      left: 648px;
+      z-index: 1;
+    }
+    
+    li.item:nth-of-type(7) {
+      left: 648px;
+      z-index: 0;
+      box-shadow: none;
     }
   }
 }
