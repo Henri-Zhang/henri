@@ -170,6 +170,7 @@ nav.scrolled {
     }
     
     li.item:nth-of-type(3) {
+      transform: scale(1.1);
       left: 120px;
       z-index: 2;
     }
@@ -181,6 +182,7 @@ nav.scrolled {
     }
     
     li.item:nth-of-type(5) {
+      transform: scale(1.1);
       left: 528px;
       z-index: 2;
     }
