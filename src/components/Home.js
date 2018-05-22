@@ -61,12 +61,12 @@ class Home extends Component {
   carouselChange = event => {
     let index;
     this.refs.carousel_ul.childNodes.forEach((item, i) => {
-      if (event.target.parentNode == item) {
+      if (event.target.parentNode === item) {
         index = i;
       }
     })
 
-    while (index != 3) {
+    while (index !== 3) {
       if (index < 3) {
         this.carouselNext();
         index++;
@@ -217,7 +217,7 @@ class Home extends Component {
                       <div className="arrow"></div>
                       <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
                     </div>
-                    <a rel="noopener noreferrer" href="javascript:;" target="_blank" data-toggle="popover">
+                    <a rel="noopener noreferrer" target="_blank" data-toggle="popover">
                       <img className="icon" alt="wechat" src={wechatIcon} />
                     </a>
                   </li>
