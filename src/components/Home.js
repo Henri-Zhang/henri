@@ -82,7 +82,7 @@ class Home extends Component {
       <div>
         <nav className={this.state.scrolled ? "navbar navbar-default fixed-top scrolled" : "navbar navbar-default fixed-top"} onScroll={this.navbarScroll}>
           <a className="brand" href="/" target="_blank">
-            <img alt="henri.ren" src={require("./../asserts/images/logo.png")} />
+            <img src={require("./../asserts/images/logo.png")} alt="henri.ren" />
             <span>
               <strong>henri</strong>.ren
             </span>
@@ -114,31 +114,31 @@ class Home extends Component {
               </a>
               <ul className="items-container" ref="carousel_ul">
                 <li className="item">
-                  <img alt="jog" src={require("./../asserts/images/jog.png")} />
+                  <img src={require("./../asserts/images/jog.png")} alt="jog" />
                   <div className="name">Jog</div>
                 </li>
                 <li className="item">
-                  <img alt="delicacy" src={require("./../asserts/images/delicacy.png")} />
+                  <img src={require("./../asserts/images/delicacy.png")} alt="delicacy" />
                   <div className="name">Delicacy</div>
                 </li>
                 <li className="item">
-                  <img alt="travel" src={require("./../asserts/images/travel.png")} />
+                  <img src={require("./../asserts/images/travel.png")} alt="travel" />
                   <div className="name">Travel</div>
                 </li>
                 <li className="item">
-                  <img alt="movie" src={require("./../asserts/images/movie.png")} />
+                  <img src={require("./../asserts/images/movie.png")} alt="movie" />
                   <div className="name">Movie</div>
                 </li>
                 <li className="item">
-                  <img alt="swim" src={require("./../asserts/images/swim.png")} />
+                  <img src={require("./../asserts/images/swim.png")} alt="swim" />
                   <div className="name">Swim</div>
                 </li>
                 <li className="item">
-                  <img alt="music" src={require("./../asserts/images/music.png")} />
+                  <img src={require("./../asserts/images/music.png")} alt="music" />
                   <div className="name">Music</div>
                 </li>
                 <li className="item">
-                  <img alt="cycling" src={require("./../asserts/images/cycling.png")} />
+                  <img src={require("./../asserts/images/cycling.png")} alt="cycling" />
                   <div className="name">Cycling</div>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ class Home extends Component {
             </div>
             <div className="row">
               <div className="col-sm-4 d-flex justify-content-center">
-                <img alt="henri" className="portrait rounded-circle" src={require("./../asserts/images/portrait.jpg")} />
+                <img className="portrait rounded-circle" src={require("./../asserts/images/portrait.jpg")} alt="henri" />
                 <div className="brief-introduction">
                   <p>Screen name: 漫长。</p>
                   <p>Age: 23</p>
@@ -194,22 +194,22 @@ class Home extends Component {
                 <ul className="personal-links">
                   <li>
                     <a rel="noopener noreferrer" href="mailto:371595867@qq.com" target="_blank">
-                      <img className="icon" alt="email" src={emailIcon} />
+                      <img className="icon" src={emailIcon} alt="email" />
                     </a>
                   </li>
                   <li>
                     <a rel="noopener noreferrer" href="https://github.com/LikedBlack" target="_blank">
-                      <img className="icon" alt="github" src={githubIcon} />
+                      <img className="icon" src={githubIcon} alt="github" />
                     </a>
                   </li>
                   <li>
                     <a rel="noopener noreferrer" href="https://www.zhihu.com/people/zhang-heng-78-10/activities" target="_blank">
-                      <img className="icon" alt="zhihu" src={zhihuIcon} />
+                      <img className="icon" src={zhihuIcon} alt="zhihu" />
                     </a>
                   </li>
                   <li>
                     <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
-                      <img className="icon" alt="qzone" src={qzoneIcon} />
+                      <img className="icon" src={qzoneIcon} alt="qzone" />
                     </a>
                   </li>
                   <li>
@@ -218,12 +218,12 @@ class Home extends Component {
                       <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
                     </div>
                     <a rel="noopener noreferrer" target="_blank" data-toggle="popover">
-                      <img className="icon" alt="wechat" src={wechatIcon} />
+                      <img className="icon" src={wechatIcon} alt="wechat" />
                     </a>
                   </li>
                   <li>
                     <a rel="noopener noreferrer" href="https://weibo.com/5214776283/profile"  target="_blank">
-                      <img className="icon" alt="weibo" src={weiboIcon} />
+                      <img className="icon" src={weiboIcon} alt="weibo" />
                     </a>
                   </li>
                 </ul>
