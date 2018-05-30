@@ -9,7 +9,7 @@
   }
 }
 
-nav.navbar {
+.navbar {
   background-color: rgba(0,0,0,.1);
   transition: all .4s ease-in-out;
   padding: 1.5rem 5rem;
@@ -45,7 +45,8 @@ nav.navbar {
     @include fixed-background('./../asserts/images/2.jpg');
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     font-family: 'Avenir-Light,sans-serif';
     color: #fff;
   }
@@ -125,7 +126,7 @@ nav.navbar {
     justify-content: space-between;
     padding-top: 40px;
 
-    ul.items-container {
+    .items-container {
       padding: 0;
       width: 888px;
       height: 300px;
@@ -133,7 +134,7 @@ nav.navbar {
       position: relative;
     }
 
-    li.item {
+    .item {
       display: block;
       position: absolute;
       width: 240px;
