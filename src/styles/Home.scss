@@ -1,3 +1,15 @@
+@import "colors";
+@import "animations";
+
+@mixin fixed-background($url) {
+  background: {
+    // image: url('./../asserts/images/2.jpg');
+    image: url($url);
+    size: cover;
+    attachment: fixed;
+  }
+}
+
 nav.navbar {
   background-color: rgba(0,0,0,.1);
   transition: all .4s ease-in-out;
@@ -20,35 +32,37 @@ nav.navbar {
   h1 {
     color: white;
   }
-}
 
-nav.scrolled {
-  background-color: rgba(0, 0, 0, .6);
-  transition: all .4s ease-in-out;
-  padding: 0.5rem 5rem;
+  &.scrolled {
+    background-color: rgba(0, 0, 0, .6);
+    transition: all .4s ease-in-out;
+    padding: 0.5rem 5rem;
+  }
 }
 
 .home-main {
   .background {
     min-height: 800px;
-    background: url('./../asserts/images/2.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+    @include fixed-background('./../asserts/images/2.jpg');
+    // background: {
+    //   image: url('./../asserts/images/2.jpg');
+    //   size: cover;
+    //   attachment: fixed;
+    // }
+  }
+
+  h1, h2 {
+    font-family: 'Avenir-Light,sans-serif';
+    color: #fff;
   }
 
   h1 {
-    font-family: Avenir-Light,sans-serif;
     font-size: 52px;
-    color: #fff;
     line-height: 1.2;
     margin-top: 300px;
     margin-bottom: 0;
   }
 
-  h2 {
-    font-family: Avenir-Light,sans-serif;
-    color: #fff;
-  }
 }
 
 .hobbies-interests {
@@ -72,11 +86,11 @@ nav.scrolled {
     border-radius: 0.15em;
     cursor: pointer;
     text-align: center;
-    box-shadow: inset 0 0 0 2px rgb(131, 197, 92);
+    box-shadow: inset 0 0 0 2px $theme-green;
     transition: background-color .2s ease-in-out, transform .2s ease-in-out;
 
     &:hover {
-      background-color: rgb(131, 197, 92);
+      background-color: $theme-green;
 
       span {
         color: white;
@@ -84,7 +98,7 @@ nav.scrolled {
     }
     
     span {
-      color: rgb(131, 197, 92);
+      color: $theme-green;
       line-height: 2em;
       transition: transform .2s ease-in-out;
     }
@@ -102,7 +116,6 @@ nav.scrolled {
   }
 
   .slide-arrow.next {
-    vertical-align: middle;
 
     &:hover {
       transform: rotate(45deg);
@@ -125,7 +138,7 @@ nav.scrolled {
       list-style: none;
       position: relative;
     }
-    
+
     li.item {
       display: block;
       position: absolute;
@@ -154,49 +167,49 @@ nav.scrolled {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         font-family: Avenir-Black,sans-serif;
-        background-color: #ffb400;
+        background-color: $theme-orange;
         color: #fff;
       }
-    }
 
-    li.item:nth-of-type(1) {
-      left: 0;
-      z-index: 0;
-      box-shadow: none;
-    }
-    
-    li.item:nth-of-type(2) {
-      left: 0;
-      z-index: 1;
-    }
-    
-    li.item:nth-of-type(3) {
-      transform: scale(1.1);
-      left: 120px;
-      z-index: 2;
-    }
-    
-    li.item:nth-of-type(4) {
-      transform: scale(1.2);
-      left: 324px;
-      z-index: 3;
-    }
-    
-    li.item:nth-of-type(5) {
-      transform: scale(1.1);
-      left: 528px;
-      z-index: 2;
-    }
-    
-    li.item:nth-of-type(6) {
-      left: 648px;
-      z-index: 1;
-    }
-    
-    li.item:nth-of-type(7) {
-      left: 648px;
-      z-index: 0;
-      box-shadow: none;
+      &.item:nth-of-type(1) {
+        left: 0;
+        z-index: 0;
+        box-shadow: none;
+      }
+      
+      &.item:nth-of-type(2) {
+        left: 0;
+        z-index: 1;
+      }
+      
+      &.item:nth-of-type(3) {
+        transform: scale(1.1);
+        left: 120px;
+        z-index: 2;
+      }
+      
+      &.item:nth-of-type(4) {
+        transform: scale(1.2);
+        left: 324px;
+        z-index: 3;
+      }
+      
+      &.item:nth-of-type(5) {
+        transform: scale(1.1);
+        left: 528px;
+        z-index: 2;
+      }
+      
+      &.item:nth-of-type(6) {
+        left: 648px;
+        z-index: 1;
+      }
+      
+      &.item:nth-of-type(7) {
+        left: 648px;
+        z-index: 0;
+        box-shadow: none;
+      }
     }
   }
 }
@@ -206,9 +219,7 @@ nav.scrolled {
   font-family: 'Avenir LT 65 Medium';
   padding: 60px;
   min-height: 400px;
-  background-size: cover;
-  background-image: url('./../asserts/images/3.jpg');
-  background-attachment: fixed;
+  @include fixed-background('./../asserts/images/3.jpg');
 
   .title {
     font-family: 'Avenir LT 65 Medium';
@@ -226,16 +237,18 @@ nav.scrolled {
     list-style: none;
 
     a {
-      font-family: 'Geomanist-Light';
-      font-style: italic;
-      font-size: 1.5rem;
-      color: #ffb400;
+      font: {
+        family: 'Geomanist-Light';
+        style: italic;
+        size: 1.5rem;
+      }
+      color: $theme-orange;
     }
   }
 }
 
 footer {
-  background-color: rgb(131, 197, 92);
+  background-color: $theme-green;
   padding: 30px 0;
 
   .title {
@@ -278,7 +291,7 @@ footer {
         display: none;
         top: -225px;
         left: -75px;
-        border: #ffb400 solid 2px;
+        border: $theme-orange solid 2px;
         border-radius: 10px;
 
         .arrow {
@@ -289,7 +302,7 @@ footer {
           
           &:before {
             bottom: -1px;
-            border-top-color: #ffb400;
+            border-top-color: $theme-orange;
             border-width: .8rem .8rem 0;
           }
           
@@ -379,28 +392,4 @@ footer {
   opacity: 0;
   visibility: hidden;
   animation: fade-out 1 .5s linear;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
