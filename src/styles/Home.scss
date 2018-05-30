@@ -96,7 +96,7 @@ nav.navbar {
         color: white;
       }
     }
-    
+
     span {
       color: $theme-green;
       line-height: 2em;
@@ -176,35 +176,35 @@ nav.navbar {
         z-index: 0;
         box-shadow: none;
       }
-      
+
       &.item:nth-of-type(2) {
         left: 0;
         z-index: 1;
       }
-      
+
       &.item:nth-of-type(3) {
         transform: scale(1.1);
         left: 120px;
         z-index: 2;
       }
-      
+
       &.item:nth-of-type(4) {
         transform: scale(1.2);
         left: 324px;
         z-index: 3;
       }
-      
+
       &.item:nth-of-type(5) {
         transform: scale(1.1);
         left: 528px;
         z-index: 2;
       }
-      
+
       &.item:nth-of-type(6) {
         left: 648px;
         z-index: 1;
       }
-      
+
       &.item:nth-of-type(7) {
         left: 648px;
         z-index: 0;
@@ -299,13 +299,13 @@ footer {
           width: 1.6rem;
           height: .8rem;
           bottom: calc((.8rem + 1px) * -1);
-          
+
           &:before {
             bottom: -1px;
             border-top-color: $theme-orange;
             border-width: .8rem .8rem 0;
           }
-          
+
           &:after {
             bottom: 1px;
             border-top-color: white;
