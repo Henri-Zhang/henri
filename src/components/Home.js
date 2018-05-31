@@ -193,7 +193,7 @@ class Home extends Component {
               <div className="col-sm-8 d-flex">
                 <ul className="personal-links">
                   <li>
-                    <a rel="noopener noreferrer" href="mailto:371595867@qq.com" target="_blank">
+                    <a rel="noopener noreferrer" href="mailto:henrizhang@qq.com" target="_blank">
                       <img className="icon" src={emailIcon} alt="email" />
                     </a>
                   </li>

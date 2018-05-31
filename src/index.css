@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -27,4 +28,16 @@ body {
 @font-face {
   font-family: 'Geomanist-ExtraLight';
   src: url('./asserts/fonts/Geomanist-ExtraLight.ttf');
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
 }
