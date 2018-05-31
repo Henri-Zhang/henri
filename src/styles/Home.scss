@@ -5,6 +5,7 @@
   background: {
     image: url($url);
     size: cover;
+    position: center center;
     attachment: fixed;
   }
 }
@@ -237,7 +238,7 @@
         style: italic;
         size: 1.5rem;
       }
-      color: $theme-orange;
+      color: $color-links;
     }
   }
 }
