@@ -326,18 +326,18 @@ footer {
         }
       }
 
-      &:hover {
-        .popover {
-          display: block;
-        }
-      }
-
       .icon {
         width: 40px;
         transition: all .1s ease-in;
+      }
 
-        &:hover {
+      a:hover {
+        .icon {
           width: 50px;
+        }
+
+        .popover {
+          display: block;
         }
       }
     }

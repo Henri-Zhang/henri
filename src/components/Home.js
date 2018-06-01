@@ -208,11 +208,11 @@ class Home extends Component {
                     </a>
                   </li>
                   <li>
-                    <div className="popover bs-popover-top">
-                      <div className="arrow"></div>
-                      <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
-                    </div>
                     <a rel="noopener noreferrer" target="_blank" data-toggle="popover">
+                      <div className="popover bs-popover-top">
+                        <div className="arrow"></div>
+                        <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
+                      </div>
                       <img className="icon" src={wechatIcon} alt="wechat" />
                     </a>
                   </li>
