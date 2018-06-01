@@ -41,6 +41,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 1rem;
+
+    &.scrolled {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
 .home-main {
   .background {
     min-height: 800px;
@@ -51,6 +61,7 @@
   h2 {
     font-family: Avenir-Light,sans-serif;
     color: #fff;
+    text-shadow: 2px 1px 15px black;
   }
 
   h1 {
@@ -59,7 +70,6 @@
     margin-top: 300px;
     margin-bottom: 0;
   }
-
 }
 
 .hobbies-interests {
@@ -214,7 +224,7 @@
 .learn-more {
   color: white;
   font-family: 'Avenir LT 65 Medium';
-  padding: 60px;
+  padding: 2rem;
   min-height: 400px;
   @include fixed-background('./../asserts/images/3.jpg');
 
@@ -258,8 +268,8 @@ footer {
   }
 
   .portrait {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 6rem;
+    max-width: 6rem;
   }
 
   .brief-introduction {
@@ -273,7 +283,7 @@ footer {
     float: left;
     padding: 0;
     margin: 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
 
@@ -348,8 +358,8 @@ footer {
 
 .top {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 4rem;
+  height: 4rem;
   color: white;
   font-weight: bold;
   position: fixed;
@@ -365,13 +375,10 @@ footer {
   }
 
   span {
-    line-height: 20px;
+    line-height: 1.2rem;
+    font-size: 1.2rem;
     display: block;
     text-align: center;
-  }
-
-  span:first-child {
-    font-size: 20px;
   }
 
   span:last-child {

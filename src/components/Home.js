@@ -87,15 +87,15 @@ class Home extends Component {
               <strong>henri</strong>.ren
             </span>
           </a>
-          <h1 className="nav navbar-nav navbar-right">Welcome to my site.</h1>
+          <h1 className="nav navbar-nav navbar-right">Welcome to my site</h1>
         </nav>
         <div className="home-main">
           <div className="background">
             <div className="container">
               <div className="row">
                 <div className="col-sm-12 item">
-                  <h1>Nice to meet you.</h1>
-                  <h2>And my name is Henri.</h2>
+                  <h1>Nice to meet you</h1>
+                  <h2>And my name is Henri</h2>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@ class Home extends Component {
             </div>
             <div className="row">
               <div className="col-sm-12">
-                <div className="tip">Click here</div>
+                <div className="tip">Click here (coming soon...)</div>
               </div>
             </div>
             <div className="row">
@@ -182,15 +182,15 @@ class Home extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-4 d-flex justify-content-center">
-                <img className="portrait rounded-circle" src={require("./../asserts/images/portrait.jpg")} alt="henri" />
+              <div className="col-lg-4 d-flex justify-content-center">
+                <img className="portrait rounded-circle" src={require("./../asserts/images/portrait.jpg")} alt="Henri" />
                 <div className="brief-introduction">
                   <p>Screen name: 漫长。</p>
                   <p>Age: 23</p>
                   <p>Region: Shanghai</p>
                 </div>
               </div>
-              <div className="col-sm-8 d-flex">
+              <div className="col-lg-8 d-flex">
                 <ul className="personal-links">
                   <li>
                     <a rel="noopener noreferrer" href="mailto:henrizhang@qq.com" target="_blank">
@@ -208,17 +208,17 @@ class Home extends Component {
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
-                      <img className="icon" src={qzoneIcon} alt="qzone" />
-                    </a>
-                  </li>
-                  <li>
                     <div className="popover bs-popover-top">
                       <div className="arrow"></div>
                       <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
                     </div>
                     <a rel="noopener noreferrer" target="_blank" data-toggle="popover">
                       <img className="icon" src={wechatIcon} alt="wechat" />
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
+                      <img className="icon" src={qzoneIcon} alt="qzone" />
                     </a>
                   </li>
                   <li>
