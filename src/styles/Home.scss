@@ -60,7 +60,7 @@
   h1,
   h2 {
     font-family: Avenir-Light,sans-serif;
-    color: #fff;
+    color: white;
     text-shadow: 2px 1px 15px black;
   }
 
@@ -82,7 +82,7 @@
     color: black;
     line-height: 1.2;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
 
   .slide-arrow {
@@ -130,7 +130,6 @@
   .carousel {
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
 
     .items-container {
       padding: 0;
@@ -143,7 +142,7 @@
     .item {
       display: block;
       position: absolute;
-      width: 240px;
+      width: 15rem;
       margin: auto;
       padding: 0;
       box-shadow: 2px 1px 15px rgb(0, 0, 0);
@@ -154,8 +153,8 @@
       img {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        min-height: 240px;
-        max-width: 240px;
+        min-height: 15rem;
+        max-width: 15rem;
       }
 
       div.name {
@@ -169,7 +168,7 @@
         border-bottom-right-radius: 5px;
         font-family: Avenir-Black,sans-serif;
         background-color: $theme-orange;
-        color: #fff;
+        color: white;
       }
 
       &.item:nth-of-type(1) {
