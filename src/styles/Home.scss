@@ -111,25 +111,19 @@
     }
   }
 
-  .slide-arrow.prev {
+  .prev:hover {
+    transform: rotate(-45deg);
 
-    &:hover {
-      transform: rotate(-45deg);
-
-      span {
-        transform: rotate(45deg);
-      }
+    span {
+      transform: rotate(45deg);
     }
   }
 
-  .slide-arrow.next {
+  .next:hover {
+    transform: rotate(45deg);
 
-    &:hover {
-      transform: rotate(45deg);
-
-      span {
-        transform: rotate(-45deg);
-      }
+    span {
+      transform: rotate(-45deg);
     }
   }
 
@@ -298,7 +292,7 @@ footer {
         display: none;
         top: -225px;
         left: -75px;
-        border: $theme-orange solid 2px;
+        border: $color-links solid 2px;
         border-radius: 10px;
 
         .arrow {
@@ -309,7 +303,7 @@ footer {
 
           &:before {
             bottom: -1px;
-            border-top-color: $theme-orange;
+            border-top-color: $color-links;
             border-width: .8rem .8rem 0;
           }
 
