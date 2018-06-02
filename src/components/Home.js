@@ -201,7 +201,7 @@ class Home extends Component {
               <div className="col-lg-8 d-flex">
                 <ul className="personal-links">
                   <li>
-                    <a rel="noopener noreferrer" href="mailto:henrizhang@qq.com" target="_blank">
+                    <a rel="noopener noreferrer" href="mailto:henrizhang@qq.com">
                       <img className="icon" src={emailIcon} alt="email" />
                     </a>
                   </li>
