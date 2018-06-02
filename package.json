@@ -24,6 +24,8 @@
   "devDependencies": {
     "gh-pages": "^1.1.0",
     "node-sass": "^4.9.0",
+    "react-loadable": "^5.4.0",
+    "react-router-dom": "^4.2.2",
     "sass-loader": "^7.0.1"
   },
   "homepage": "https://henri.ren/"
