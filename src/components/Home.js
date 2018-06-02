@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import FontAwesome from 'react-fontawesome';
 import emailIcon from './../asserts/icons/email.svg';
 import githubIcon from './../asserts/icons/github.svg';
@@ -157,17 +158,17 @@ class Home extends Component {
             </div>
             <div className="row">
               <div className="col-sm-12">
-                <div className="tip">Click here (coming soon...)</div>
+                <div className="tip">Click here</div>
               </div>
             </div>
             <div className="row">
               <div className="col-sm-12">
                 <ul>
                   <li>
-                    <a href="/places">The places I've been to</a>
+                    <Link to="/places">The places I've been to</Link>
                   </li>
                   <li>
-                    <a href="/running-story">My running story</a>
+                    <Link to="/running-story">My running story</Link>
                   </li>
                 </ul>
               </div>
