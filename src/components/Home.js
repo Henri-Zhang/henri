@@ -31,15 +31,19 @@ class Home extends Component {
         scrolled: !prevState.scrolled
       }));
 
-      topButton.classList.add('fade-in');
-      topButton.classList.remove('fade-out');
+      if (topButton) {
+        topButton.classList.add('fade-in');
+        topButton.classList.remove('fade-out');
+      }
     } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
       }));
 
-      topButton.classList.add('fade-out');
-      topButton.classList.remove('fade-in');
+      if (topButton) {
+        topButton.classList.add('fade-out');
+        topButton.classList.remove('fade-in');
+      }
     }
   }
 
