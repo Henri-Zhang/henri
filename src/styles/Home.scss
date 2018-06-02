@@ -561,6 +561,8 @@ footer {
 
 .top {
   display: block;
+  opacity: 0;
+  visibility: hidden;
   width: 4rem;
   height: 4rem;
   color: white;

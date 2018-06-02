@@ -25,14 +25,21 @@ class Home extends Component {
 
   navbarScroll = (event) => {
     let distance = document.documentElement.scrollTop;
+    let topButton = document.getElementById('top');
     if (distance > 200 && !this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
       }));
-    } else if (distance < 200 && this.state.scrolled) {
+
+      topButton.classList.add('fade-in');
+      topButton.classList.remove('fade-out');
+    } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
       }));
+
+      topButton.classList.add('fade-out');
+      topButton.classList.remove('fade-in');
     }
   }
 
@@ -239,7 +246,7 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-        <div id="top" className={this.state.scrolled ? "top rounded-circle fade-in" : "top rounded-circle fade-out"} onClick={this.backToTop}>
+        <div id="top" className="top rounded-circle" onClick={this.backToTop}>
           <FontAwesome name="chevron-up" />
           <span>TOP</span>
         </div>
