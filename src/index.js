@@ -21,12 +21,18 @@ const Places = Loadable({
   loading: () => <div>Loading...</div>
 })
 
+const Resume = Loadable({
+  loader: () => import('./components/Resume'),
+  loading: () => <div>Loading...</div>
+})
+
 const App = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/running-story" component={RunningStory} />
       <Route path="/places" component={Places} />
+      <Route path="/resume" component={Resume} />
     </Switch>
   </Router>
 )
