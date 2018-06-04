@@ -508,7 +508,7 @@ footer {
           left: 80px;
           width: 1.6rem;
           height: .8rem;
-          bottom: calc((.8rem + 1px) * -1);
+          bottom: -.8rem;
 
           &:before {
             bottom: -1px;
