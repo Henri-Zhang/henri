@@ -258,7 +258,7 @@ class Home extends Component {
           <span>TOP</span>
         </div>
       </div>
-    );
+    )
   }
 
 }
