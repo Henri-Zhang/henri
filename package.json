@@ -26,7 +26,7 @@
     "deploy": "rimraf build/static/js/*.map && gh-pages -d build"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^5.0.0",
+    "ts-loader": "^3.1.1",
     "gh-pages": "^1.2.0",
     "node-sass": "^4.9.0",
     "react-loadable": "^5.4.0",
