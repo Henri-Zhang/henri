@@ -1,90 +1,90 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import FontAwesome from 'react-fontawesome';
-import emailIcon from './../asserts/icons/email.svg';
-import githubIcon from './../asserts/icons/github.svg';
-import qzoneIcon from './../asserts/icons/qzone.svg';
-import wechatIcon from './../asserts/icons/wechat.svg';
-import weiboIcon from './../asserts/icons/weibo.svg';
-import zhihuIcon from './../asserts/icons/zhihu.svg';
-import './../styles/Home.scss';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
+import FontAwesome from 'react-fontawesome'
+import emailIcon from './../asserts/icons/email.svg'
+import githubIcon from './../asserts/icons/github.svg'
+import qzoneIcon from './../asserts/icons/qzone.svg'
+import wechatIcon from './../asserts/icons/wechat.svg'
+import weiboIcon from './../asserts/icons/weibo.svg'
+import zhihuIcon from './../asserts/icons/zhihu.svg'
+import './../styles/Home.scss'
 
 class Home extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {scrolled : false}
-    this.navbarScroll = this.navbarScroll.bind(this);
+    this.navbarScroll = this.navbarScroll.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.navbarScroll);
+    window.addEventListener('scroll', this.navbarScroll)
     this.refs.carousel_ul.childNodes.forEach(item => {
-      item.addEventListener('click', this.carouselChange);
-    });
+      item.addEventListener('click', this.carouselChange)
+    })
   }
 
   navbarScroll = (event) => {
-    let distance = document.documentElement.scrollTop;
-    let topButton = document.getElementById('top');
+    let distance = document.documentElement.scrollTop
+    let topButton = document.getElementById('top')
     if (distance > 200 && !this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
-      }));
+      }))
 
       if (topButton) {
-        topButton.classList.add('fade-in');
-        topButton.classList.remove('fade-out');
+        topButton.classList.add('fade-in')
+        topButton.classList.remove('fade-out')
       }
     } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
-      }));
+      }))
 
       if (topButton) {
-        topButton.classList.add('fade-out');
-        topButton.classList.remove('fade-in');
+        topButton.classList.add('fade-out')
+        topButton.classList.remove('fade-in')
       }
     }
   }
 
   backToTop = (event) => {
     let timer = setInterval(() => {
-      let currentScrollTop = document.documentElement.scrollTop;
-      let distance = Math.ceil(currentScrollTop / 10);
-      document.documentElement.scrollTop = currentScrollTop - distance;
+      let currentScrollTop = document.documentElement.scrollTop
+      let distance = Math.ceil(currentScrollTop / 10)
+      document.documentElement.scrollTop = currentScrollTop - distance
 
       if (document.documentElement.scrollTop <= 0) {
-        clearInterval(timer);
+        clearInterval(timer)
       }
-    }, 20);
+    }, 20)
   }
 
   carouselPrev = event => {
-    let fisrtChild = this.refs.carousel_ul.children[0];
-    this.refs.carousel_ul.appendChild(fisrtChild);
+    let fisrtChild = this.refs.carousel_ul.children[0]
+    this.refs.carousel_ul.appendChild(fisrtChild)
   }
 
   carouselNext = event => {
-    let fisrtChild = this.refs.carousel_ul.children[0];
-    let lastChild = this.refs.carousel_ul.children[this.refs.carousel_ul.children.length - 1];
-    this.refs.carousel_ul.insertBefore(lastChild, fisrtChild);
+    let fisrtChild = this.refs.carousel_ul.children[0]
+    let lastChild = this.refs.carousel_ul.children[this.refs.carousel_ul.children.length - 1]
+    this.refs.carousel_ul.insertBefore(lastChild, fisrtChild)
   }
 
   carouselChange = event => {
-    let index;
+    let index
     this.refs.carousel_ul.childNodes.forEach((item, i) => {
       if (event.target.parentNode === item) {
-        index = i;
+        index = i
       }
     })
 
     while (index !== 3) {
       if (index < 3) {
-        this.carouselNext();
-        index++;
+        this.carouselNext()
+        index++
       } else {
-        this.carouselPrev();
-        index--;
+        this.carouselPrev()
+        index--
       }
     }
   }
@@ -263,4 +263,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default Home

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {ScrollToTopOnMount, SectionsContainer, Section, Header, Footer} from 'react-fullpage';
+import React, { Component } from 'react'
+import {ScrollToTopOnMount, SectionsContainer, Section, Header, Footer} from 'react-fullpage'
 
 class Resume extends Component {
   render() {
@@ -37,4 +37,4 @@ class Resume extends Component {
   }
 }
 
-export default Resume;
+export default Resume
