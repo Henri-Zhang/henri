@@ -3,7 +3,7 @@ import axios from 'axios'
 
 class ComingSoon extends Component {
   componentDidMount() {
-    axios.get('http://freegeoip.net/json/').then(response => {
+    axios.get('http://ip-api.com/json/').then(response => {
       console.log(response)
     })
   }
