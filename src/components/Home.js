@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import Visitors from './../engine/Visitors'
 import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
 import emailIcon from './../asserts/icons/email.svg'
@@ -14,6 +16,12 @@ class Home extends Component {
     super(props)
     this.state = {scrolled : false}
     this.navbarScroll = this.navbarScroll.bind(this)
+  }
+
+  componentWillMount() {
+    axios.get('http://ip-api.com/json/').then(response => {
+      Visitors.addVisitor(response.data)
+    })
   }
 
   componentDidMount() {
