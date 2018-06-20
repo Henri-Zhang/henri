@@ -19,7 +19,7 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://ip-api.com/json/').then(response => {
+    axios.get('https://ipapi.co/json').then(response => {
       Visitors.addVisitor(response.data)
     })
   }
