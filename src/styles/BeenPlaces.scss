@@ -1,0 +1,92 @@
+.title {
+  font-family: 'Avenir LT 65 Medium';
+  margin: 3rem 0;
+}
+
+.city {
+  overflow: hidden;
+  position: relative;
+  max-height: 400px;
+  padding: 0;
+  color: white;
+  background-color: rgb(70, 233, 170);
+
+  .image-background {
+    display: block;
+    position: relative;
+    transition: 0.75s transform cubic-bezier(0.2, 1, 0.3, 1) .1s;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: 1s transform cubic-bezier(0.2, 1, 0.3, 1);
+    }
+  }
+
+  .fill-up {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  .city-link {
+    overflow: hidden;
+    text-indent: -9999px;
+    z-index: 2;
+  }
+
+  .hover-in {
+    opacity: 0;
+    transform: translateY(-50%) translateZ(0px);
+    transition: 0.5s opacity cubic-bezier(0.2, 1, 0.3, 1), 0.5s transform cubic-bezier(0.2, 1, 0.3, 1);
+    z-index: 1;
+
+    .city-name {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: inherit;
+    transition: 3s transform cubic-bezier(0.2, 1, 0.3, 1);
+    opacity: .9;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(2) translateX(-100%) translateY(-100%) translateZ(0px) rotate(-45deg);
+  }
+
+}
+
+.city:hover {
+  .image-background {
+    img {
+      transform: scale(1.2);
+      transition: 1s transform cubic-bezier(0.2, 1, 0.3, 1);
+    }
+  }
+
+  .hover-in {
+    opacity: 1;
+    transform: translateY(0px) translateZ(0px);
+    transition: 0.5s opacity cubic-bezier(0.2, 1, 0.3, 1), 0.5s transform cubic-bezier(0.2, 1, 0.3, 1);
+    z-index: 1;
+  }
+
+  &::after {
+    transform: scale(2) rotate(-45deg) translateZ(0px);
+    transition-duration: 1s;
+  }
+}
