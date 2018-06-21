@@ -20,7 +20,7 @@ class Home extends Component {
 
   componentWillMount() {
     axios.get('https://ipapi.co/json').then(response => {
-      Visitors.addVisitor(response.data)
+      // Visitors.addVisitor(response.data)
     })
   }
 
@@ -184,7 +184,7 @@ class Home extends Component {
               <div className="col-sm-12">
                 <ul>
                   <li>
-                    <Link to="/places">The places I've been to</Link>
+                    <Link to="/been-places">The places I've been to</Link>
                   </li>
                   <li>
                     <Link to="/running-story">My running story</Link>
