@@ -16,7 +16,7 @@ class Home extends Component {
 
   componentWillMount() {
     axios.get('https://ipapi.co/json').then(response => {
-      // Visitors.addVisitor(response.data)
+      Visitors.addVisitor(response.data)
     })
   }
 
