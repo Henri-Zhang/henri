@@ -5,6 +5,14 @@ import TopButton from './../components/TopButton'
 import './../styles/BeenPlaces.scss'
 
 class BeenPlaces extends Component {
+
+  scrollToAnchor = (anchor) => {
+    let element = document.getElementById(anchor)
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+
   render() {
     return (
       <div>

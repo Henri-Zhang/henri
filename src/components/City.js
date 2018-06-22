@@ -9,7 +9,7 @@ class City extends Component {
 
   render() {
     return (
-      <div className="col-md-6 city" ref="city">
+      <div className="col-md-6 city" id={this.props.name} ref="city">
         <div className="image-background">
           <img src={this.props.imgSrc} alt={this.props.name} />
         </div>
