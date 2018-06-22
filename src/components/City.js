@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import Tool from './../engine/Tool'
+import './../styles/City.scss'
 
 class City extends Component {
+  componentDidMount() {
+    this.refs.city.style.backgroundColor = Tool.getRandomColor()
+  }
+
   render() {
     return (
-      <div className="col-md-6 city">
+      <div className="col-md-6 city" ref="city">
         <div className="image-background">
           <img src={this.props.imgSrc} alt={this.props.name} />
         </div>
