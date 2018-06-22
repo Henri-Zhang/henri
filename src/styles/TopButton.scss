@@ -1,0 +1,45 @@
+@import "animations";
+
+#top {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  width: 4rem;
+  height: 4rem;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+  z-index: 3;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  span {
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+  }
+
+  span:last-child {
+    font-family: Avenir-Light,sans-serif;
+  }
+}
+
+.fade-in {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: fade-in 1 .5s linear;
+}
+
+.fade-out {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: fade-out 1 .5s linear;
+}
