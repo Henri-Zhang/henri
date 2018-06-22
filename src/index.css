@@ -30,6 +30,11 @@ body {
   src: url('./asserts/fonts/Geomanist-ExtraLight.ttf');
 }
 
+@font-face {
+  font-family: '腾祥伯当行楷繁';
+  src: url('./asserts/fonts/腾祥伯当行楷繁.ttf');
+}
+
 @media (max-width: 576px) {
   html {
     font-size: 13px;
