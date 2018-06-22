@@ -1,12 +1,13 @@
 .city {
   overflow: hidden;
   position: relative;
-  max-height: 400px;
   padding: 0;
   color: white;
   background-color: black;
 
   .image-background {
+    height: 320px;
+    margin: 0;
     display: block;
     position: relative;
     transition: 0.75s transform cubic-bezier(0.2, 1, 0.3, 1) .1s;

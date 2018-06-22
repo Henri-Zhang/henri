@@ -10,9 +10,9 @@ class City extends Component {
   render() {
     return (
       <div className="col-md-6 city" id={this.props.name} ref="city">
-        <div className="image-background">
+        <figure className="image-background">
           <img src={this.props.imgSrc} alt={this.props.name} />
-        </div>
+        </figure>
         <div className="fill-up hover-in">
           <h1 className="city-name">{this.props.name}</h1>
         </div>
