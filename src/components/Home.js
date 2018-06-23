@@ -16,7 +16,7 @@ class Home extends Component {
 
   componentWillMount() {
     axios.get('https://ipapi.co/json').then(response => {
-      Visitors.addVisitor(response.data)
+      // Visitors.addVisitor(response.data)
     })
   }
 
@@ -163,6 +163,7 @@ class Home extends Component {
                     <Link to="/running-story">My running story</Link>
                   </li>
                   <li style={{"display":"none"}}>
+                    <a href={require('./../asserts/documents/resume.pdf')} target="_blank">My resume</a>
                     <Link to="/resume">My resume</Link>
                   </li>
                 </ul>
