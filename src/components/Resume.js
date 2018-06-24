@@ -5,24 +5,24 @@ import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
 
 const locales = {
-  'en-US': require('./../i18n/Resume/en-US.json'),
-  'zh-CN': require('./../i18n/Resume/zh-CN.json'),
-  'en': require('./../i18n/Resume/en-US.json'),
-  'zh': require('./../i18n/Resume/zh-CN.json')
+  'en': require('./../i18n/Resume/en.json'),
+  'zh': require('./../i18n/Resume/zh.json')
 }
 
 class Resume extends Component {
   constructor(props) {
     super(props)
-    this.change = this.change.bind(this)
-    console.log(this.props.match)
+
+    this.state = {currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2)}
     intl.init({
-      currentLocale: intl.determineLocale({urlLocaleKey: "lang"}),
+      currentLocale: this.state.currentLocale,
       locales
     })
+
+    this.changeLanguage = this.changeLanguage.bind(this)
   }
 
-  change() {
+  changeLanguage() {
     window.location.search = `?lang=${this.refs.lang_selector.value}`;
   }
 
@@ -42,10 +42,9 @@ class Resume extends Component {
       <div className="resume-container">
         <ScrollToTopOnMount />
         <Header>
-          <select className="lang-select" onChange={this.change} ref="lang_selector">
-            <option value>None</option>
-            <option value="en-US">English</option>
-            <option value="zh-CN">中文</option>
+          <select className="lang-select" onChange={this.changeLanguage} defaultValue={this.state.currentLocale} ref="lang_selector">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
           </select>
           <ul className="menu">
             <li>
