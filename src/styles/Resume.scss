@@ -1,7 +1,39 @@
 .resume-container {
 
-  header {
+  > header {
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 10rem;
+    background-color: rgba(0, 0, 0, .1);
+
+    a {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+      text-decoration: none;
+
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        border-bottom: white solid 2px;
+        transition: .2s width linear;
+      }
+
+      &::before {
+        left: 10%;
+      }
+
+      &::after {
+        right: 10%;
+      }
+
+      &:hover::before, &:hover::after {
+        width: 40%;
+      }
+    }
   }
+
 }

@@ -46,14 +46,10 @@ class Resume extends Component {
             <option value="en">English</option>
             <option value="zh">中文</option>
           </select>
-          <ul className="menu">
-            <li>
-              <a href={require('./../asserts/documents/resume.pdf')} target="_blank">{intl.get('pdf-version').defaultMessage('PDF Versionn')}</a>
-            </li>
-            <li>
-              <Link to="/">{intl.get('homepage').defaultMessage('Homepagee')}</Link>
-            </li>
-          </ul>
+          <nav className="nav float-right">
+            <a className="nav-link" href={require('./../asserts/documents/resume.pdf')} target="_blank">{intl.get('pdf-version').defaultMessage('PDF Version')}</a>
+            <Link className="nav-link" to="/">{intl.get('homepage').defaultMessage('Homepage')}</Link>
+          </nav>
         </Header>
         <SectionsContainer {...options}>
           <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
