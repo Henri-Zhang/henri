@@ -163,7 +163,6 @@ class Home extends Component {
                     <Link to="/running-story">My running story</Link>
                   </li>
                   <li style={{"display":"none"}}>
-                    <a href={require('./../asserts/documents/resume.pdf')} target="_blank">My resume</a>
                     <Link to="/resume">My resume</Link>
                   </li>
                 </ul>
