@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+// eslint-disable-next-line
 import Visitors from './../engine/Visitors'
 import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
@@ -22,7 +23,7 @@ class Home extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.navbarScroll)
-    this.refs.carousel_ul.childNodes.forEach(item => {
+    this.refs.carouselUl.childNodes.forEach(item => {
       item.addEventListener('click', this.carouselChange)
     })
   }
@@ -41,19 +42,19 @@ class Home extends Component {
   }
 
   carouselPrev = event => {
-    let fisrtChild = this.refs.carousel_ul.children[0]
-    this.refs.carousel_ul.appendChild(fisrtChild)
+    let fisrtChild = this.refs.carouselUl.children[0]
+    this.refs.carouselUl.appendChild(fisrtChild)
   }
 
   carouselNext = event => {
-    let fisrtChild = this.refs.carousel_ul.children[0]
-    let lastChild = this.refs.carousel_ul.children[this.refs.carousel_ul.children.length - 1]
-    this.refs.carousel_ul.insertBefore(lastChild, fisrtChild)
+    let fisrtChild = this.refs.carouselUl.children[0]
+    let lastChild = this.refs.carouselUl.children[this.refs.carouselUl.children.length - 1]
+    this.refs.carouselUl.insertBefore(lastChild, fisrtChild)
   }
 
   carouselChange = event => {
     let index
-    this.refs.carousel_ul.childNodes.forEach((item, i) => {
+    this.refs.carouselUl.childNodes.forEach((item, i) => {
       if (event.target.parentNode === item) {
         index = i
       }
@@ -105,7 +106,7 @@ class Home extends Component {
               <a className="slide-arrow prev" onClick={this.carouselPrev}>
                 <FontAwesome name="arrow-left" />
               </a>
-              <ul className="items-container" ref="carousel_ul">
+              <ul className="items-container" ref="carouselUl">
                 <li className="item">
                   <img src={require("./../asserts/images/jog.png")} alt="jog" />
                   <div className="name">Jog</div>

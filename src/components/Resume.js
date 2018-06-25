@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ScrollToTopOnMount, SectionsContainer, Section, Header} from 'react-fullpage'
+import {ScrollToTopOnMount, SectionsContainer, Section} from 'react-fullpage'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -20,41 +20,86 @@ class Resume extends Component {
     })
 
     this.changeLanguage = this.changeLanguage.bind(this)
+    this.initLangToggle = this.initLangToggle.bind(this)
   }
 
-  changeLanguage() {
-    window.location.search = `?lang=${this.refs.lang_selector.value}`;
+  componentDidMount() {
+    this.initLangToggle()
+  }
+
+  changeLanguage(event) {
+    let liNode = event.target
+    while (liNode.nodeName !== 'LI') {
+      liNode = liNode.parentNode
+    }
+    window.location.search = `?lang=${liNode.getAttribute('data-value')}`
+  }
+
+  initLangToggle() {
+    let currentLocale = this.state.currentLocale
+    this.refs.langToggle.childNodes.forEach(item => {
+      let value = item.getAttribute('data-value')
+      if (currentLocale === value) {
+        item.classList.add('active')
+      } else {
+        item.classList.add('inactive')
+      }
+    })
+  }
+
+  test(anchorLink, index) {
+    console.log(anchorLink)
+    console.log(index)
+    console.log('#########')
   }
 
   render() {
     let options = {
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree'],
+      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
+      sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c', '#fec401'],
       scrollBar:            false,
       navigation:           true,
+      slidesNavPosition:   'left',
+      scrollingSpeed:       300,
       verticalAlign:        false,
       sectionPaddingTop:    '50px',
       sectionPaddingBottom: '50px',
-      arrowNavigation:      true
+      keyboardScrolling:    true,
+      navigationTooltips:   ['One', 'Two', 'Three', 'Four'],
+      showActiveTooltip:    true,
+      arrowNavigation:      true,
+      afterLoad:            this.test()
     }
 
     return (
       <div className="resume-container">
         <ScrollToTopOnMount />
-        <Header>
-          <select className="lang-select" onChange={this.changeLanguage} defaultValue={this.state.currentLocale} ref="lang_selector">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-          </select>
-          <nav className="nav float-right">
-            <a className="nav-link" href={require('./../asserts/documents/resume.pdf')} target="_blank">{intl.get('pdf-version').defaultMessage('PDF Version')}</a>
-            <Link className="nav-link" to="/">{intl.get('homepage').defaultMessage('Homepage')}</Link>
-          </nav>
-        </Header>
+        <nav className="navbar navbar-default fixed-top">
+          <ul className="lang-toggle" ref="langToggle">
+            <li data-value="en" onClick={this.changeLanguage}>
+              <img className="flag" src={require('./../asserts/icons/Britain_flag.svg')} alt="English" />
+              <span>English</span>
+            </li>
+            <li data-value="zh" onClick={this.changeLanguage}>
+              <img className="flag" src={require('./../asserts/icons/China_flag.svg')} alt="中文" />
+              <span>中文</span>
+            </li>
+          </ul>
+          <ul className="navbar-right">
+            <li>
+              <a href={require('./../asserts/documents/resume.pdf')} target="_blank">{intl.get('pdf-version').defaultMessage('PDF Version')}</a>
+            </li>
+            <li>
+              <Link to="/">{intl.get('homepage').defaultMessage('Homepage')}</Link>
+            </li>
+          </ul>
+        </nav>
         <SectionsContainer {...options}>
-          <Section className="custom-section" verticalAlign="true" color="#69D2E7">Page 1</Section>
-          <Section color="#A7DBD8">Page 2</Section>
-          <Section color="#E0E4CC">Page 3</Section>
+          <Section className="custom-section" verticalAlign="true" >Page 1</Section>
+          <Section>Page 2</Section>
+          <Section>Page 3</Section>
+          <Section>Page 4</Section>
         </SectionsContainer>
       </div>
     )

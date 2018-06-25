@@ -1,15 +1,60 @@
 .resume-container {
 
-  > header {
+  > nav {
     color: white;
-    padding: 1rem 10rem;
+    padding: 2rem 10rem;
     background-color: rgba(0, 0, 0, .1);
+
+    ul {
+      margin: 0;
+
+      li {
+        display: inline-block;
+      }
+    }
+
+    .lang-toggle {
+      list-style: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 0;
+      // width: fit-content;
+      border: white solid 2px;
+      background-color: transparent;
+
+      li {
+        width: 100px;
+
+        .flag {
+          padding-left: .5rem;
+          max-height: 24px;
+        }
+
+        span {
+          padding-left: .5rem;
+        }
+      }
+
+      .active {
+        cursor: default;
+        color: orange;
+        background-color: white;
+      }
+
+      .inactive {
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+      }
+    }
 
     a {
       color: white;
       font-size: 16px;
       font-weight: bold;
+      padding: 1rem;
       position: relative;
+      text-align: center;
       text-decoration: none;
 
       &::before, &::after {
