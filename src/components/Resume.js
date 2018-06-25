@@ -50,14 +50,13 @@ class Resume extends Component {
   test(anchorLink, index) {
     console.log(anchorLink)
     console.log(index)
-    console.log('#########')
   }
 
   render() {
     let options = {
       sectionClassName:     'section',
       anchors:              ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
-      sectionsColor: ['#ff5f45', '#0798ec', '#fc6c7c', '#fec401'],
+      sectionsColor:        ['black', 'black', 'black', 'black'],
       scrollBar:            false,
       navigation:           true,
       slidesNavPosition:   'left',
@@ -96,10 +95,10 @@ class Resume extends Component {
           </ul>
         </nav>
         <SectionsContainer {...options}>
-          <Section className="custom-section" verticalAlign="true" >Page 1</Section>
-          <Section>Page 2</Section>
-          <Section>Page 3</Section>
-          <Section>Page 4</Section>
+          <Section color="#ff5f45" className="custom-section" verticalAlign="true" >Page 1</Section>
+          <Section color="#0798ec">Page 2</Section>
+          <Section color="#fc6c7c">Page 3</Section>
+          <Section color="#fec401">Page 4</Section>
         </SectionsContainer>
       </div>
     )
