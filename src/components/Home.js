@@ -81,7 +81,7 @@ class Home extends Component {
               <strong>henri</strong>.ren
             </span>
           </a>
-          <h1 className="nav navbar-nav navbar-right">Welcome to my site</h1>
+          <h1 className="nav navbar-nav">Welcome to my site</h1>
         </nav>
         <div className="home-main">
           <div className="background">

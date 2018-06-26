@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ScrollToTopOnMount, SectionsContainer, Section} from 'react-fullpage'
+import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -9,11 +9,37 @@ const locales = {
   'zh': require('./../i18n/Resume/zh.json')
 }
 
-class Resume extends Component {
+const fullPageOptions = {
+  // for mouse/wheel events
+  // represents the level of force required to generate a slide change on non-mobile, 10 is default
+  scrollSensitivity: 7,
+
+  // for touchStart/touchEnd/mobile scrolling
+  // represents the level of force required to generate a slide change on mobile, 10 is default
+  touchSensitivity: 7,
+  scrollSpeed: 500,
+  hideScrollBars: true,
+  enableArrowKeys: true
+}
+
+class Resumee extends Component {
+  slidesColor = [
+    '#ff5f45',
+    '#0798ec',
+    '#fc6c7c',
+    '#fec401'
+  ]
+
   constructor(props) {
     super(props)
 
-    this.state = {currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2)}
+    this.state = {
+      currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2),
+      active: {
+        Fullpage: 0,
+        horizontalSlider: 0
+      }
+    }
     intl.init({
       currentLocale: this.state.currentLocale,
       locales
@@ -21,6 +47,7 @@ class Resume extends Component {
 
     this.changeLanguage = this.changeLanguage.bind(this)
     this.initLangToggle = this.initLangToggle.bind(this)
+    this.onSlideChangeEnd = this.onSlideChangeEnd.bind(this)
   }
 
   componentDidMount() {
@@ -45,35 +72,63 @@ class Resume extends Component {
         item.classList.add('inactive')
       }
     })
+
+    this.updateLangToggle(this.state.active.Fullpage)
   }
 
-  test(anchorLink, index) {
-    console.log(anchorLink)
-    console.log(index)
+  updateLangToggle(activeSlide) {
+    let fontColor = this.slidesColor[activeSlide]
+
+    this.refs.langToggle.childNodes.forEach(item => {
+      if (item.className.match(new RegExp("(\\s|^)active(\\s|$)"))) {
+        item.style.color = fontColor
+      }
+    })
+  }
+
+  onSlideChangeEnd(name, props, state, newState) {
+    console.log(name)
+    console.log(props)
+    console.log(state)
+    console.log(newState)
+    this.updateLangToggle(newState.activeSlide)
   }
 
   render() {
-    let options = {
-      sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour'],
-      sectionsColor:        ['black', 'black', 'black', 'black'],
-      scrollBar:            false,
-      navigation:           true,
-      slidesNavPosition:   'left',
-      scrollingSpeed:       300,
-      verticalAlign:        false,
-      sectionPaddingTop:    '50px',
-      sectionPaddingBottom: '50px',
-      keyboardScrolling:    true,
-      navigationTooltips:   ['One', 'Two', 'Three', 'Four'],
-      showActiveTooltip:    true,
-      arrowNavigation:      true,
-      afterLoad:            this.test()
+    const fullPageOptions = {
+      // for mouse/wheel events
+      // represents the level of force required to generate a slide change on non-mobile, 10 is default
+      scrollSensitivity: 7,
+
+      // for touchStart/touchEnd/mobile scrolling
+      // represents the level of force required to generate a slide change on mobile, 10 is default
+      touchSensitivity: 7,
+      scrollSpeed: 500,
+      hideScrollBars: true,
+      enableArrowKeys: true
     }
+
+    const horizontalSliderProps = {
+      name: 'horizontalSlider', // name is required
+      infinite: true, // enable infinite scrolling
+    };
+
+    const horizontalSlides = [
+      <Slide> Slide 2.1 </Slide>,
+      <Slide> Slide 2.2 </Slide>
+    ];
+    horizontalSliderProps.slides = horizontalSlides;
+
+    const slides = [
+      <Slide style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
+      <HorizontalSlider {...horizontalSliderProps} style={{backgroundColor: this.slidesColor[1]}}></HorizontalSlider>,
+      <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
+    ];
+    fullPageOptions.slides = slides;
 
     return (
       <div className="resume-container">
-        <ScrollToTopOnMount />
         <nav className="navbar navbar-default fixed-top">
           <ul className="lang-toggle" ref="langToggle">
             <li data-value="en" onClick={this.changeLanguage}>
@@ -85,7 +140,7 @@ class Resume extends Component {
               <span>中文</span>
             </li>
           </ul>
-          <ul className="navbar-right">
+          <ul>
             <li>
               <a href={require('./../asserts/documents/resume.pdf')} target="_blank">{intl.get('pdf-version').defaultMessage('PDF Version')}</a>
             </li>
@@ -94,15 +149,10 @@ class Resume extends Component {
             </li>
           </ul>
         </nav>
-        <SectionsContainer {...options}>
-          <Section color="#ff5f45" className="custom-section" verticalAlign="true" >Page 1</Section>
-          <Section color="#0798ec">Page 2</Section>
-          <Section color="#fc6c7c">Page 3</Section>
-          <Section color="#fec401">Page 4</Section>
-        </SectionsContainer>
+        <Fullpage {...fullPageOptions} onSlideChangeEnd={this.onSlideChangeEnd} />
       </div>
     )
   }
 }
 
-export default Resume
+export default Resumee
