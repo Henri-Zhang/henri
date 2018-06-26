@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react'
+import { Fullpage, Slide } from 'fullpage-react'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -22,8 +22,7 @@ class Resume extends Component {
   constructor(props) {
     super(props)
 
-    let anchor = parseInt(window.location.hash.replace("#", "")) || 0
-    console.log("anchor = " + anchor)
+    let anchor = (parseInt(window.location.hash.replace("#", ""), 10) || 0) % 4
 
     this.state = {
       currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2),
@@ -88,6 +87,8 @@ class Resume extends Component {
     }
 
     lis[activeSlide].classList.add('active')
+
+    window.location.hash = activeSlide
   }
 
   onSlideChangeEnd(name, props, state, newState) {
@@ -100,7 +101,7 @@ class Resume extends Component {
   }
 
   locate(event) {
-    changeFullpageSlide(parseInt(event.target.getAttribute('data-slideindex')))
+    changeFullpageSlide(parseInt(event.target.getAttribute('data-slideindex'), 10))
   }
 
   render() {
@@ -147,19 +148,19 @@ class Resume extends Component {
         <ul className="anchors" ref="anchors">
           <li>
             <span className="tip">One</span>
-            <a href="#0" data-slideindex="0" onClick={this.locate}></a>
+            <a href="#0" data-slideindex="0" onClick={this.locate}> </a>
           </li>
           <li>
             <span className="tip">Two</span>
-            <a href="#1" data-slideindex="1" onClick={this.locate}></a>
+            <a href="#1" data-slideindex="1" onClick={this.locate}> </a>
           </li>
           <li>
             <span className="tip">Three</span>
-            <a href="#2" data-slideindex="2" onClick={this.locate}></a>
+            <a href="#2" data-slideindex="2" onClick={this.locate}> </a>
           </li>
           <li>
             <span className="tip">Four</span>
-            <a href="#3" data-slideindex="3" onClick={this.locate}></a>
+            <a href="#3" data-slideindex="3" onClick={this.locate}> </a>
           </li>
         </ul>
       </div>
