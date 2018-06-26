@@ -139,7 +139,7 @@
       bottom: 1px;
       opacity: 0;
       transform: rotate(-45deg);
-      transform-origin: right bottom;
+      transform-origin: calc(100% + 16px) bottom;
       transition: .2s all linear;
     }
 
