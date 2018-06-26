@@ -9,20 +9,9 @@ const locales = {
   'zh': require('./../i18n/Resume/zh.json')
 }
 
-const fullPageOptions = {
-  // for mouse/wheel events
-  // represents the level of force required to generate a slide change on non-mobile, 10 is default
-  scrollSensitivity: 7,
+const { changeFullpageSlide } = Fullpage;
 
-  // for touchStart/touchEnd/mobile scrolling
-  // represents the level of force required to generate a slide change on mobile, 10 is default
-  touchSensitivity: 7,
-  scrollSpeed: 500,
-  hideScrollBars: true,
-  enableArrowKeys: true
-}
-
-class Resumee extends Component {
+class Resume extends Component {
   slidesColor = [
     '#ff5f45',
     '#0798ec',
@@ -52,6 +41,7 @@ class Resumee extends Component {
 
   componentDidMount() {
     this.initLangToggle()
+    this.updateAnchors(this.state.active.Fullpage)
   }
 
   changeLanguage(event) {
@@ -86,46 +76,46 @@ class Resumee extends Component {
     })
   }
 
+  updateAnchors(activeSlide) {
+    let lis = this.refs.anchors.childNodes
+    if (lis) {
+      lis.forEach(li => {
+        li.classList.remove('active')
+      })
+    }
+
+    lis[activeSlide].classList.add('active')
+  }
+
   onSlideChangeEnd(name, props, state, newState) {
     console.log(name)
     console.log(props)
     console.log(state)
     console.log(newState)
     this.updateLangToggle(newState.activeSlide)
+    this.updateAnchors(newState.activeSlide)
+  }
+
+  locate(event) {
+    changeFullpageSlide(event.target.getAttribute('data-slideindex'))
   }
 
   render() {
     const fullPageOptions = {
-      // for mouse/wheel events
-      // represents the level of force required to generate a slide change on non-mobile, 10 is default
-      scrollSensitivity: 7,
-
-      // for touchStart/touchEnd/mobile scrolling
-      // represents the level of force required to generate a slide change on mobile, 10 is default
-      touchSensitivity: 7,
-      scrollSpeed: 500,
+      scrollSensitivity: 2,
+      touchSensitivity: 2,
+      scrollSpeed: 300,
+      resetSlides: true,
       hideScrollBars: true,
       enableArrowKeys: true
     }
 
-    const horizontalSliderProps = {
-      name: 'horizontalSlider', // name is required
-      infinite: true, // enable infinite scrolling
-    };
-
-    const horizontalSlides = [
-      <Slide> Slide 2.1 </Slide>,
-      <Slide> Slide 2.2 </Slide>
-    ];
-    horizontalSliderProps.slides = horizontalSlides;
-
-    const slides = [
-      <Slide style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
-      <HorizontalSlider {...horizontalSliderProps} style={{backgroundColor: this.slidesColor[1]}}></HorizontalSlider>,
-      <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
-    ];
-    fullPageOptions.slides = slides;
+    fullPageOptions.slides = [
+      <Slide id="slideOne" style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
+      <Slide id="slideTwo" style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
+      <Slide id="slideThree" style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
+      <Slide id="slideFour" style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
+    ]
 
     return (
       <div className="resume-container">
@@ -150,9 +140,27 @@ class Resumee extends Component {
           </ul>
         </nav>
         <Fullpage {...fullPageOptions} onSlideChangeEnd={this.onSlideChangeEnd} />
+        <ul className="anchors" ref="anchors">
+          <li>
+            <span className="tip">One</span>
+            <a data-slideindex="0" onClick={this.locate}></a>
+          </li>
+          <li>
+            <span className="tip">Two</span>
+            <a data-slideindex="1" onClick={this.locate}></a>
+          </li>
+          <li>
+            <span className="tip">Three</span>
+            <a data-slideindex="2" onClick={this.locate}></a>
+          </li>
+          <li>
+            <span className="tip">Four</span>
+            <a data-slideindex="3" onClick={this.locate}></a>
+          </li>
+        </ul>
       </div>
     )
   }
 }
 
-export default Resumee
+export default Resume

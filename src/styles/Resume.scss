@@ -115,3 +115,61 @@
   }
 
 }
+
+.anchors {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  z-index: 100;
+  list-style: none;
+
+  li {
+    height: 20px;
+    margin: 10px;
+    position: relative;
+
+    .tip {
+      color: white;
+      font-weight: bold;
+      line-height: 20px;
+      float: left;
+      width: 0;
+      overflow: hidden;
+      right: 30px;
+      bottom: 1px;
+      opacity: 0;
+      transform: rotate(-45deg);
+      transform-origin: right bottom;
+      transition: .2s all linear;
+    }
+
+    a {
+      display: block;
+      float: right;
+      height: 6px;
+      width: 6px;
+      margin-top: 7px;
+      margin-left: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 50%;
+      background-color: white;
+      transition: .2s transform linear;
+    }
+
+    &:hover, &.active {
+      a {
+        transform: scale(2)
+      }
+    }
+
+    &:hover {
+      .tip {
+        width: auto;
+        overflow: auto;
+        opacity: 1;
+        transform: rotate(0);
+      }
+    }
+  }
+}
