@@ -22,13 +22,16 @@ class Resume extends Component {
   constructor(props) {
     super(props)
 
+    let anchor = parseInt(window.location.hash.replace("#", "")) || 0
+    console.log("anchor = " + anchor)
+
     this.state = {
       currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2),
       active: {
-        Fullpage: 0,
-        horizontalSlider: 0
+        Fullpage: anchor
       }
     }
+
     intl.init({
       currentLocale: this.state.currentLocale,
       locales
@@ -105,6 +108,7 @@ class Resume extends Component {
       scrollSensitivity: 2,
       touchSensitivity: 2,
       scrollSpeed: 300,
+      activeSlide: this.state.active.Fullpage,
       resetSlides: true,
       hideScrollBars: true,
       enableArrowKeys: true
@@ -143,19 +147,19 @@ class Resume extends Component {
         <ul className="anchors" ref="anchors">
           <li>
             <span className="tip">One</span>
-            <a data-slideindex="0" onClick={this.locate}></a>
+            <a href="#0" data-slideindex="0" onClick={this.locate}></a>
           </li>
           <li>
             <span className="tip">Two</span>
-            <a data-slideindex="1" onClick={this.locate}></a>
+            <a href="#1" data-slideindex="1" onClick={this.locate}></a>
           </li>
           <li>
             <span className="tip">Three</span>
-            <a data-slideindex="2" onClick={this.locate}></a>
+            <a href="#2" data-slideindex="2" onClick={this.locate}></a>
           </li>
           <li>
             <span className="tip">Four</span>
-            <a data-slideindex="3" onClick={this.locate}></a>
+            <a href="#3" data-slideindex="3" onClick={this.locate}></a>
           </li>
         </ul>
       </div>
