@@ -97,7 +97,7 @@ class Resume extends Component {
   }
 
   locate(event) {
-    changeFullpageSlide(event.target.getAttribute('data-slideindex'))
+    changeFullpageSlide(parseInt(event.target.getAttribute('data-slideindex')))
   }
 
   render() {
@@ -111,10 +111,10 @@ class Resume extends Component {
     }
 
     fullPageOptions.slides = [
-      <Slide id="slideOne" style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
-      <Slide id="slideTwo" style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
-      <Slide id="slideThree" style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
-      <Slide id="slideFour" style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
+      <Slide style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
     ]
 
     return (
