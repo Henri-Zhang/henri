@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 
 class Rain {
-  x = 0
-  y = 0
-  speed = 0
-  splashed = false
-  width = 2
-  length = 0
-  drops = []
-
   constructor() {
+    this.x = 0
+    this.y = 0
+    this.speed = 0
+    this.width = 2
+    this.length = 0
   }
 
   init() {
@@ -17,7 +14,6 @@ class Rain {
     this.y = Math.random() * 2 * -window.innerHeight
     this.speed =  Math.random() * 5
     this.length = Math.random() * 0.5 * 40 + 20
-    this.splashed = false
   }
 
 }
@@ -33,7 +29,7 @@ class Drop {
   init(x, length) {
     this.center = {
       x: x,
-      y: window.innerHeight - length * 0.25
+      y: window.innerHeight - length * 0.2
     }
     let angle = Math.random() * Math.PI
     let speed = Math.random() * this.maxSpeed
@@ -50,15 +46,16 @@ class Controller {
   drops = null
   dropPool = null
   timer = null
-  g = 2
-  rainColor = ""
 
-  constructor(canvas) {
-    this.canvas = canvas
+  constructor(options) {
+    this.canvas = options.canvas
     this.canvas.width = window.innerWidth
     this.canvas.height = window.innerHeight
-    this.context = canvas.getContext('2d')
-    this.rainColor = 'white'
+    this.context = this.canvas.getContext('2d')
+    this.rainColor = options.rainColor
+    this.g = options.g
+    this.dropCount = options.dropCount
+    this.interval = options.interval
   }
 
   init() {
@@ -68,8 +65,8 @@ class Controller {
     this.rains = []
     this.drops = new Set()
     this.dropPool = []
+    let rainCount = Math.round(window.innerWidth / 100)
 
-    let rainCount = Math.round(window.innerWidth / 200)
     for (let i = 0; i < rainCount; i++) {
       let rain = new Rain()
       rain.init()
@@ -91,7 +88,7 @@ class Controller {
       rain.y = rain.y + rain.speed
       rain.speed += this.g
       if (rain.y > window.innerHeight) {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < this.dropCount; i++) {
           let drop = this.dropPool.pop() || new Drop()
           drop.init(rain.x, rain.length)
           this.drops.add(drop)
@@ -122,7 +119,7 @@ class Controller {
   run() {
     this.timer = setInterval(() => {
       this.draw()
-    }, 30)
+    }, this.interval)
   }
 
   stop() {
@@ -134,23 +131,30 @@ class Raining extends Component {
   controller = null
 
   componentDidMount() {
-    let canvas = this.refs.canvas
+    const options = {
+      canvas: this.refs.canvas,
+      rainColor: 'white',
+      g: 2,
+      dropCount: 5,
+      interval: 30
+    }
 
-    this.controller = new Controller(this.refs.canvas)
+    this.controller = new Controller(options)
     this.controller.init()
     setTimeout(() => {
       this.controller.run()
-    }, 1000);
+    }, 1000)
 
     this.resize = this.resize.bind(this)
     window.addEventListener('resize', this.resize)
   }
 
   resize() {
-    console.log('resize')
-    this.controller.stop()
-    this.controller.init()
-    this.controller.run()
+    if (this.controller) {
+      this.controller.stop()
+      this.controller.init()
+      this.controller.run()
+    }
   }
 
   componentWillUnmount() {
