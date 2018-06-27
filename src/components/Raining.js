@@ -6,21 +6,17 @@ class Rain {
   speed = 0
   splashed = false
   width = 2
-  height = 0
-  canvasWidth = 0
-  canvasHeight = 0
+  length = 0
   drops = []
 
-  constructor(canvas) {
-    this.canvasWidth = canvas.width
-    this.canvasHeight = canvas.height
+  constructor() {
   }
 
   init() {
-    this.x = Math.random() * (this.canvasWidth + this.canvasHeight)
-    this.y = Math.random() * 2 * -this.canvasHeight
+    this.x = Math.random() * window.innerWidth
+    this.y = Math.random() * 2 * -window.innerHeight
     this.speed =  Math.random() * 5
-    this.height = Math.random() * 0.5 * 40 + 20
+    this.length = Math.random() * 0.5 * 40 + 20
     this.splashed = false
   }
 
@@ -29,16 +25,15 @@ class Rain {
 class Drop {
   constructor() {
     this.center = {}
-    this.radius = Math.round(Math.random() * 2 + 1)
     this.speedX = 0
     this.speedY = 0
     this.maxSpeed = 5
   }
 
-  init(x, height, canvasHeight) {
+  init(x, length) {
     this.center = {
       x: x,
-      y: canvasHeight - 10
+      y: window.innerHeight - length * 0.25
     }
     let angle = Math.random() * Math.PI
     let speed = Math.random() * this.maxSpeed
@@ -51,53 +46,62 @@ class Drop {
 class Controller {
   canvas = null
   context = null
-  rains = []
-  drops = []
-  drawDrops = null
+  rains = null
+  drops = null
+  dropPool = null
   timer = null
   g = 2
   rainColor = ""
 
   constructor(canvas) {
     this.canvas = canvas
+    this.canvas.width = window.innerWidth
+    this.canvas.height = window.innerHeight
     this.context = canvas.getContext('2d')
-    this.drawDrops = new Set()
     this.rainColor = 'white'
   }
 
   init() {
-    for (let i = 0; i < 100; i++) {
-      let rain = new Rain(this.canvas)
+    this.canvas.width = window.innerWidth
+    this.canvas.height = window.innerHeight
+
+    this.rains = []
+    this.drops = new Set()
+    this.dropPool = []
+
+    let rainCount = Math.round(window.innerWidth / 200)
+    for (let i = 0; i < rainCount; i++) {
+      let rain = new Rain()
       rain.init()
       this.rains.push(rain)
     }
   }
 
   draw() {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
     this.rains.forEach(rain => {
       this.context.beginPath()
       this.context.moveTo(rain.x, rain.y)
-      this.context.lineTo(rain.x, rain.y + rain.height)
+      this.context.lineTo(rain.x, rain.y + rain.length)
       this.context.lineWidth = rain.width
       this.context.strokeStyle = this.rainColor
       this.context.stroke()
 
       rain.y = rain.y + rain.speed
       rain.speed += this.g
-      if (rain.y > this.canvas.height) {
+      if (rain.y > window.innerHeight) {
         for (let i = 0; i < 5; i++) {
-          let drop = this.drops.pop() || new Drop()
-          drop.init(rain.x, this.height, this.canvas.height)
-          this.drawDrops.add(drop)
+          let drop = this.dropPool.pop() || new Drop()
+          drop.init(rain.x, rain.length)
+          this.drops.add(drop)
         }
         rain.init()
       }
 
     })
 
-    this.drawDrops.forEach(drop => {
+    this.drops.forEach(drop => {
       this.context.beginPath()
       this.context.arc(drop.center.x, drop.center.y, Math.random() * 2, 0, 2 * Math.PI)
       this.context.fillStyle = this.rainColor
@@ -107,9 +111,9 @@ class Controller {
       drop.center.x += drop.speedX
       drop.center.y += drop.speedY
       drop.speedY += this.g
-      if (drop.center.y > this.canvas.height) {
-        this.drawDrops.delete(drop)
-        this.drops.push(drop)
+      if (drop.center.y > window.innerHeight) {
+        this.drops.delete(drop)
+        this.dropPool.push(drop)
       }
     })
 
@@ -131,14 +135,22 @@ class Raining extends Component {
 
   componentDidMount() {
     let canvas = this.refs.canvas
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
 
     this.controller = new Controller(this.refs.canvas)
     this.controller.init()
     setTimeout(() => {
       this.controller.run()
     }, 1000);
+
+    this.resize = this.resize.bind(this)
+    window.addEventListener('resize', this.resize)
+  }
+
+  resize() {
+    console.log('resize')
+    this.controller.stop()
+    this.controller.init()
+    this.controller.run()
   }
 
   componentWillUnmount() {
