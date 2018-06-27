@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Fullpage, Slide } from 'fullpage-react'
+import Raining from './Raining'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -92,10 +93,10 @@ class Resume extends Component {
   }
 
   onSlideChangeEnd(name, props, state, newState) {
-    console.log(name)
-    console.log(props)
-    console.log(state)
-    console.log(newState)
+    // console.log(name)
+    // console.log(props)
+    // console.log(state)
+    // console.log(newState)
     this.updateLangToggle(newState.activeSlide)
     this.updateAnchors(newState.activeSlide)
   }
@@ -116,7 +117,10 @@ class Resume extends Component {
     }
 
     fullPageOptions.slides = [
-      <Slide style={{backgroundColor: this.slidesColor[0]}}> Slide 1 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[0]}}>
+        <Raining />
+        <h1>Skiing</h1>
+      </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import City from './../components/City'
-import Footer from './../components/Footer'
-import TopButton from './../components/TopButton'
+import City from './City'
+import Footer from './Footer'
+import TopButton from './TopButton'
 import './../styles/BeenPlaces.scss'
 
 class BeenPlaces extends Component {

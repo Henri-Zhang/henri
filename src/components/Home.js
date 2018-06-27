@@ -4,8 +4,8 @@ import axios from 'axios'
 import Visitors from './../engine/Visitors'
 import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
-import Footer from './../components/Footer'
-import TopButton from './../components/TopButton'
+import Footer from './Footer'
+import TopButton from './TopButton'
 import './../styles/Home.scss'
 
 class Home extends Component {
