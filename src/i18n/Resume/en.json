@@ -1,5 +1,9 @@
 {
   "pdf-version": "PDF Version",
   "homepage": "Homepage",
-  "basic-information": "Basic Information"
+  "basic-information": "Basic Information",
+  "project-experience": "Project experience",
+  "educational-background": "Educational Background",
+  "professional-skills": "Professional Skills",
+  "self-evaluation": "Self Evaluation"
 }

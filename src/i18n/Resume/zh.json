@@ -1,5 +1,9 @@
 {
   "pdf-version": "PDF版本",
   "homepage": "首页",
-  "basic-information": "基本信息"
+  "basic-information": "基本信息",
+  "project-experience": "项目经验",
+  "educational-background": "教育背景",
+  "professional-skills": "专业技能",
+  "self-evaluation": "自我评价"
 }

@@ -17,7 +17,8 @@ class Resume extends Component {
     '#ff5f45',
     '#0798ec',
     '#fc6c7c',
-    '#fec401'
+    '#fec401',
+    '#74d874'
   ]
 
   constructor(props) {
@@ -123,7 +124,8 @@ class Resume extends Component {
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>
+      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[4]}}> Slide 5 </Slide>
     ]
 
     return (
@@ -155,16 +157,20 @@ class Resume extends Component {
             <a href="#0" data-slideindex="0" onClick={this.locate}> </a>
           </li>
           <li>
-            <span className="tip">Two</span>
+            <span className="tip">{intl.get('project-experience').defaultMessage('Project experience')}</span>
             <a href="#1" data-slideindex="1" onClick={this.locate}> </a>
           </li>
           <li>
-            <span className="tip">Three</span>
+            <span className="tip">{intl.get('educational-background').defaultMessage('Educational Background')}</span>
             <a href="#2" data-slideindex="2" onClick={this.locate}> </a>
           </li>
           <li>
-            <span className="tip">Four</span>
+            <span className="tip">{intl.get('professional-skills').defaultMessage('Professional Skills')}</span>
             <a href="#3" data-slideindex="3" onClick={this.locate}> </a>
+          </li>
+          <li>
+            <span className="tip">{intl.get('self-evaluation').defaultMessage('Self Evaluation')}</span>
+            <a href="#4" data-slideindex="4" onClick={this.locate}> </a>
           </li>
         </ul>
       </div>
