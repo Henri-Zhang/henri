@@ -151,7 +151,7 @@ class Resume extends Component {
         <Fullpage {...fullPageOptions} onSlideChangeEnd={this.onSlideChangeEnd} />
         <ul className="anchors" ref="anchors">
           <li>
-            <span className="tip">One</span>
+            <span className="tip">{intl.get('basic-information').defaultMessage('Basic Information')}</span>
             <a href="#0" data-slideindex="0" onClick={this.locate}> </a>
           </li>
           <li>

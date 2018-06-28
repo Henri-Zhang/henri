@@ -163,7 +163,7 @@ class Raining extends Component {
 
   render() {
     return (
-      <canvas ref="canvas"></canvas>
+      <canvas ref="canvas" style={{position: 'absolute'}}></canvas>
     )
   }
 }
