@@ -24,7 +24,7 @@ class Resume extends Component {
   constructor(props) {
     super(props)
 
-    let anchor = (parseInt(window.location.hash.replace("#", ""), 10) || 0) % 4
+    let anchor = (parseInt(window.location.hash.replace("#", ""), 10) || 0) % 5
 
     this.state = {
       currentLocale: intl.determineLocale({urlLocaleKey: "lang"}).substr(0, 2),
@@ -118,14 +118,61 @@ class Resume extends Component {
     }
 
     fullPageOptions.slides = [
-      <Slide style={{backgroundColor: this.slidesColor[0]}}>
+      <Slide style={{backgroundColor: this.slidesColor[0]}} className="">
         <Raining />
-        <h1>Skiing</h1>
+        <div className="container basic-info absoulte-center">
+          <div className="row">
+            <div className="col-md-3">
+            </div>
+            <div className="col-md-3">
+              <img className="portrait" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('portrait').defaultMessage('portrait')} />
+            </div>
+            <div className="col-md-3">
+              <p className="name">张恒</p>
+              <p className="name">Henri Zhang</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
+              <img className="icon" src={require('./../asserts/icons/Resume/calendar.svg')} alt={intl.get('birthday').defaultMessage('birthday')}/>
+              <span className="info">1994.07.18</span>
+            </div>
+            <div className="col-md-3">
+              <img className="icon" src={require('./../asserts/icons/Resume/location.svg')} alt={intl.get('location').defaultMessage('location')}/>
+              <span className="info">Shanghai</span>
+            </div>
+            <div className="col-md-3">
+              <img className="icon" src={require('./../asserts/icons/Resume/phone.svg')} alt={intl.get('phone').defaultMessage('phone')}/>
+              <span className="info">15755503230</span>
+            </div>
+            <div className="col-md-3">
+              <img className="icon" src={require('./../asserts/icons/Resume/email.svg')} alt={intl.get('email').defaultMessage('email')}/>
+              <span className="info">henrizhang@henri.ren</span>
+            </div>
+          </div>
+        </div>
       </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[1]}}> Slide 2 </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[2]}}> Slide 3 </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[3]}}> Slide 4 </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[4]}}> Slide 5 </Slide>
+      <Slide style={{backgroundColor: this.slidesColor[1]}}>
+        <div className="absoulte-center">
+          <h2>安徽工业大学</h2>
+        </div>
+      </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[2]}}>
+        <div className="absoulte-center">
+          <h2>{intl.get('project-experience').defaultMessage('Project experience')}</h2>
+        </div>
+      </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[3]}}>
+        <div className="absoulte-center">
+          <h2>{intl.get('professional-skills').defaultMessage('Professional Skills')}</h2>
+        </div>
+      </Slide>,
+      <Slide style={{backgroundColor: this.slidesColor[4]}}>
+        <div className="absoulte-center">
+          <h2>{intl.get('self-evaluation').defaultMessage('Self Evaluation')}</h2>
+          <p className="typing" id="x">轻度前端成瘾者。一年前左右开始专心学习前端，平时喜欢搜寻简约漂亮的网页和酷炫狂拽的特效，并思考和尝试实现。遇到不了解的前端技术，能够主动积极去学习，甘之如饴。日后打算深耕前端领域，力求早日能够独当一面。</p>
+        </div>
+      </Slide>
     ]
 
     return (
@@ -133,11 +180,11 @@ class Resume extends Component {
         <nav className="navbar navbar-default fixed-top">
           <ul className="lang-toggle" ref="langToggle">
             <li data-value="en" onClick={this.changeLanguage}>
-              <img className="flag" src={require('./../asserts/icons/Britain_flag.svg')} alt="English" />
+              <img className="flag" src={require('./../asserts/icons/Resume/Britain_flag.svg')} alt="English" />
               <span>English</span>
             </li>
             <li data-value="zh" onClick={this.changeLanguage}>
-              <img className="flag" src={require('./../asserts/icons/China_flag.svg')} alt="中文" />
+              <img className="flag" src={require('./../asserts/icons/Resume/China_flag.svg')} alt="中文" />
               <span>中文</span>
             </li>
           </ul>
@@ -157,11 +204,11 @@ class Resume extends Component {
             <a href="#0" data-slideindex="0" onClick={this.locate}> </a>
           </li>
           <li>
-            <span className="tip">{intl.get('project-experience').defaultMessage('Project experience')}</span>
+            <span className="tip">{intl.get('educational-background').defaultMessage('Educational Background')}</span>
             <a href="#1" data-slideindex="1" onClick={this.locate}> </a>
           </li>
           <li>
-            <span className="tip">{intl.get('educational-background').defaultMessage('Educational Background')}</span>
+            <span className="tip">{intl.get('project-experience').defaultMessage('Project experience')}</span>
             <a href="#2" data-slideindex="2" onClick={this.locate}> </a>
           </li>
           <li>

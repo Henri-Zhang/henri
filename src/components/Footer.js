@@ -24,17 +24,17 @@ class Footer extends Component {
               <ul className="personal-links">
                 <li>
                   <a rel="noopener noreferrer" href="mailto:henrizhang@henri.ren">
-                    <img className="icon" src={require('./../asserts/icons/email.svg')} alt="email" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/email.svg')} alt="email" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://github.com/LikedBlack" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/github.svg')} alt="github" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/github.svg')} alt="github" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://www.zhihu.com/people/zhang-heng-78-10/activities" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/zhihu.svg')} alt="zhihu" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/zhihu.svg')} alt="zhihu" />
                   </a>
                 </li>
                 <li>
@@ -43,17 +43,17 @@ class Footer extends Component {
                       <div className="arrow"></div>
                       <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
                     </div>
-                    <img className="icon" src={require('./../asserts/icons/wechat.svg')} alt="wechat" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/wechat.svg')} alt="wechat" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/qzone.svg')} alt="qzone" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/qzone.svg')} alt="qzone" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://weibo.com/5214776283/profile"  target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/weibo.svg')} alt="weibo" />
+                    <img className="icon" src={require('./../asserts/icons/Footer/weibo.svg')} alt="weibo" />
                   </a>
                 </li>
               </ul>
