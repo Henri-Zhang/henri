@@ -167,7 +167,7 @@ class Resume extends Component {
             <div className="col-md-3 names">
               <div>
                 <h1 className="name">张  恒</h1>
-                <h1 className="name">Henri Zhang</h1>
+                <h2 className="name">Henri Zhang</h2>
               </div>
             </div>
           </div>
