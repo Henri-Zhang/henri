@@ -1,0 +1,26 @@
+.self-evaluation {
+  p {
+    line-height: 2rem;
+  }
+
+  .blink::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1.5rem;
+    vertical-align: middle;
+    animation: blink 1s infinite steps(1, start);
+  }
+}
+
+@keyframes blink {
+  0%{
+    background-color: white;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: white;
+  }
+}

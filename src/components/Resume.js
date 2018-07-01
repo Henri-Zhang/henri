@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Fullpage, Slide } from 'fullpage-react'
 import Raining from './Raining'
+import SelfEvaluation from './SelfEvaluation'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -19,6 +20,14 @@ class Resume extends Component {
     '#fc6c7c',
     '#fec401',
     '#74d874'
+  ]
+
+  childComponents = [
+    ['raining'],
+    [],
+    [],
+    [],
+    ['selfEvaluation']
   ]
 
   constructor(props) {
@@ -41,11 +50,17 @@ class Resume extends Component {
     this.changeLanguage = this.changeLanguage.bind(this)
     this.initLangToggle = this.initLangToggle.bind(this)
     this.onSlideChangeEnd = this.onSlideChangeEnd.bind(this)
+    this.hideSlide = this.hideSlide.bind(this)
+    this.showSlide = this.showSlide.bind(this)
   }
 
   componentDidMount() {
     this.initLangToggle()
     this.updateAnchors(this.state.active.Fullpage)
+
+    setTimeout(() => {
+      this.showSlide(this.state.active.Fullpage)
+    }, 500);
   }
 
   changeLanguage(event) {
@@ -94,16 +109,38 @@ class Resume extends Component {
   }
 
   onSlideChangeEnd(name, props, state, newState) {
-    // console.log(name)
-    // console.log(props)
-    // console.log(state)
-    // console.log(newState)
+    console.log(name)
+    console.log(props)
+    console.log(state)
+    console.log(newState)
     this.updateLangToggle(newState.activeSlide)
     this.updateAnchors(newState.activeSlide)
+
+    this.hideSlide(newState.lastActive)
+    this.showSlide(newState.activeSlide)
   }
 
   locate(event) {
-    changeFullpageSlide(parseInt(event.target.getAttribute('data-slideindex'), 10))
+    let index = parseInt(event.target.getAttribute('data-slideindex'), 10)
+    changeFullpageSlide(index)
+  }
+
+  hideSlide(index) {
+    this.childComponents[index].forEach(componentName => {
+      let component = this.refs[componentName]
+      if (component) {
+        component.hide()
+      }
+    })
+  }
+
+  showSlide(index) {
+    this.childComponents[index].forEach(componentName => {
+      let component = this.refs[componentName]
+      if (component) {
+        component.show()
+      }
+    })
   }
 
   render() {
@@ -118,11 +155,11 @@ class Resume extends Component {
     }
 
     fullPageOptions.slides = [
-      <Slide style={{backgroundColor: this.slidesColor[0]}} className="">
-        <Raining />
+      <Slide style={{backgroundColor: this.slidesColor[0]}}>
+        <Raining ref="raining" />
         <div className="container basic-info absoulte-center">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-Rainingmd-3">
             </div>
             <div className="col-md-3">
               <img className="portrait" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('portrait').defaultMessage('portrait')} />
@@ -168,10 +205,12 @@ class Resume extends Component {
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[4]}}>
-        <div className="absoulte-center">
-          <h2>{intl.get('self-evaluation').defaultMessage('Self Evaluation')}</h2>
-          <p className="typing" id="x">轻度前端成瘾者。一年前左右开始专心学习前端，平时喜欢搜寻简约漂亮的网页和酷炫狂拽的特效，并思考和尝试实现。遇到不了解的前端技术，能够主动积极去学习，甘之如饴。日后打算深耕前端领域，力求早日能够独当一面。</p>
-        </div>
+        <SelfEvaluation
+          className="absoulte-center"
+          title={intl.get('self-evaluation').defaultMessage('Self Evaluation')}
+          ref="selfEvaluation"
+          content="轻度前端成瘾者。一年前左右开始专心学习前端，平时喜欢搜寻简约漂亮的网页和酷炫狂拽的特效，并思考和尝试实现。遇到不了解的前端技术，能够主动积极去学习，甘之如饴。日后打算深耕前端领域，力求早日能够独当一面。"
+        />
       </Slide>
     ]
 

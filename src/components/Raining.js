@@ -123,6 +123,7 @@ class Controller {
   }
 
   stop() {
+    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
     clearInterval(this.timer)
   }
 }
@@ -140,11 +141,6 @@ class Raining extends Component {
     }
 
     this.controller = new Controller(options)
-    this.controller.init()
-    setTimeout(() => {
-      this.controller.run()
-    }, 1000)
-
     this.resize = this.resize.bind(this)
     window.addEventListener('resize', this.resize)
   }
@@ -157,7 +153,14 @@ class Raining extends Component {
     }
   }
 
-  componentWillUnmount() {
+  show() {
+    this.controller.init()
+    setTimeout(() => {
+      this.controller.run()
+    }, 1000)
+  }
+
+  hide() {
     this.controller.stop()
   }
 
