@@ -15,7 +15,7 @@ const { changeFullpageSlide } = Fullpage;
 
 class Resume extends Component {
   slidesColor = [
-    '#ff5f45',
+    '#e6727c',
     '#0798ec',
     '#fc6c7c',
     '#fec401',
@@ -159,17 +159,19 @@ class Resume extends Component {
         <Raining ref="raining" />
         <div className="container basic-info absoulte-center">
           <div className="row">
-            <div className="col-Rainingmd-3">
-            </div>
             <div className="col-md-3">
-              <img className="portrait" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('portrait').defaultMessage('portrait')} />
             </div>
-            <div className="col-md-3">
-              <p className="name">张恒</p>
-              <p className="name">Henri Zhang</p>
+            <div className="col-md-3 photo-container">
+              <img className="photo" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('photo').defaultMessage('photo')} />
+            </div>
+            <div className="col-md-3 names">
+              <div>
+                <h1 className="name">张  恒</h1>
+                <h1 className="name">Henri Zhang</h1>
+              </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row infos">
             <div className="col-md-3">
               <img className="icon" src={require('./../asserts/icons/Resume/calendar.svg')} alt={intl.get('birthday').defaultMessage('birthday')}/>
               <span className="info">1994.07.18</span>
@@ -183,8 +185,10 @@ class Resume extends Component {
               <span className="info">15755503230</span>
             </div>
             <div className="col-md-3">
-              <img className="icon" src={require('./../asserts/icons/Resume/email.svg')} alt={intl.get('email').defaultMessage('email')}/>
-              <span className="info">henrizhang@henri.ren</span>
+              <a href="mailto:henrizhang@henri.ren">
+                <img className="icon" src={require('./../asserts/icons/Resume/email.svg')} alt={intl.get('email').defaultMessage('email')}/>
+                <span className="info">henrizhang@henri.ren</span>
+              </a>
             </div>
           </div>
         </div>

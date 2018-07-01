@@ -116,26 +116,45 @@
   }
 
   .basic-info {
+    color: white;
 
-    .portrait {
-      width: 9rem;
-      height: 12rem;
+    .photo-container {
+      text-align: center;
+
+      .photo {
+        width: 9rem;
+        height: 12rem;
+        border: white solid 2px;
+        box-shadow: 3px 3px 5px #333;
+      }
     }
 
-    .name {
-      color: white;
+    .names {
+      display: flex;
+      justify-content: left;
+      align-items: center;
     }
 
     .icon {
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
     }
 
-    .info {
-      color: white;
-      height: 100%;
-      line-height: 3rem;
+    .infos {
+      margin-top: 2rem;
+
+      .info {
+        padding-left: .5rem;
+        vertical-align: sub;
+        color: white;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+      }
     }
+
   }
 
   .self-evaluation {
@@ -215,17 +234,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.typingg {
-  font: bold 200% Consolas, Monaco, monospace;
-  border-right: .1em solid;
-  width: 16.5em; /* fallback */
-  width: 4px; /* # of chars */
-  margin: 2em 1em;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 7s steps(13, end), blink-caret 0.5s step-end infinite alternate;
-}
-
-@keyframes typing { from { width: 0; } }
-@keyframes blink-caret { 50% { border-color: transparent; } }
