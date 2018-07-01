@@ -60,7 +60,7 @@ class Resume extends Component {
 
     setTimeout(() => {
       this.showSlide(this.state.active.Fullpage)
-    }, 500);
+    }, 0);
   }
 
   changeLanguage(event) {
