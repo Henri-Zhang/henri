@@ -194,6 +194,9 @@ class Resume extends Component {
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[1]}}>
+        <video className="background-video" loop="loop" autoplay="autoplay" muted="muted">
+          <source src="http://cdn.moji.com/websrc/video/video2018summer.mp4" type="video/mp4" />
+        </video>
         <div className="absoulte-center">
           <h2>安徽工业大学</h2>
         </div>
