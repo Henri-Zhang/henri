@@ -3,7 +3,7 @@ import './../styles/SelfEvaluation.scss'
 
 class SelfEvaluation extends Component {
   timer = null
-s
+
   show() {
     let text = this.refs.text
     let string = this.props.content
@@ -28,7 +28,7 @@ s
 
   render() {
     return (
-      <div className={this.props.className + ' self-evaluation'}>
+      <div className={this.props.className + ' SelfEvaluation'}>
         <h1>{this.props.title}</h1>
         <p className="blink" ref="text"></p>
       </div>

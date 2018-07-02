@@ -17,8 +17,8 @@ const { changeFullpageSlide } = Fullpage;
 class Resume extends Component {
   slidesColor = [
     '#e6727c',
-    '#0798ec',
     '#fc6c7c',
+    '#0798ec',
     '#fec401',
     '#74d874'
   ]
@@ -165,7 +165,7 @@ class Resume extends Component {
             <div className="col-md-3 photo-container">
               <img className="photo" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('photo').defaultMessage('photo')} />
             </div>
-            <div className="col-md-3 names">
+            <div className="col-md-3 names text-shadow">
               <div>
                 <h1 className="name">张  恒</h1>
                 <h2 className="name">Henri Zhang</h2>
@@ -204,16 +204,16 @@ class Resume extends Component {
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}>
         <div className="absoulte-center">
-          <h2>{intl.get('project-experience').defaultMessage('Project experience')}</h2>
+          <h2 className="text-shadow">{intl.get('project-experience').defaultMessage('Project experience')}</h2>
         </div>
       </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[3]}}>
-        <div className="absoulte-center professional-skills">
-          <h1>{intl.get('professional-skills').defaultMessage('Professional Skills')}</h1>
+      <Slide style={{backgroundColor: this.slidesColor[3]}} className="professional-skills">
+        <div className="absoulte-center">
+          <h1 className="text-shadow">{intl.get('professional-skills').defaultMessage('Professional Skills')}</h1>
           <SkillsCloud />
         </div>
       </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[4]}}>
+      <Slide style={{backgroundColor: this.slidesColor[4]}} className="self-evaluation">
         <SelfEvaluation
           className="absoulte-center"
           title={intl.get('self-evaluation').defaultMessage('Self Evaluation')}

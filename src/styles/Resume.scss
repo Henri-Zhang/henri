@@ -133,7 +133,6 @@
       display: flex;
       justify-content: left;
       align-items: center;
-      text-shadow: 3px 3px 5px #333;
     }
 
     .icon {
@@ -155,14 +154,20 @@
         text-decoration: none;
       }
     }
+  }
 
+  .project-experience {
+    background: {
+      image: url('./../asserts/images/professional-skills-background.jpg');
+      size: cover;
+      position: center center;
+    }
   }
 
   .professional-skills {
     h1 {
       text-align: center;
       color: white;
-      text-shadow: 3px 3px 5px #333;
       margin-bottom: 2rem;
     }
   }
@@ -170,10 +175,6 @@
   .self-evaluation {
     h1 {
       text-align: center;
-      color: white;
-    }
-
-    p {
       color: white;
     }
   }
@@ -247,4 +248,8 @@
 
 .background-video {
   position: absolute;
+}
+
+.text-shadow {
+  text-shadow: 3px 3px 5px #333;
 }

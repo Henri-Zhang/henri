@@ -2,6 +2,7 @@
   .tag {
     animation: blinker 2s linear infinite;
     transition: .1s transform linear;
+    transition: .1s opacity linear;
 
     &:hover {
       animation: none !important;
@@ -20,5 +21,5 @@
 }
 
 @keyframes blinker {
-  50% { opacity: 0.2; }
+  50% { opacity: .2; }
 }

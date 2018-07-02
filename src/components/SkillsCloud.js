@@ -1,27 +1,31 @@
-import React, { Component } from "react";
-import { TagCloud } from "react-tagcloud";
+import React, { Component } from "react"
+import { TagCloud } from "react-tagcloud"
+import { Button } from 'semantic-ui-react'
 import './../styles/SkillsCloud.scss'
+// import 'semantic-ui-css/semantic.min.css'
 
 const data = [
-  { value: "jQuery", count: 25, group: 'front' },
-  { value: "MongoDB", count: 18, group: 'front' },
-  { value: "JavaScript", count: 38, group: 'other' },
+  { value: "HTML", count: 25, group: 'front' },
+  { value: "MongoDB", count: 18, group: 'other' },
+  { value: "JavaScript", count: 38, group: 'front' },
   { value: "React", count: 30, group: 'front' },
-  { value: "Nodejs", count: 28, group: 'other' },
-  { value: "Express.js", count: 25, group: 'front' },
-  { value: "HTML5", count: 33, group: 'front' },
-  { value: "CSS3", count: 20, group: 'other' },
+  { value: "Nodejs", count: 28, group: 'front' },
+  { value: "Docker", count: 25, group: 'other' },
+  { value: "Bootstrap", count: 33, group: 'front' },
+  { value: "CSS", count: 20, group: 'front' },
   { value: "Webpack", count: 22, group: 'front' },
-  { value: "Babel.js", count: 7, group: 'other' },
-  { value: "ECMAScript", count: 25, group: 'front' },
-  { value: "Jest", count: 15, group: 'front' },
-  { value: "Mocha", count: 17, group: 'front' },
-  { value: "React Native", count: 27, group: 'other' },
-  { value: "Angular.js", count: 30, group: 'front' },
-  { value: "TypeScript", count: 15, group: 'other' },
-  { value: "Flow", count: 30, group: 'other' },
-  { value: "NPM", count: 11, group: 'front' },
-];
+  { value: "jQuery", count: 11, group: 'front' },
+  { value: "响应式设计", count: 7, group: 'thought' },
+  { value: "Python", count: 25, group: 'other' },
+  { value: "PHP", count: 15, group: 'other' },
+  { value: "Web语义化", count: 30, group: 'thought' },
+  { value: "Vue", count: 17, group: 'front' },
+  { value: "Java", count: 27, group: 'other' },
+  { value: "RESTful", count: 30, group: 'thought' },
+  { value: "SASS", count: 11, group: 'front' },
+  { value: "表现与数据分离", count: 15, group: 'thought' },
+  { value: "Photoshop", count: 11, group: 'front' },
+]
 
 // custom renderer is function which has tag, computed font size and
 // color as arguments, and returns react component which represents tag
@@ -43,29 +47,52 @@ const customRenderer = (tag, size, color) => (
 )
 
 class SkillsCloud extends Component {
+  timer
+
   constructor(props) {
     super(props)
 
-    this.test = this.test.bind(this)
+    this.show = this.show.bind(this)
   }
 
-  test() {
+  show(group) {
     let tags = document.getElementsByClassName('tag')
     for (const tag of tags) {
-      let group = tag.getAttribute('group')
-      if ("front" === group) {
+      let tagGroup = tag.getAttribute('group')
+      if (group === tagGroup) {
+        tag.classList.remove('dark')
         tag.classList.add('bright')
-      } else if ("other" === group) {
+      } else {
+        tag.classList.remove('bright')
         tag.classList.add('dark')
       }
+    }
+
+    clearTimeout(this.timer)
+    this.timer = setTimeout(() => {
+      this.recover()
+    }, 3000)
+  }
+
+  recover() {
+    let tags = document.getElementsByClassName('tag')
+    for (const tag of tags) {
+      tag.classList.remove('dark')
+      tag.classList.remove('bright')
     }
   }
 
   render() {
     return (
-      <div>
-        <button onClick={this.test}>xxx</button>
-        <TagCloud className="skills-cloud" tags={data} minSize={1.2} maxSize={2} renderer={customRenderer} />
+      <div className="skills-cloud">
+        <Button.Group>
+          <Button onClick={this.show.bind(this, 'front')}>前端</Button>
+          <Button.Or />
+          <Button onClick={this.show.bind(this, 'other')}>其他</Button>
+          <Button.Or />
+          <Button onClick={this.show.bind(this, 'thought')}>思想</Button>
+        </Button.Group>
+        <TagCloud tags={data} minSize={1.2} maxSize={2} renderer={customRenderer} />
       </div>
     )
   }
