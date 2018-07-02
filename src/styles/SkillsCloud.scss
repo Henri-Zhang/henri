@@ -1,0 +1,24 @@
+.skills-cloud {
+  .tag {
+    animation: blinker 2s linear infinite;
+    transition: .1s transform linear;
+
+    &:hover {
+      animation: none !important;
+      transform: scale(1.1);
+    }
+  }
+
+  .bright {
+    animation: none;
+  }
+
+  .dark {
+    animation: none;
+    opacity: .2;
+  }
+}
+
+@keyframes blinker {
+  50% { opacity: 0.2; }
+}

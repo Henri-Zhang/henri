@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Fullpage, Slide } from 'fullpage-react'
 import Raining from './Raining'
 import SelfEvaluation from './SelfEvaluation'
+import SkillsCloud from './SkillsCloud'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -194,7 +195,7 @@ class Resume extends Component {
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[1]}}>
-        <video className="background-video" loop="loop" autoplay="autoplay" muted="muted">
+        <video className="background-video" loop="loop" autoPlay muted="muted">
           <source src="http://cdn.moji.com/websrc/video/video2018summer.mp4" type="video/mp4" />
         </video>
         <div className="absoulte-center">
@@ -207,8 +208,9 @@ class Resume extends Component {
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[3]}}>
-        <div className="absoulte-center">
-          <h2>{intl.get('professional-skills').defaultMessage('Professional Skills')}</h2>
+        <div className="absoulte-center professional-skills">
+          <h1>{intl.get('professional-skills').defaultMessage('Professional Skills')}</h1>
+          <SkillsCloud />
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[4]}}>
