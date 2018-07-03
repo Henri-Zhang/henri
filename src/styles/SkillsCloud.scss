@@ -79,7 +79,6 @@
 
   .tag {
     animation: blinker 2s linear infinite;
-    transition: .1s transform linear;
     transition: .1s opacity linear;
 
     &:hover {
