@@ -163,7 +163,7 @@ class Home extends Component {
                   <li>
                     <Link to="/running-story">My running story</Link>
                   </li>
-                  <li style={{"display":"none"}}>
+                  <li>
                     <Link to="/resume">My resume</Link>
                   </li>
                 </ul>

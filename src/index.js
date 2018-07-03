@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Loadable from 'react-loadable'
 import Loading from './components/Loading'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './index.css'
+import registerServiceWorker from './registerServiceWorker'
 
 const Home = Loadable({
   loader: () => import('./components/Home'),
@@ -38,5 +38,5 @@ const App = () => (
   </Router>
 )
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()
