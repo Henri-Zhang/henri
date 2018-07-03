@@ -1,4 +1,83 @@
 .skills-cloud {
+  text-align: center;
+
+  .buttons {
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 0;
+    vertical-align: baseline;
+    margin: 0 0 1rem 0;
+
+    button {
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-block;
+      min-height: 1em;
+      outline: 0;
+      border: none;
+      vertical-align: baseline;
+      background: #E0E1E2;
+      color: rgba(0,0,0,.6);
+      font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      padding: .78571429em 1.5em;
+      text-transform: none;
+      text-shadow: none;
+      font-weight: 700;
+      line-height: 1em;
+      font-style: normal;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+      user-select: none;
+      transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+      will-change: '';
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &.active, &:hover {
+        background-color: #C0C1C2;
+        background-image: none;
+        color: rgba(0,0,0,.95);
+      }
+    }
+
+    .or {
+      font-size: 1rem;
+      position: relative;
+      width: .3em;
+      height: 2.57142857em;
+      z-index: 3;
+
+      &::before {
+        position: absolute;
+        text-align: center;
+        border-radius: 500rem;
+        content: 'or';
+        top: 50%;
+        left: 50%;
+        background-color: #FFF;
+        text-shadow: none;
+        margin-top: -.89285714em;
+        margin-left: -.89285714em;
+        width: 1.78571429em;
+        height: 1.78571429em;
+        line-height: 1.78571429em;
+        color: rgba(0,0,0,.4);
+        font-style: normal;
+        font-weight: 700;
+        box-shadow: 0 0 0 1px transparent inset;
+      }
+    }
+  }
+
   .tag {
     animation: blinker 2s linear infinite;
     transition: .1s transform linear;

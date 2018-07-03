@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import { TagCloud } from "react-tagcloud"
-import { Button } from 'semantic-ui-react'
 import './../styles/SkillsCloud.scss'
-// import 'semantic-ui-css/semantic.min.css'
 
 const data = [
   { value: "HTML", count: 25, group: 'front' },
@@ -27,8 +25,6 @@ const data = [
   { value: "Photoshop", count: 11, group: 'front' },
 ]
 
-// custom renderer is function which has tag, computed font size and
-// color as arguments, and returns react component which represents tag
 const customRenderer = (tag, size, color) => (
   <span key={tag.value}
         className="tag"
@@ -53,9 +49,18 @@ class SkillsCloud extends Component {
     super(props)
 
     this.show = this.show.bind(this)
+    this.recover = this.recover.bind(this)
   }
 
-  show(group) {
+  show(group, event) {
+    let buttons = this.refs.buttons
+    buttons.childNodes.forEach(node => {
+      if (node.nodeName === 'BUTTON') {
+        node.classList.remove('active')
+      }
+    })
+    event.target.classList.add('active')
+
     let tags = document.getElementsByClassName('tag')
     for (const tag of tags) {
       let tagGroup = tag.getAttribute('group')
@@ -75,6 +80,13 @@ class SkillsCloud extends Component {
   }
 
   recover() {
+    let buttons = this.refs.buttons
+    buttons.childNodes.forEach(node => {
+      if (node.nodeName === 'BUTTON') {
+        node.classList.remove('active')
+      }
+    })
+
     let tags = document.getElementsByClassName('tag')
     for (const tag of tags) {
       tag.classList.remove('dark')
@@ -85,13 +97,13 @@ class SkillsCloud extends Component {
   render() {
     return (
       <div className="skills-cloud">
-        <Button.Group>
-          <Button onClick={this.show.bind(this, 'front')}>前端</Button>
-          <Button.Or />
-          <Button onClick={this.show.bind(this, 'other')}>其他</Button>
-          <Button.Or />
-          <Button onClick={this.show.bind(this, 'thought')}>思想</Button>
-        </Button.Group>
+        <div className="buttons" ref="buttons">
+          <button className="button" onClick={this.show.bind(this, 'front')}>前端</button>
+          <div className="or"></div>
+          <button className="button" onClick={this.show.bind(this, 'other')}>其他</button>
+          <div className="or"></div>
+          <button className="button" onClick={this.show.bind(this, 'thought')}>思想</button>
+        </div>
         <TagCloud tags={data} minSize={1.2} maxSize={2} renderer={customRenderer} />
       </div>
     )
