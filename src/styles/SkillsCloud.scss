@@ -17,8 +17,7 @@
       border: none;
       vertical-align: baseline;
       background: #E0E1E2;
-      color: rgba(0,0,0,.6);
-      font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      color: rgba(0, 0, 0, .6);
       padding: .78571429em 1.5em;
       text-transform: none;
       text-shadow: none;
@@ -44,8 +43,8 @@
 
       &.active, &:hover {
         background-color: #C0C1C2;
-        background-image: none;
-        color: rgba(0,0,0,.95);
+        box-shadow: 0 0 0 1px transparent inset;
+        color: rgba(0, 0, 0, .95);
       }
     }
 
