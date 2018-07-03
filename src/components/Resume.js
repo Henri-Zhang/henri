@@ -110,10 +110,6 @@ class Resume extends Component {
   }
 
   onSlideChangeEnd(name, props, state, newState) {
-    console.log(name)
-    console.log(props)
-    console.log(state)
-    console.log(newState)
     this.updateLangToggle(newState.activeSlide)
     this.updateAnchors(newState.activeSlide)
 
@@ -194,12 +190,16 @@ class Resume extends Component {
           </div>
         </div>
       </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[1]}}>
+      <Slide style={{backgroundColor: this.slidesColor[1]}} className="educational-background">
         <video className="background-video" loop="loop" autoPlay muted="muted">
           <source src="http://cdn.moji.com/websrc/video/video2018summer.mp4" type="video/mp4" />
         </video>
         <div className="absoulte-center">
-          <h2>安徽工业大学</h2>
+          <h2 className="text-center text-shadow">安徽工业大学</h2>
+          <p>软件工程 2013.9-2017.7</p>
+          <p>安徽工业大学： 普通全日制一本院校，省属重点院校</p>
+          <p>获得奖项： 省级算法比赛京胜杯一等奖，蓝桥杯二等奖</p>
+          <p>英语能力： CET-4</p>
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}>

@@ -29,7 +29,7 @@ class SelfEvaluation extends Component {
   render() {
     return (
       <div className={this.props.className + ' SelfEvaluation'}>
-        <h1>{this.props.title}</h1>
+        <h1 className="text-shadow">{this.props.title}</h1>
         <p className="blink" ref="text"></p>
       </div>
     )
