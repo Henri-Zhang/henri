@@ -173,6 +173,12 @@
   }
 
   .self-evaluation {
+    background: {
+      image: url('./../asserts/images/self-evaluation-background.jpg');
+      size: cover;
+      position: center center;
+    }
+
     h1 {
       text-align: center;
       color: white;

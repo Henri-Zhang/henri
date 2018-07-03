@@ -18,9 +18,9 @@ class Resume extends Component {
   slidesColor = [
     '#e6727c',
     '#fc6c7c',
-    '#0798ec',
-    '#fec401',
-    '#74d874'
+    '#74c9fb',
+    '#74d874',
+    '#fec401'
   ]
 
   childComponents = [
