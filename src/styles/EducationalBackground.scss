@@ -3,6 +3,7 @@
 
   h1 {
     font-size: 1.5rem;
+    opacity: 0;
   }
 
   .major {
@@ -71,9 +72,9 @@
   animation-fill-mode: both;
 }
 
-.shake {
-  -webkit-animation-name: shake;
-  animation-name: shake;
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -146,27 +147,14 @@
   }
 }
 
-@keyframes shake {
-  from,
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
 
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
+  50% {
+    opacity: 1;
   }
 }

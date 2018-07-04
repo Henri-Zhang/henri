@@ -18,7 +18,7 @@ class EducationalBackground extends Component {
     })
     majorLeft.classList.add('slideInLeft')
     majorRight.classList.add('slideInRight')
-    title.classList.add('shake')
+    title.classList.add('zoomIn')
   }
 
   hide() {
@@ -31,7 +31,7 @@ class EducationalBackground extends Component {
     })
     majorLeft.classList.remove('slideInLeft')
     majorRight.classList.remove('slideInRight')
-    title.classList.remove('shake')
+    title.classList.remove('zoomIn')
   }
 
   render() {
