@@ -196,10 +196,13 @@ class Resume extends Component {
         </video>
         <div className="absoulte-center">
           <h2 className="text-center text-shadow">安徽工业大学</h2>
-          <p>软件工程 2013.9-2017.7</p>
+          <p className="major text-shadow">
+            <span>软件工程</span>
+            <span>2013.9-2017.7</span>
+          </p>
           <p>安徽工业大学： 普通全日制一本院校，省属重点院校</p>
           <p>获得奖项： 省级算法比赛京胜杯一等奖，蓝桥杯二等奖</p>
-          <p>英语能力： CET-4</p>
+          <p>英语能力： CET - 4</p>
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}>
