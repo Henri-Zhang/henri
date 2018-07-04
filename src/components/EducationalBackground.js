@@ -12,22 +12,26 @@ class EducationalBackground extends Component {
     let nodes = this.dom.querySelectorAll('p:not(.major)')
     let majorLeft = this.dom.querySelector('p.major :first-child')
     let majorRight = this.dom.querySelector('p.major :last-child')
+    let title = this.dom.querySelector('h2')
     nodes.forEach(node => {
       node.classList.add('bounceInUp')
     })
     majorLeft.classList.add('slideInLeft')
     majorRight.classList.add('slideInRight')
+    title.classList.add('shake')
   }
 
   hide() {
     let nodes = this.dom.querySelectorAll('p:not(.major)')
     let majorLeft = this.dom.querySelector('p.major :first-child')
     let majorRight = this.dom.querySelector('p.major :last-child')
+    let title = this.dom.querySelector('h2')
     nodes.forEach(node => {
       node.classList.remove('bounceInUp')
     })
     majorLeft.classList.remove('slideInLeft')
     majorRight.classList.remove('slideInRight')
+    title.classList.remove('shake')
   }
 
   render() {
