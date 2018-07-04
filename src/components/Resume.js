@@ -3,6 +3,7 @@ import { Fullpage, Slide } from 'fullpage-react'
 import Raining from './Raining'
 import SelfEvaluation from './SelfEvaluation'
 import SkillsCloud from './SkillsCloud'
+import EducationalBackground from './EducationalBackground'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -25,7 +26,7 @@ class Resume extends Component {
 
   childComponents = [
     ['raining'],
-    [],
+    ['educationalBackground'],
     [],
     [],
     ['selfEvaluation']
@@ -194,16 +195,11 @@ class Resume extends Component {
         <video className="background-video" loop="loop" autoPlay muted="muted">
           <source src="http://cdn.moji.com/websrc/video/video2018summer.mp4" type="video/mp4" />
         </video>
-        <div className="absoulte-center">
-          <h2 className="text-center text-shadow">安徽工业大学</h2>
-          <p className="major text-shadow">
-            <span>软件工程</span>
-            <span>2013.9-2017.7</span>
-          </p>
-          <p>安徽工业大学： 普通全日制一本院校，省属重点院校</p>
-          <p>获得奖项： 省级算法比赛京胜杯一等奖，蓝桥杯二等奖</p>
-          <p>英语能力： CET - 4</p>
-        </div>
+        <EducationalBackground
+          className="absoulte-center"
+          title={intl.get('university').defaultMessage('安徽工业大学')}
+          ref="educationalBackground"
+        />
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[2]}}>
         <div className="absoulte-center">

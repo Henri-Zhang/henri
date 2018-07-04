@@ -157,25 +157,7 @@
   }
 
   .educational-background {
-    color: white;
 
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    .major {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.2rem;
-      margin: 1rem 10%;
-    }
-
-    p:not(.major) {
-      padding: 10px 15px;
-      border-radius: 1rem;
-      background: rgba(0, 0, 0, .5);
-      text-align: center;
-    }
   }
 
   .project-experience {
