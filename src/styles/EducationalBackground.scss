@@ -1,8 +1,8 @@
 .EducationalBackground {
   color: white;
 
-  h1 {
-    font-size: 1.5rem;
+  h2 {
+    font-size: 2.5rem;
     opacity: 0;
   }
 
@@ -152,6 +152,10 @@
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 1;
   }
 
   50% {
