@@ -18,10 +18,10 @@ const { changeFullpageSlide } = Fullpage;
 class Resume extends Component {
   slidesColor = [
     '#e6727c',
-    '#fc6c7c',
+    '#737373',
     '#74c9fb',
     '#74d874',
-    '#fec401'
+    '#6e4c45'
   ]
 
   childComponents = [
