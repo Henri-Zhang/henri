@@ -4,6 +4,7 @@ import Raining from './Raining'
 import SelfEvaluation from './SelfEvaluation'
 import SkillsCloud from './SkillsCloud'
 import EducationalBackground from './EducationalBackground'
+import ProjectExperience from './ProjectExperience'
 import { Link } from "react-router-dom"
 import intl from 'react-intl-universal'
 import './../styles/Resume.scss'
@@ -201,10 +202,12 @@ class Resume extends Component {
           ref="educationalBackground"
         />
       </Slide>,
-      <Slide style={{backgroundColor: this.slidesColor[2]}}>
-        <div className="absoulte-center">
-          <h2 className="text-shadow">{intl.get('project-experience').defaultMessage('Project experience')}</h2>
-        </div>
+      <Slide style={{backgroundColor: this.slidesColor[2]}} className="project-experience">
+        <ProjectExperience
+          className="absoulte-center"
+          title={intl.get('project-experience').defaultMessage('Project experience')}
+          ref="projectExperience"
+        />
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[3]}} className="professional-skills">
         <div className="absoulte-center">
