@@ -7,26 +7,35 @@
     text-align: center;
   }
   .projects {
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     .project {
 
       .paper {
         position: relative;
-        height: 400px;
-        background-color: white;
-        filter: drop-shadow(0 0 15px #bbb);
-        border-bottom-right-radius: 40px;
+        margin: auto;
+        height: 350px;
+        background: #f5f5f5;
+        border-radius: 2px;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          bottom: 5px;
+          width: 40%;
+          height: 5px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+          z-index: -1;
+        }
+
+        &::before {
+          left: 10px;
+          transform: skew(-5deg) rotate(-5deg);
+        }
 
         &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          width: 40px;
-          height: 40px;
-          background: linear-gradient(to left top, transparent, #ddd);
+          right: 10px;
+          transform: skew(5deg) rotate(5deg);
         }
       }
     }
