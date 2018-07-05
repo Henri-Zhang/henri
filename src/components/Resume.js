@@ -193,7 +193,7 @@ class Resume extends Component {
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[1]}} className="educational-background">
         <video className="background-video" loop="loop" autoPlay muted="muted">
-          <source src="http://cdn.moji.com/websrc/video/video2018summer.mp4" type="video/mp4" />
+          <source src={require('./../asserts/videos/education_background.mov')} type="video/mp4" />
         </video>
         <EducationalBackground
           className="absoulte-center"
