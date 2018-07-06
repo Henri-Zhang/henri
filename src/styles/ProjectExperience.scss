@@ -11,12 +11,17 @@
 
     .project {
 
+      &:first-child .paper {
+        background-color: #ccf;
+      }
+
       .paper {
         position: relative;
         margin: auto;
-        height: 350px;
-        background: #eee;
+        height: 400px;
+        background-color: #fec;
         border-radius: 2px;
+
 
         &::before, &::after {
           content: '';
