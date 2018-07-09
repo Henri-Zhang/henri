@@ -161,7 +161,7 @@ class Resume extends Component {
             <div className="col-md-3">
             </div>
             <div className="col-md-3 photo-container">
-              <img className="photo" src={require("./../asserts/images/portrait.jpg")} alt={intl.get('photo').defaultMessage('photo')} />
+              <img className="photo" src={require("./../asserts/images/resume_photo.jpg")} alt={intl.get('photo').defaultMessage('photo')} />
             </div>
             <div className="col-md-3 names text-shadow">
               <div>
