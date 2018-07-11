@@ -177,7 +177,7 @@ class Resume extends Component {
             </div>
             <div className="col-md-3">
               <img className="icon" src={require('./../asserts/icons/Resume/location.svg')} alt={intl.get('location').defaultMessage('location')}/>
-              <span className="info">Shanghai</span>
+              <span className="info">{intl.get('shanghai').defaultMessage('Shanghai')}</span>
             </div>
             <div className="col-md-3">
               <img className="icon" src={require('./../asserts/icons/Resume/phone.svg')} alt={intl.get('phone').defaultMessage('phone')}/>
@@ -198,7 +198,7 @@ class Resume extends Component {
         </video>
         <EducationalBackground
           className="absoulte-center"
-          title={intl.get('university').defaultMessage('安徽工业大学')}
+          title="安徽工业大学"
           ref="educationalBackground"
         />
       </Slide>,
@@ -212,7 +212,11 @@ class Resume extends Component {
       <Slide style={{backgroundColor: this.slidesColor[3]}} className="professional-skills">
         <div className="absoulte-center">
           <h1 className="text-shadow">{intl.get('professional-skills').defaultMessage('Professional Skills')}</h1>
-          <SkillsCloud />
+          <SkillsCloud
+            frontEnd={intl.get('front-end').defaultMessage('Front end')}
+            other={intl.get('other').defaultMessage('Other')}
+            idea={intl.get('idea').defaultMessage('Idea')}
+          />
         </div>
       </Slide>,
       <Slide style={{backgroundColor: this.slidesColor[4]}} className="self-evaluation">

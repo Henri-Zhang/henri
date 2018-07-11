@@ -98,11 +98,11 @@ class SkillsCloud extends Component {
     return (
       <div className="skills-cloud">
         <div className="buttons" ref="buttons">
-          <button className="button" onClick={this.show.bind(this, 'front')}>前端</button>
+          <button className="button" onClick={this.show.bind(this, 'front')}>{this.props.frontEnd}</button>
           <div className="or"></div>
-          <button className="button" onClick={this.show.bind(this, 'other')}>其他</button>
+          <button className="button" onClick={this.show.bind(this, 'other')}>{this.props.other}</button>
           <div className="or"></div>
-          <button className="button" onClick={this.show.bind(this, 'thought')}>思想</button>
+          <button className="button" onClick={this.show.bind(this, 'thought')}>{this.props.idea}</button>
         </div>
         <TagCloud tags={data} minSize={1.2} maxSize={2} renderer={customRenderer} />
       </div>

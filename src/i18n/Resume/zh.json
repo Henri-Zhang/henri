@@ -5,5 +5,15 @@
   "project-experience": "项目经验",
   "educational-background": "教育背景",
   "professional-skills": "专业技能",
-  "self-evaluation": "自我评价"
+  "self-evaluation": "自我评价",
+  "location": "位置",
+  "photo": "照片",
+  "birthday": "生日",
+  "phone": "电话",
+  "email": "邮箱",
+  "university": "大学",
+  "shanghai": "上海",
+  "front-end": "前端",
+  "other": "其他",
+  "idea": "思想"
 }

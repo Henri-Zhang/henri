@@ -1,26 +1,50 @@
 .ProjectExperience {
   width: 80%;
 
-  h2 {
+  h2,
+  h5 {
     color: white;
     width: 100%;
     text-align: center;
+
+    span {
+      font-size: .9rem;
+    }
   }
+
   .projects {
     margin-top: 2rem;
 
     .project {
-
-      &:first-child .paper {
-        background-color: #ccf;
+      &:first-child .paper h6 {
+        background-color: #1cc7c7;
       }
 
       .paper {
         position: relative;
         margin: auto;
         height: auto;
-        background-color: #fec;
+        background-color: white;
         border-radius: 2px;
+
+        h6 {
+          color: white;
+          padding: .5rem;
+          text-align: center;
+          background-color: #8a67b2;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+
+          a {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+
+        .intro {
+          color: #9f9f9f;
+          padding: .5rem 1rem 1rem 1rem;
+        }
 
 
         &::before, &::after {

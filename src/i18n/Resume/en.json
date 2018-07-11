@@ -2,8 +2,18 @@
   "pdf-version": "PDF Version",
   "homepage": "Homepage",
   "basic-information": "Basic Information",
-  "project-experience": "Welcome to Honolulu.",
+  "project-experience": "Project Experience",
   "educational-background": "Educational Background",
   "professional-skills": "Professional Skills",
-  "self-evaluation": "Self Evaluation"
+  "self-evaluation": "Self Evaluation",
+  "location": "location",
+  "photo": "photo",
+  "birthday": "birthday",
+  "phone": "phone",
+  "email": "email",
+  "university": "university",
+  "shanghai": "Shanghai",
+  "front-end": "Front end",
+  "other": "Other",
+  "idea": "Other"
 }
