@@ -46,6 +46,7 @@ class Controller {
   drops = null
   dropPool = null
   timer = null
+  stopped = true
 
   constructor(options) {
     this.canvas = options.canvas
@@ -119,12 +120,14 @@ class Controller {
   run() {
     this.timer = setInterval(() => {
       this.draw()
+      this.stopped = false
     }, this.interval)
   }
 
   stop() {
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
     clearInterval(this.timer)
+    this.stopped = true
   }
 }
 
@@ -146,7 +149,7 @@ class Raining extends Component {
   }
 
   resize() {
-    if (this.controller) {
+    if (this.controller && !this.controller.stopped) {
       this.controller.stop()
       this.controller.init()
       this.controller.run()
