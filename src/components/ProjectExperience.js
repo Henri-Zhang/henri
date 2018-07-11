@@ -26,7 +26,6 @@ class ProjectExperience extends Component {
           <div className="col-md-3 project">
             <div className="paper">
               <p>群硕软件开发（上海）有限公司</p>
-              <p>群硕软件</p>
               <p>Hispanic scholarship fund <a>https://www.hsf.net/</a></p>
               <p>2016.8-2017.10        后端开发</p>
               <p>美国一个基金会官方网站。Java Web系统，主要负责后端业务处理，数据库交互。</p>
