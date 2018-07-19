@@ -54,7 +54,7 @@
 .home-main {
   .background {
     min-height: 800px;
-    @include fixed-background('./../asserts/images/1.jpg');
+    @include fixed-background('https://henri.oss-cn-hangzhou.aliyuncs.com/home_background_1.jpg?Expires=1531961029&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=jshZMhh4owS7TjqX%2BWGpsFl37I0%3D');
   }
 
   h1,
@@ -429,7 +429,7 @@
   font-family: 'Avenir LT 65 Medium';
   padding: 2rem;
   min-height: 400px;
-  @include fixed-background('./../asserts/images/3.jpg');
+  @include fixed-background('https://henri.oss-cn-hangzhou.aliyuncs.com/home_background_2.jpg?Expires=1531961073&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=Myhkb8L3dxkFZfiMy8yDse1DeXE%3D');
 
   .title {
     font-family: 'Avenir LT 65 Medium';
