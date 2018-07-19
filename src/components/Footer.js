@@ -13,7 +13,7 @@ class Footer extends Component {
           </div>
           <div className="row">
             <div className="col-lg-4 d-flex justify-content-center">
-              <img className="portrait rounded-circle" src="https://henri.oss-cn-hangzhou.aliyuncs.com/portrait.jpg?Expires=1531961511&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=DQKzP6q2FpEDco8fTO7uoeKd8O4%3D" alt="Henri" />
+              <img className="portrait rounded-circle" src="https://henri.oss-cn-hangzhou.aliyuncs.com/portrait.jpg" alt="Henri" />
               <div className="brief-introduction">
                 <p>Screen name: 漫长。</p>
                 <p>Age: 23</p>

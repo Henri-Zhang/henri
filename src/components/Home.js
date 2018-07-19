@@ -109,31 +109,31 @@ class Home extends Component {
               </a>
               <ul className="items-container" ref="carouselUl">
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/jog.png?Expires=1531961318&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=%2B%2FZ5RvPzPfab76mUPpRjftMyWoM%3D" alt="jog" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/jog.png" alt="jog" />
                   <div className="name">Jog</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/delicacy.png?Expires=1531961356&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=OLWJ9I7KycmE9jYMzKKYC%2FqCC8M%3D" alt="delicacy" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/delicacy.png" alt="delicacy" />
                   <div className="name">Delicacy</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/travel.png?Expires=1531961378&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=oEr%2FWCLO4odJcotcT%2FA0ZY%2FLubo%3D" alt="travel" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/travel.png" alt="travel" />
                   <div className="name">Travel</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/movie.png?Expires=1531961396&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=DL%2Fzyrdly2%2Bq%2BsPNjjafUA10ewE%3D" alt="movie" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/movie.png" alt="movie" />
                   <div className="name">Movie</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/swim.png?Expires=1531961414&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=XYuh1%2BgvYQJj2A3DiZJc%2Bow7cHQ%3D" alt="swim" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/swim.png" alt="swim" />
                   <div className="name">Swim</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/music.png?Expires=1531961436&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=Zmz0CHentdG4hRiWBQxPF%2BNoL9c%3D" alt="music" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/music.png" alt="music" />
                   <div className="name">Music</div>
                 </li>
                 <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/cycling.png?Expires=1531961454&OSSAccessKeyId=TMP.AQE8oRS3Njrt3UiZcLMG0WyxKkn1JazaDpqocTeT2uQQpJpn00k8EQ46ASWeADAtAhQgM-wzvAGy3PWFZuknZIZ8JIfG8wIVAOQ_pRQWvovXl7lTnbO9ZJb12VwC&Signature=54twHxEnz8EJAZNu0hLGBrxwtK8%3D" alt="cycling" />
+                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/cycling.png" alt="cycling" />
                   <div className="name">Cycling</div>
                 </li>
               </ul>
