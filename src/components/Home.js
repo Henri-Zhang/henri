@@ -8,6 +8,7 @@ import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import TopButton from './TopButton'
 import _ from 'lodash'
+import _hobbies from './../data/hobbies.json'
 import './../styles/Home.scss'
 
 class Home extends Component {
@@ -109,34 +110,14 @@ class Home extends Component {
                 <FontAwesome name="arrow-left" />
               </a>
               <ul className="items-container" ref="carouselUl">
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/jog.png" alt="jog" />
-                  <div className="name">Jog</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/delicacy.png" alt="delicacy" />
-                  <div className="name">Delicacy</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/travel.png" alt="travel" />
-                  <div className="name">Travel</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/movie.png" alt="movie" />
-                  <div className="name">Movie</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/swim.png" alt="swim" />
-                  <div className="name">Swim</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/music.png" alt="music" />
-                  <div className="name">Music</div>
-                </li>
-                <li className="item">
-                  <img src="https://henri.oss-cn-hangzhou.aliyuncs.com/cycling.png" alt="cycling" />
-                  <div className="name">Cycling</div>
-                </li>
+                {
+                  _hobbies.map(item => (
+                    <li key={item.name} className="item">
+                      <img src={item.img} alt={item.name} />
+                      <div className="name">{item.name}</div>
+                    </li>
+                  ))
+                }
               </ul>
               <a className="slide-arrow next" onClick={this.carouselNext}>
                 <FontAwesome name="arrow-right" />
