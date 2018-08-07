@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import TopButton from './TopButton'
+import _ from 'lodash'
 import './../styles/Home.scss'
 
 class Home extends Component {
@@ -23,7 +24,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.navbarScroll)
+    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200))
     this.refs.carouselUl.childNodes.forEach(item => {
       item.addEventListener('click', this.carouselChange)
     })
