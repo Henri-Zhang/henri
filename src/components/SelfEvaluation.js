@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './../styles/SelfEvaluation.scss'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
+import styles from './../styles/SelfEvaluation.scss'
 
 class SelfEvaluation extends Component {
   timer = null
@@ -28,12 +30,12 @@ class SelfEvaluation extends Component {
 
   render() {
     return (
-      <div className={this.props.className + ' SelfEvaluation'}>
-        <h1 className="text-shadow">{this.props.title}</h1>
-        <p className="blink" ref="text"></p>
+      <div className={classNames(this.props.className, styles['self-evaluation'])}>
+        <h1 className={styles['text-shadow']}>{this.props.title}</h1>
+        <p className={styles.blink} ref="text"></p>
       </div>
     )
   }
 }
 
-export default SelfEvaluation
+export default CSSModules(SelfEvaluation, styles)

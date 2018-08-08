@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './../styles/EducationalBackground.scss'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
+import styles from './../styles/EducationalBackground.scss'
 
 class EducationalBackground extends Component {
   constructor(props) {
@@ -9,36 +11,36 @@ class EducationalBackground extends Component {
   }
 
   show() {
-    let nodes = this.dom.querySelectorAll('p:not(.major)')
-    let majorLeft = this.dom.querySelector('p.major :first-child')
-    let majorRight = this.dom.querySelector('p.major :last-child')
+    let nodes = this.dom.querySelectorAll(`p:not(.${styles.major})`)
+    let majorLeft = this.dom.querySelector(`p.${styles.major} :first-child`)
+    let majorRight = this.dom.querySelector(`p.${styles.major} :last-child`)
     let title = this.dom.querySelector('h2')
     nodes.forEach(node => {
-      node.classList.add('bounceInUp')
+      node.classList.add(styles.bounceInUp)
     })
-    majorLeft.classList.add('slideInLeft')
-    majorRight.classList.add('slideInRight')
-    title.classList.add('zoomIn')
+    majorLeft.classList.add(styles.slideInLeft)
+    majorRight.classList.add(styles.slideInRight)
+    title.classList.add(styles.zoomIn)
   }
 
   hide() {
-    let nodes = this.dom.querySelectorAll('p:not(.major)')
-    let majorLeft = this.dom.querySelector('p.major :first-child')
-    let majorRight = this.dom.querySelector('p.major :last-child')
+    let nodes = this.dom.querySelectorAll(`p:not(.${styles.major})`)
+    let majorLeft = this.dom.querySelector(`p.${styles.major} :first-child`)
+    let majorRight = this.dom.querySelector(`p.${styles.major} :last-child`)
     let title = this.dom.querySelector('h2')
     nodes.forEach(node => {
-      node.classList.remove('bounceInUp')
+      node.classList.remove(styles.bounceInUp)
     })
-    majorLeft.classList.remove('slideInLeft')
-    majorRight.classList.remove('slideInRight')
-    title.classList.remove('zoomIn')
+    majorLeft.classList.remove(styles.slideInLeft)
+    majorRight.classList.remove(styles.slideInRight)
+    title.classList.remove(styles.zoomIn)
   }
 
   render() {
     return (
-      <div className={this.props.className + ' EducationalBackground'} ref={dom => this.dom = dom}>
-        <h2 className="text-center text-shadow">{this.props.title}</h2>
-        <p className="major text-shadow">
+      <div className={classNames(this.props.className, styles['educational-background'])} ref={dom => this.dom = dom}>
+        <h2 className={classNames(styles['text-shadow'], 'text-center')}>{this.props.title}</h2>
+        <p className={classNames(styles['text-shadow'], styles.major)}>
           <span>软件工程</span>
           <span>2013.9-2017.7</span>
         </p>
@@ -50,4 +52,4 @@ class EducationalBackground extends Component {
   }
 }
 
-export default EducationalBackground
+export default CSSModules(EducationalBackground, styles)
