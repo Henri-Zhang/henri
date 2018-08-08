@@ -98,6 +98,7 @@ class Resume extends Component {
     })
   }
 
+  // toggle
   updateAnchors(activeSlide) {
     let lis = this.refs.anchors.childNodes
     if (lis) {

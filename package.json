@@ -33,7 +33,7 @@
     "enzyme-adapter-react-16": "^1.2.0",
     "gh-pages": "^1.2.0",
     "lodash": "^4.17.10",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.2",

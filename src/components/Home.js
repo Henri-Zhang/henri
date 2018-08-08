@@ -75,7 +75,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <nav className={classNames('navbar navbar-default fixed-top', styles.navbar, {'scrolled': this.state.scrolled})} onScroll={this.navbarScroll}>
+        <nav className={classNames('navbar navbar-default fixed-top', styles.navbar, {[styles.scrolled]: this.state.scrolled})}>
           <a className={styles.brand} href="/" target="_blank">
             <img src={require("./../asserts/images/logo.png")} alt="henri.ren" />
             <span>
@@ -96,43 +96,43 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="hobbies-interests">
+        <div className={styles['hobbies-interests']}>
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
-                <div className="title">My hobbies and interests</div>
+                <div className={styles.title}>My hobbies and interests</div>
               </div>
             </div>
-            <div className="row carousel">
-              <a className="slide-arrow prev" onClick={this.carouselPrev}>
+            <div className={classNames('row', styles.carousel)}>
+              <a className={classNames(styles['slide-arrow'], styles.prev)} onClick={this.carouselPrev}>
                 <FontAwesome name="arrow-left" />
               </a>
-              <ul className="items-container" ref="carouselUl">
+              <ul className={styles['items-container']} ref="carouselUl">
                 {
                   _hobbies.map(item => (
-                    <li key={item.name} className="item">
+                    <li key={item.name} className={styles.item}>
                       <img src={item.img} alt={item.name} />
-                      <div className="name">{item.name}</div>
+                      <div className={styles.name}>{item.name}</div>
                     </li>
                   ))
                 }
               </ul>
-              <a className="slide-arrow next" onClick={this.carouselNext}>
+              <a className={classNames(styles['slide-arrow'], styles.next)} onClick={this.carouselNext}>
                 <FontAwesome name="arrow-right" />
               </a>
             </div>
           </div>
         </div>
-        <div className="learn-more">
+        <div className={styles['learn-more']}>
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
-                <div className="title">Wanna know more about me?</div>
+                <div className={styles.title}>Wanna know more about me?</div>
               </div>
             </div>
             <div className="row">
               <div className="col-sm-12">
-                <div className="tip">Click here</div>
+                <div className={styles.tip}>Click here</div>
               </div>
             </div>
             <div className="row">
