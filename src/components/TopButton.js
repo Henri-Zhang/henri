@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import _ from 'lodash'
 import './../styles/TopButton.scss'
 
 class TopButton extends Component {
@@ -10,7 +11,7 @@ class TopButton extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.navbarScroll)
+    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200))
   }
 
   navbarScroll = () => {

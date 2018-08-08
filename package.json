@@ -21,12 +21,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rimraf build/static/js/*.map && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "rimraf build/static/js/*.map && gh-pages -d build"
   },
   "devDependencies": {
+    "enzyme": "^3.4.0",
     "gh-pages": "^1.2.0",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",

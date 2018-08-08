@@ -1,8 +1,4 @@
 import React, { Component } from 'react'
-// eslint-disable-next-line
-import axios from 'axios'
-// eslint-disable-next-line
-import Visitors from './../engine/Visitors'
 import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
