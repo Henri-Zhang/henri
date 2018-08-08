@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { TagCloud } from "react-tagcloud"
-import './../styles/SkillsCloud.scss'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
+import styles from './../styles/SkillsCloud.scss'
 
 const data = [
   { value: "HTML", count: 25, group: 'front' },
@@ -27,7 +29,7 @@ const data = [
 
 const customRenderer = (tag, size, color) => (
   <span key={tag.value}
-        className="tag"
+        className={styles.tag}
         group={tag.group}
         style={{
           animationDelay: `${Math.random() * 2}s`,
@@ -61,15 +63,15 @@ class SkillsCloud extends Component {
     })
     event.target.classList.add('active')
 
-    let tags = document.getElementsByClassName('tag')
+    let tags = document.getElementsByClassName(styles.tag)
     for (const tag of tags) {
       let tagGroup = tag.getAttribute('group')
       if (group === tagGroup) {
-        tag.classList.remove('dark')
-        tag.classList.add('bright')
+        tag.classList.remove(styles.dark)
+        tag.classList.add(styles.bright)
       } else {
-        tag.classList.remove('bright')
-        tag.classList.add('dark')
+        tag.classList.remove(styles.bright)
+        tag.classList.add(styles.dark)
       }
     }
 
@@ -83,26 +85,26 @@ class SkillsCloud extends Component {
     let buttons = this.refs.buttons
     buttons.childNodes.forEach(node => {
       if (node.nodeName === 'BUTTON') {
-        node.classList.remove('active')
+        node.classList.remove(styles.active)
       }
     })
 
-    let tags = document.getElementsByClassName('tag')
+    let tags = document.getElementsByClassName(styles.tag)
     for (const tag of tags) {
-      tag.classList.remove('dark')
-      tag.classList.remove('bright')
+      tag.classList.remove(styles.dark)
+      tag.classList.remove(styles.bright)
     }
   }
 
   render() {
     return (
-      <div className="skills-cloud">
-        <div className="buttons" ref="buttons">
-          <button className="button" onClick={this.show.bind(this, 'front')}>{this.props.frontEnd}</button>
-          <div className="or"></div>
-          <button className="button" onClick={this.show.bind(this, 'other')}>{this.props.other}</button>
-          <div className="or"></div>
-          <button className="button" onClick={this.show.bind(this, 'thought')}>{this.props.idea}</button>
+      <div className={styles['skills-cloud']}>
+        <div className={styles.buttons} ref="buttons">
+          <button onClick={this.show.bind(this, 'front')}>{this.props.frontEnd}</button>
+          <div className={styles.or}></div>
+          <button onClick={this.show.bind(this, 'other')}>{this.props.other}</button>
+          <div className={styles.or}></div>
+          <button onClick={this.show.bind(this, 'thought')}>{this.props.idea}</button>
         </div>
         <TagCloud tags={data} minSize={1.2} maxSize={2} renderer={customRenderer} />
       </div>
@@ -110,4 +112,4 @@ class SkillsCloud extends Component {
   }
 }
 
-export default SkillsCloud
+export default CSSModules(SkillsCloud, styles)
