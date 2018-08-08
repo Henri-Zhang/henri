@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import City from './City'
 import Footer from './Footer'
 import TopButton from './TopButton'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
 import _ from 'lodash'
 import _beenPlaces from './../data/beenPlaces.json'
-import './../styles/BeenPlaces.scss'
+import styles from './../styles/BeenPlaces.scss'
 
 class BeenPlaces extends Component {
 
@@ -18,10 +20,10 @@ class BeenPlaces extends Component {
   render() {
     return (
       <div>
-        <div className="container cities-containter">
+        <div className={classNames('container', styles['cities-containter'])}>
           <div className="row">
             <div className="col-12">
-              <h1 className="text-center title">The places I've been to</h1>
+              <h1 className={classNames('text-center', styles.title)}>The places I've been to</h1>
             </div>
           </div>
           {
@@ -43,4 +45,4 @@ class BeenPlaces extends Component {
   }
 }
 
-export default BeenPlaces
+export default CSSModules(BeenPlaces, styles)

@@ -4,9 +4,10 @@ import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import TopButton from './TopButton'
 import _ from 'lodash'
+import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import _hobbies from './../data/hobbies.json'
-import './../styles/Home.scss'
+import styles from './../styles/Home.scss'
 
 class Home extends Component {
   constructor(props) {
@@ -74,8 +75,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <nav className={classNames('navbar navbar-default fixed-top', {scrolled: this.state.scrolled})} onScroll={this.navbarScroll}>
-          <a className="brand" href="/" target="_blank">
+        <nav className={classNames('navbar navbar-default fixed-top', styles.navbar, {'scrolled': this.state.scrolled})} onScroll={this.navbarScroll}>
+          <a className={styles.brand} href="/" target="_blank">
             <img src={require("./../asserts/images/logo.png")} alt="henri.ren" />
             <span>
               <strong>henri</strong>.ren
@@ -83,11 +84,11 @@ class Home extends Component {
           </a>
           <h1 className="nav navbar-nav">Welcome to my site</h1>
         </nav>
-        <div className="home-main">
-          <div className="background">
+        <div className={styles['home-main']}>
+          <div className={styles.background}>
             <div className="container">
               <div className="row">
-                <div className="col-sm-12 item">
+                <div className={classNames('col-sm-12', styles.item)}>
                   <h1>Nice to meet you</h1>
                   <h2>And my name is Henri</h2>
                 </div>
@@ -159,4 +160,4 @@ class Home extends Component {
 
 }
 
-export default Home
+export default CSSModules(Home, styles)

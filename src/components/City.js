@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Tool from './../engine/Tool'
-import './../styles/City.scss'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
+import styles from './../styles/City.scss'
 
 class City extends Component {
   componentDidMount() {
@@ -9,17 +11,17 @@ class City extends Component {
 
   render() {
     return (
-      <div className="col-md-6 city" id={this.props.name} ref="city">
-        <figure className="image-background">
+      <div className={classNames('col-md-6', styles.city)} ref="city">
+        <figure className={styles['image-background']}>
           <img src={this.props.imgSrc} alt={this.props.name} />
         </figure>
-        <div className="fill-up hover-in">
-          <h1 className="city-name">{this.props.name}</h1>
+        <div className={classNames(styles['fill-up'], styles['hover-in'])}>
+          <h1 className={styles['city-name']}>{this.props.name}</h1>
         </div>
-        <a className="fill-up city-link" rel="noopener noreferrer" href={this.props.link} target="_blank">{this.props.name}</a>
+        <a className={classNames(styles['fill-up'], styles['city-link'])} rel="noopener noreferrer" href={this.props.link} target="_blank">{this.props.name}</a>
       </div>
     )
   }
 }
 
-export default City
+export default CSSModules(City, styles)

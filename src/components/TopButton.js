@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
 import _ from 'lodash'
-import './../styles/TopButton.scss'
+import styles from './../styles/TopButton.scss'
 
 class TopButton extends Component {
   constructor(props) {
@@ -23,8 +25,8 @@ class TopButton extends Component {
       }))
 
       if (topButton) {
-        topButton.classList.add('fade-in')
-        topButton.classList.remove('fade-out')
+        topButton.classList.add(styles['fade-in'])
+        topButton.classList.remove(styles['fade-out'])
       }
     } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
@@ -32,8 +34,8 @@ class TopButton extends Component {
       }))
 
       if (topButton) {
-        topButton.classList.add('fade-out')
-        topButton.classList.remove('fade-in')
+        topButton.classList.add(styles['fade-out'])
+        topButton.classList.remove(styles['fade-in'])
       }
     }
   }
@@ -52,7 +54,7 @@ class TopButton extends Component {
 
   render() {
     return (
-      <div id="top" className="top rounded-circle" onClick={this.backToTop} ref="topButton">
+      <div className={classNames('rounded-circle', styles.top)} onClick={this.backToTop} ref="topButton">
         <FontAwesome name="chevron-up" />
         <span>TOP</span>
       </div>
@@ -60,4 +62,4 @@ class TopButton extends Component {
   }
 }
 
-export default TopButton
+export default CSSModules(TopButton, styles)

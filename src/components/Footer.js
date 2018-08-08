@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import './../styles/Footer.scss'
+import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
+import styles from './../styles/Footer.scss'
 
 class Footer extends Component {
   render() {
@@ -8,52 +10,52 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <div className="title">Make firends with me</div>
+              <div className={styles.title}>Make firends with me</div>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-4 d-flex justify-content-center">
-              <img className="portrait rounded-circle" src="https://henri.oss-cn-hangzhou.aliyuncs.com/portrait.jpg" alt="Henri" />
-              <div className="brief-introduction">
+              <img className={classNames(styles.portrait, 'rounded-circle')} src="https://henri.oss-cn-hangzhou.aliyuncs.com/portrait.jpg" alt="Henri" />
+              <div className={styles['brief-introduction']}>
                 <p>Screen name: 漫长。</p>
                 <p>Age: 23</p>
                 <p>Region: Shanghai</p>
               </div>
             </div>
             <div className="col-lg-8 d-flex">
-              <ul className="personal-links">
+              <ul className={styles['personal-links']}>
                 <li>
                   <a rel="noopener noreferrer" href="mailto:henrizhang@henri.ren">
-                    <img className="icon" src={require('./../asserts/icons/Footer/email.svg')} alt="email" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/email.svg')} alt="email" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://github.com/LikedBlack" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/Footer/github.svg')} alt="github" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/github.svg')} alt="github" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://www.zhihu.com/people/zhang-heng-78-10/activities" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/Footer/zhihu.svg')} alt="zhihu" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/zhihu.svg')} alt="zhihu" />
                   </a>
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" target="_blank" data-toggle="popover">
-                    <div className="popover bs-popover-top">
-                      <div className="arrow"></div>
+                  <a rel="noopener noreferrer" target="_blank">
+                    <div className={classNames('popover', styles.popover)}>
+                      <div className={classNames('arrow', styles.arrow)}></div>
                       <img alt="Wechat QR code" src={require("./../asserts/images/wechat_QRcode.jpg")} />
                     </div>
-                    <img className="icon" src={require('./../asserts/icons/Footer/wechat.svg')} alt="wechat" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/wechat.svg')} alt="wechat" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://user.qzone.qq.com/371595867" target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/Footer/qzone.svg')} alt="qzone" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/qzone.svg')} alt="qzone" />
                   </a>
                 </li>
                 <li>
                   <a rel="noopener noreferrer" href="https://weibo.com/5214776283/profile"  target="_blank">
-                    <img className="icon" src={require('./../asserts/icons/Footer/weibo.svg')} alt="weibo" />
+                    <img className={styles.icon} src={require('./../asserts/icons/Footer/weibo.svg')} alt="weibo" />
                   </a>
                 </li>
               </ul>
@@ -61,7 +63,7 @@ class Footer extends Component {
           </div>
           <div className="row">
             <div className="col-sm-12">
-              <div className="copyright">
+              <div className={styles.copyright}>
                 <span>© 2018 henri.ren All Rights Reserved.</span>
               </div>
             </div>
@@ -72,4 +74,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default CSSModules(Footer, styles)
