@@ -4,6 +4,7 @@ import FontAwesome from 'react-fontawesome'
 import Footer from './Footer'
 import TopButton from './TopButton'
 import _ from 'lodash'
+import classNames from 'classnames'
 import _hobbies from './../data/hobbies.json'
 import './../styles/Home.scss'
 
@@ -73,7 +74,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <nav className={this.state.scrolled ? "navbar navbar-default fixed-top scrolled" : "navbar navbar-default fixed-top"} onScroll={this.navbarScroll}>
+        <nav className={classNames('navbar navbar-default fixed-top', {scrolled: this.state.scrolled})} onScroll={this.navbarScroll}>
           <a className="brand" href="/" target="_blank">
             <img src={require("./../asserts/images/logo.png")} alt="henri.ren" />
             <span>
