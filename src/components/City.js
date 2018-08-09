@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Tool from './../engine/Tool'
+import PropTypes from 'prop-types'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import styles from './../styles/City.scss'
@@ -10,6 +11,7 @@ class City extends Component {
   }
 
   render() {
+    console.log(PropTypes)
     return (
       <div className={classNames('col-md-6', styles.city)} ref="city">
         <figure className={styles['image-background']}>
@@ -22,6 +24,12 @@ class City extends Component {
       </div>
     )
   }
+}
+
+City.propTypes = {
+  name: PropTypes.string,
+  imgSrc: PropTypes.string,
+  link: PropTypes.string
 }
 
 export default CSSModules(City, styles)
