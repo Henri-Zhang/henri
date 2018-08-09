@@ -282,4 +282,4 @@ class Resume extends Component {
   }
 }
 
-export default Resume
+export default CSSModules(Resume, styles)

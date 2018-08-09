@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { TagCloud } from "react-tagcloud"
 import CSSModules from 'react-css-modules'
-import classNames from 'classnames'
 import styles from './../styles/SkillsCloud.scss'
 
 const data = [
