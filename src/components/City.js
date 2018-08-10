@@ -6,12 +6,17 @@ import classNames from 'classnames'
 import styles from './../styles/City.scss'
 
 class City extends Component {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
+  }
+
   componentDidMount() {
     this.refs.city.style.backgroundColor = Tool.getRandomColor()
   }
 
   render() {
-    console.log(PropTypes)
     return (
       <div className={classNames('col-md-6', styles.city)} ref="city">
         <figure className={styles['image-background']}>
@@ -24,12 +29,6 @@ class City extends Component {
       </div>
     )
   }
-}
-
-City.propTypes = {
-  name: PropTypes.string,
-  imgSrc: PropTypes.string,
-  link: PropTypes.string
 }
 
 export default CSSModules(City, styles)
