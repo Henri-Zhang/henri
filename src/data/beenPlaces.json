@@ -113,5 +113,30 @@
     "name": "扬州",
     "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/yangzhou.jpeg",
     "link": "https://baike.baidu.com/item/%E6%89%AC%E5%B7%9E/6255"
+  },
+  {
+    "name": "昆明",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/kunming.jpeg",
+    "link": "https://baike.baidu.com/item/%E6%98%86%E6%98%8E/161012?fr=aladdin"
+  },
+  {
+    "name": "大理",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/dali.jpg",
+    "link": "https://baike.baidu.com/item/%E5%A4%A7%E7%90%86%E7%99%BD%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/2916136?fromtitle=%E5%A4%A7%E7%90%86&fromid=32237&fr=aladdin"
+  },
+  {
+    "name": "丽江",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/lijiang.jpg",
+    "link": "https://baike.baidu.com/item/%E4%B8%BD%E6%B1%9F/121726"
+  },
+  {
+    "name": "深圳",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/shenzhen.png",
+    "link": "https://baike.baidu.com/item/%E6%B7%B1%E5%9C%B3"
+  },
+  {
+    "name": "广州",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/guangzhou.jpg",
+    "link": "https://baike.baidu.com/item/%E5%B9%BF%E5%B7%9E/72101"
   }
 ]
