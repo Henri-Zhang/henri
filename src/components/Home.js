@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { Link } from "react-router-dom"
-import FontAwesome from 'react-fontawesome'
-import Footer from './Footer'
-import TopButton from './TopButton'
-import _ from 'lodash'
-import CSSModules from 'react-css-modules'
-import classNames from 'classnames'
-import _hobbies from './../data/hobbies.json'
-import styles from './../styles/Home.scss'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import FontAwesome from "react-fontawesome";
+import _ from "lodash";
+import CSSModules from "react-css-modules";
+import classNames from "classnames";
+import Footer from "./Footer";
+import TopButton from "./TopButton";
+import _hobbies from "./../data/hobbies.json";
+import styles from "./../styles/Home.scss";
 
 class Home extends Component {
   constructor(props) {
-    super(props)
-    this.state = {scrolled : false}
-    this.navbarScroll = this.navbarScroll.bind(this)
+    super(props);
+    this.state = { scrolled: false };
+    this.navbarScroll = this.navbarScroll.bind(this);
   }
 
   componentWillMount() {
@@ -23,72 +23,83 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200))
+    window.addEventListener("scroll", _.throttle(this.navbarScroll, 200));
     this.refs.carouselUl.childNodes.forEach(item => {
-      item.addEventListener('click', this.carouselChange)
-    })
+      item.addEventListener("click", this.carouselChange);
+    });
   }
 
-  navbarScroll = (event) => {
-    let distance = document.documentElement.scrollTop
+  navbarScroll = event => {
+    let distance = document.documentElement.scrollTop;
     if (distance > 200 && !this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
-      }))
+      }));
     } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
         scrolled: !prevState.scrolled
-      }))
+      }));
     }
-  }
+  };
 
   carouselPrev = event => {
-    let fisrtChild = this.refs.carouselUl.children[0]
-    this.refs.carouselUl.appendChild(fisrtChild)
-  }
+    let fisrtChild = this.refs.carouselUl.children[0];
+    this.refs.carouselUl.appendChild(fisrtChild);
+  };
 
   carouselNext = event => {
-    let fisrtChild = this.refs.carouselUl.children[0]
-    let lastChild = this.refs.carouselUl.children[this.refs.carouselUl.children.length - 1]
-    this.refs.carouselUl.insertBefore(lastChild, fisrtChild)
-  }
+    let fisrtChild = this.refs.carouselUl.children[0];
+    let lastChild = this.refs.carouselUl.children[
+      this.refs.carouselUl.children.length - 1
+    ];
+    this.refs.carouselUl.insertBefore(lastChild, fisrtChild);
+  };
 
   carouselChange = event => {
-    let index
+    let index;
     this.refs.carouselUl.childNodes.forEach((item, i) => {
       if (event.target.parentNode === item) {
-        index = i
+        index = i;
       }
-    })
+    });
 
     while (index !== 3) {
       if (index < 3) {
-        this.carouselNext()
-        index++
+        this.carouselNext();
+        index++;
       } else {
-        this.carouselPrev()
-        index--
+        this.carouselPrev();
+        index--;
       }
     }
-  }
+  };
 
   render() {
     return (
       <div>
-        <nav className={classNames('navbar navbar-default fixed-top', styles.navbar, {[styles.scrolled]: this.state.scrolled})}>
+        <nav
+          className={classNames(
+            "navbar navbar-default fixed-top",
+            styles.navbar,
+            { [styles.scrolled]: this.state.scrolled }
+          )}
+        >
           <a className={styles.brand} href="/" target="_blank">
-            <img src={require("./../asserts/images/logo.png")} alt="henri.ren" />
+            <img
+              src={require("./../asserts/images/logo.png")}
+              alt="henri.ren"
+            />
             <span>
               <strong>henri</strong>.ren
             </span>
           </a>
           <h1 className="nav navbar-nav">Welcome to my site</h1>
         </nav>
-        <div className={styles['home-main']}>
+        <div className={styles["home-main"]}>
           <div className={styles.background}>
             <div className="container">
               <div className="row">
-                <div className={classNames('col-sm-12', styles.item)}>
+                <div className={classNames("col-sm-12", styles.item)}>
                   <h1>Nice to meet you</h1>
                   <h2>And my name is Henri</h2>
                 </div>
@@ -96,34 +107,38 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className={styles['hobbies-interests']}>
+        <div className={styles["hobbies-interests"]}>
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
                 <div className={styles.title}>My hobbies and interests</div>
               </div>
             </div>
-            <div className={classNames('row', styles.carousel)}>
-              <a className={classNames(styles['slide-arrow'], styles.prev)} onClick={this.carouselPrev}>
+            <div className={classNames("row", styles.carousel)}>
+              <a
+                className={classNames(styles["slide-arrow"], styles.prev)}
+                onClick={this.carouselPrev}
+              >
                 <FontAwesome name="arrow-left" />
               </a>
-              <ul className={styles['items-container']} ref="carouselUl">
-                {
-                  _hobbies.map(item => (
-                    <li key={item.name} className={styles.item}>
-                      <img src={item.img} alt={item.name} />
-                      <div className={styles.name}>{item.name}</div>
-                    </li>
-                  ))
-                }
+              <ul className={styles["items-container"]} ref="carouselUl">
+                {_hobbies.map(item => (
+                  <li key={item.name} className={styles.item}>
+                    <img src={item.img} alt={item.name} />
+                    <div className={styles.name}>{item.name}</div>
+                  </li>
+                ))}
               </ul>
-              <a className={classNames(styles['slide-arrow'], styles.next)} onClick={this.carouselNext}>
+              <a
+                className={classNames(styles["slide-arrow"], styles.next)}
+                onClick={this.carouselNext}
+              >
                 <FontAwesome name="arrow-right" />
               </a>
             </div>
           </div>
         </div>
-        <div className={styles['learn-more']}>
+        <div className={styles["learn-more"]}>
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
@@ -155,9 +170,8 @@ class Home extends Component {
         <Footer />
         <TopButton />
       </div>
-    )
+    );
   }
-
 }
 
-export default CSSModules(Home, styles)
+export default CSSModules(Home, styles);

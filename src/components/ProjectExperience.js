@@ -22,7 +22,7 @@ class ProjectExperience extends Component {
                 <a href="https://henri.ren" target="_blank" rel="noopener noreferrer">个人网站</a>
               </h6>
               <div className={styles.intro}>
-                <a className="badge badge-secondary" href="https://github.com/LikedBlack/henri" target="_blank" rel="noopener noreferrer">Github地址</a>
+                <a className="badge badge-secondary" href="https://github.com/Henri-Zhang/henri" target="_blank" rel="noopener noreferrer">Github地址</a>
                 <p>个人练手项目。应用React，JavaScript ES6，SASS等框架或技术。响应式设计，配有后端服务。</p>
               </div>
             </div>

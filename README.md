@@ -1,5 +1,5 @@
 <a href="https://henri.ren">
-  <img src="https://raw.githubusercontent.com/LikedBlack/henri/master/src/asserts/images/logo.png" alt="henri.ren" />
+  <img src="https://raw.githubusercontent.com/Henri-Zhang/henri/master/src/asserts/images/logo.png" alt="henri.ren" />
 </a>
 
 ## <font color=#e06c75>Introduction</font>
@@ -21,7 +21,7 @@
 ## <font color=#e06c75>Contributors</font>
   * Henri Zhang
 
-  click <a href="https://github.com/LikedBlack/henri/graphs/contributors">here</a> for details.
+  click <a href="https://github.com/Henri-Zhang/henri/graphs/contributors">here</a> for details.
 
 ---
 

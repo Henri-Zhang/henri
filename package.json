@@ -1,13 +1,15 @@
 {
   "name": "henri",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.6",
     "fullpage-react": "^3.0.33",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "numeral": "^2.0.6",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
@@ -30,11 +32,11 @@
     "deploy": "rimraf build/static/js/*.map && gh-pages -d build"
   },
   "devDependencies": {
-    "enzyme": "^3.4.0",
+    "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.2.0",
     "gh-pages": "^1.2.0",
-    "lodash": "^4.17.10",
-    "node-sass": "^4.9.2",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.12.0",
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.2",
