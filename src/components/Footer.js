@@ -121,7 +121,9 @@ class Footer extends Component {
           <div className="row">
             <div className="col-sm-12">
               <div className={styles.copyright}>
-                <span>© 2018 henri.ren All Rights Reserved.</span>
+                <span>
+                  © {moment().format("YYYY")} henri.ren All Rights Reserved.
+                </span>
               </div>
             </div>
           </div>
