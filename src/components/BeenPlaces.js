@@ -10,10 +10,8 @@ import styles from "./../styles/BeenPlaces.scss";
 
 class BeenPlaces extends Component {
   scrollToAnchor = anchor => {
-    let element = document.getElementById(anchor);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    const element = document.getElementById(anchor);
+    element && element.scrollIntoView({ behavior: "smooth" });
   };
 
   render() {
@@ -27,7 +25,7 @@ class BeenPlaces extends Component {
               </h1>
             </div>
           </div>
-          {_.chunk(_beenPlaces, 2).map((array, index) => (
+          {_.chunk(_.shuffle(_beenPlaces), 2).map((array, index) => (
             <div key={index} className="row">
               {array.map(item => (
                 <City

@@ -138,5 +138,20 @@
     "name": "广州",
     "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/guangzhou.jpg",
     "link": "https://baike.baidu.com/item/%E5%B9%BF%E5%B7%9E/72101"
+  },
+  {
+    "name": "滁州",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/chuzhou.png",
+    "link": "https://baike.baidu.com/item/%E6%BB%81%E5%B7%9E/1131131?fr=aladdin"
+  },
+  {
+    "name": "澳门",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/macao.png",
+    "link": "https://baike.baidu.com/item/%E6%BE%B3%E9%97%A8/24335?fr=aladdin"
+  },
+  {
+    "name": "香港",
+    "img": "https://henri.oss-cn-hangzhou.aliyuncs.com/beenPlaces/hongkong.png",
+    "link": "https://baike.baidu.com/item/%E9%A6%99%E6%B8%AF/128775?fr=aladdin"
   }
 ]
