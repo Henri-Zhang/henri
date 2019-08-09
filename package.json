@@ -3,29 +3,35 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
+    "babel-loader": "8.0.0-beta.0",
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.6",
     "fullpage-react": "^3.0.33",
+    "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
-    "react-bootstrap": "^0.32.1",
     "react-css-modules": "^4.7.4",
     "react-dom": "^16.4.0",
     "react-fontawesome": "^1.6.1",
     "react-intl-universal": "^1.11.2",
     "react-scripts": "1.1.4",
     "react-tagcloud": "^1.2.1",
-    "webpack": "^3.11.0",
-    "webpack-cli": "^3.0.2"
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && rimraf build/static/js/*.map",
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -34,13 +40,14 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.2.0",
+    "file-loader": "^4.2.0",
     "gh-pages": "^1.2.0",
     "lodash": "^4.17.11",
     "node-sass": "^4.12.0",
     "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.2"
+    "sass-loader": "^7.1.0"
   },
   "homepage": "https://henri.ren/"
 }

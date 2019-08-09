@@ -1,31 +1,33 @@
-import React, { Component } from "react";
-import City from "./City";
-import Footer from "./Footer";
-import TopButton from "./TopButton";
-import CSSModules from "react-css-modules";
-import classNames from "classnames";
-import _ from "lodash";
-import _beenPlaces from "./../data/beenPlaces.json";
-import styles from "./../styles/BeenPlaces.scss";
+import React, { Component } from 'react';
+import City from './City';
+import Footer from './Footer';
+import TopButton from './TopButton';
+import CSSModules from 'react-css-modules';
+import classNames from 'classnames';
+import _ from 'lodash';
+import _beenPlaces from './../data/beenPlaces.json';
+import styles from './../styles/BeenPlaces.scss';
+
+_beenPlaces = _.shuffle(_beenPlaces);
 
 class BeenPlaces extends Component {
   scrollToAnchor = anchor => {
     const element = document.getElementById(anchor);
-    element && element.scrollIntoView({ behavior: "smooth" });
+    element && element.scrollIntoView({ behavior: 'smooth' });
   };
 
   render() {
     return (
       <div>
-        <div className={classNames("container", styles["cities-containter"])}>
+        <div className={classNames('container', styles['cities-containter'])}>
           <div className="row">
             <div className="col-12">
-              <h1 className={classNames("text-center", styles.title)}>
+              <h1 className={classNames('text-center', styles.title)}>
                 The places I've been to
               </h1>
             </div>
           </div>
-          {_.chunk(_.shuffle(_beenPlaces), 2).map((array, index) => (
+          {_.chunk(_beenPlaces, 2).map((array, index) => (
             <div key={index} className="row">
               {array.map(item => (
                 <City

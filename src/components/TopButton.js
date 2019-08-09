@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import FontAwesome from "react-fontawesome";
-import CSSModules from "react-css-modules";
-import classNames from "classnames";
-import _ from "lodash";
-import styles from "./../styles/TopButton.scss";
+import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+import CSSModules from 'react-css-modules';
+import classNames from 'classnames';
+import _ from 'lodash';
+import styles from './../styles/TopButton.scss';
 
 class TopButton extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class TopButton extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", _.throttle(this.navbarScroll, 200));
+    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200));
   }
 
   navbarScroll = () => {
@@ -25,8 +25,8 @@ class TopButton extends Component {
       }));
 
       if (topButton) {
-        topButton.classList.add(styles["fade-in"]);
-        topButton.classList.remove(styles["fade-out"]);
+        topButton.classList.add(styles['fade-in']);
+        topButton.classList.remove(styles['fade-out']);
       }
     } else if (distance <= 200 && this.state.scrolled) {
       this.setState(prevState => ({
@@ -34,13 +34,13 @@ class TopButton extends Component {
       }));
 
       if (topButton) {
-        topButton.classList.add(styles["fade-out"]);
-        topButton.classList.remove(styles["fade-in"]);
+        topButton.classList.add(styles['fade-out']);
+        topButton.classList.remove(styles['fade-in']);
       }
     }
   };
 
-  backToTop = event => {
+  backToTop = () => {
     let timer = setInterval(() => {
       let currentScrollTop = document.documentElement.scrollTop;
       let distance = Math.ceil(currentScrollTop / 10);
@@ -55,7 +55,7 @@ class TopButton extends Component {
   render() {
     return (
       <div
-        className={classNames("rounded-circle", styles.top)}
+        className={classNames('rounded-circle', styles.top)}
         onClick={this.backToTop}
         ref="topButton"
       >

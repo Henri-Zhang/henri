@@ -23,7 +23,7 @@ class Footer extends Component {
                 alt="Henri"
               />
               <div className={styles["brief-introduction"]}>
-                <p>Screen name: 薄暮。</p>
+                <p>Screen name: 漫长。</p>
                 <p>
                   Age:{" "}
                   {numeral(
