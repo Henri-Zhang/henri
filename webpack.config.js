@@ -49,5 +49,10 @@ module.exports = {
       favicon: './src/asserts/favicon.ico',
       hash: true
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+    compress: true,
+    port: 9000
+  }
 };
