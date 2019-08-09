@@ -13,7 +13,11 @@ class TopButton extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200));
+    window.addEventListener('scroll', this.throttleNavbarScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.throttleNavbarScroll);
   }
 
   navbarScroll = () => {
@@ -39,6 +43,8 @@ class TopButton extends Component {
       }
     }
   };
+
+  throttleNavbarScroll = _.throttle(this.navbarScroll, 200);
 
   backToTop = () => {
     let timer = setInterval(() => {

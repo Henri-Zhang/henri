@@ -16,10 +16,15 @@ class Home extends Component {
     this.navbarScroll = this.navbarScroll.bind(this);
   }
 
-  componentWillMount() {}
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.throttleNavbarScroll);
+    this.refs.carouselUl.childNodes.forEach(item => {
+      item.removeEventListener('click', this.carouselChange);
+    });
+  }
 
   componentDidMount() {
-    window.addEventListener('scroll', _.throttle(this.navbarScroll, 200));
+    window.addEventListener('scroll', this.throttleNavbarScroll);
     this.refs.carouselUl.childNodes.forEach(item => {
       item.addEventListener('click', this.carouselChange);
     });
@@ -37,6 +42,8 @@ class Home extends Component {
       }));
     }
   };
+
+  throttleNavbarScroll = _.throttle(this.navbarScroll, 200);
 
   carouselPrev = () => {
     let fisrtChild = this.refs.carouselUl.children[0];
