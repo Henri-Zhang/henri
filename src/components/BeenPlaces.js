@@ -8,7 +8,7 @@ import _ from 'lodash';
 import _beenPlaces from './../data/beenPlaces.json';
 import styles from './../styles/BeenPlaces.scss';
 
-_beenPlaces = _.shuffle(_beenPlaces);
+const shuffleBeenPlaces = _.shuffle(_beenPlaces);
 
 class BeenPlaces extends Component {
   scrollToAnchor = anchor => {
@@ -27,7 +27,7 @@ class BeenPlaces extends Component {
               </h1>
             </div>
           </div>
-          {_.chunk(_beenPlaces, 2).map((array, index) => (
+          {_.chunk(shuffleBeenPlaces, 2).map((array, index) => (
             <div key={index} className="row">
               {array.map(item => (
                 <City

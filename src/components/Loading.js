@@ -1,5 +1,5 @@
-import React from "react";
-import "./../styles/Loading.scss";
+import React from 'react';
+import './../styles/Loading.scss';
 
 export default props => {
   if (props.error) {
@@ -10,7 +10,7 @@ export default props => {
     );
   } else if (!props.pastDelay) {
     return <h2 id="loading">Loading...</h2>;
-  } else {
-    return null;
   }
+
+  return null;
 };
