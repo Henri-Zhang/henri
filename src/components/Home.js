@@ -105,7 +105,6 @@ class Home extends Component {
                 <div className={classNames('col-sm-12', styles.item)}>
                   <h1>Nice to meet you</h1>
                   <h2>And my name is Henri</h2>
-                  <h2>测试文字</h2>
                 </div>
               </div>
             </div>
