@@ -3,3 +3,10 @@ node_js:
   - '8'
 install: yarn install
 script: yarn run build
+branchs:
+  only:
+    - master
+addons:
+  ssh_known_hosts: 47.99.53.54
+after_success:
+  - ssh root@47.99.53.54 StrictHostKeyChecking=no -o "cd ~/henri && git pull && yarn install && yarn run build"
