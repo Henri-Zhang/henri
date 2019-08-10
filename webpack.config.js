@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: 'bundle.[hash].js',
     chunkFilename: '[id].chunk.[hash].js',
+    hashDigestLength: 8,
     path: path.resolve('dist')
   },
   module: {
@@ -54,8 +55,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
-      favicon: './src/asserts/favicon.ico',
-      hash: true
+      favicon: './src/asserts/favicon.ico'
     })
   ],
   devServer: {
