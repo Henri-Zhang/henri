@@ -159,9 +159,9 @@ class Home extends Component {
                   <li>
                     <Link to="/been-places">The places I've been to</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/running-story">My running story</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/resume">My resume</Link>
                   </li>
