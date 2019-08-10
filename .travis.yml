@@ -13,7 +13,7 @@ branchs:
 addons:
   ssh_known_hosts: 47.99.53.54
 after_success:
-  - ssh root@47.99.53.54 StrictHostKeyChecking=no -o "cd ~/henri && git pull && yarn install && yarn run build"
+  - ssh root@47.99.53.54 StrictHostKeyChecking=no "cd ~/henri && git pull && yarn install && yarn run build"
 notifications:
   email:
     recipients: henrizhang@henri.ren
