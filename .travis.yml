@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - '8'
+before_install:
+  - openssl aes-256-cbc -K $encrypted_eb484601b0ce_key -iv $encrypted_eb484601b0ce_iv
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
 install: yarn install
 script: yarn run build
 branchs:
@@ -9,14 +13,9 @@ branchs:
 addons:
   ssh_known_hosts: 47.99.53.54
 after_success:
-  - ssh root@47.99.53.54 StrictHostKeyChecking=no -o "cd ~/henri && git pull && yarn
-    install && yarn run build"
+  - ssh root@47.99.53.54 StrictHostKeyChecking=no -o "cd ~/henri && git pull && yarn install && yarn run build"
 notifications:
   email:
     recipients: henrizhang@henri.ren
     on_success: always
     on_failure: always
-before_install:
-  - openssl aes-256-cbc -K $encrypted_eb484601b0ce_key -iv $encrypted_eb484601b0ce_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
