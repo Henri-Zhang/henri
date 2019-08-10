@@ -7,7 +7,7 @@ before_install:
   - chmod 600 ~/.ssh/id_rsa
 install: yarn install
 script: yarn run build
-branchs:
+branches:
   only:
     - master
 addons:
