@@ -14,6 +14,9 @@
 # production
 /dist
 
+#server
+MP_verify_yQ941z6pwgGlAWqw.txt
+
 # misc
 .DS_Store
 .env.local
