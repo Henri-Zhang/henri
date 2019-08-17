@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import City from './City';
-import Footer from './Footer';
-import TopButton from './TopButton';
+import City from '@/components/City';
+import Footer from '@/components/Footer';
+import TopButton from '@/components/TopButton';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
 import _ from 'lodash';
-import _beenPlaces from './../data/beenPlaces.json';
-import styles from './../styles/BeenPlaces.scss';
+import _beenPlaces from '@/datas/beenPlaces.json';
+import styles from '@/styles/BeenPlaces.scss';
 
 const shuffleBeenPlaces = _.shuffle(_beenPlaces);
 

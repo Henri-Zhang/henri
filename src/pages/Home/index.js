@@ -4,10 +4,10 @@ import FontAwesome from 'react-fontawesome';
 import _ from 'lodash';
 import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
-import Footer from './Footer';
-import TopButton from './TopButton';
-import _hobbies from './../data/hobbies.json';
-import styles from './../styles/Home.scss';
+import Footer from '@/components/Footer';
+import TopButton from '@/components/TopButton';
+import _hobbies from '@/datas/hobbies.json';
+import styles from '@/styles/Home.scss';
 
 class Home extends Component {
   constructor(props) {
@@ -88,10 +88,7 @@ class Home extends Component {
           )}
         >
           <a className={styles.brand} href="/" target="_blank">
-            <img
-              src={require('./../asserts/images/logo.png')}
-              alt="henri.ren"
-            />
+            <img src={require('@/asserts/images/logo.png')} alt="henri.ren" />
             <span>
               <strong>henri</strong>.ren
             </span>

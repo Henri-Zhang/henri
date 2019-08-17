@@ -2,27 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import Loading from './components/Loading';
+import Loading from '@/components/Loading';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const Home = Loadable({
-  loader: () => import('./components/Home'),
+  loader: () => import('@/pages/Home'),
   loading: Loading
 });
 
 const RunningStory = Loadable({
-  loader: () => import('./components/ComingSoon'),
+  loader: () => import('@/pages/ComingSoon'),
   loading: Loading
 });
 
 const BeenPlaces = Loadable({
-  loader: () => import('./components/BeenPlaces'),
+  loader: () => import('@/pages/BeenPlaces'),
   loading: Loading
 });
 
 const Resume = Loadable({
-  loader: () => import('./components/Resume'),
+  loader: () => import('@/pages/Resume'),
   loading: Loading
 });
 

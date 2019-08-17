@@ -58,11 +58,18 @@ module.exports = {
       favicon: './src/asserts/favicon.ico'
     })
   ],
+  resolve: {
+    mainFiles: ['index'],
+    extensions: ['.js', '.css', '.scss'],
+    alias: {
+      '@': require('path').resolve(__dirname, 'src')
+    }
+  },
   devServer: {
     historyApiFallback: true,
     host: '0.0.0.0',
     useLocalIp: true,
-    open: true,
+    open: false,
     quiet: true,
     progress: true,
     compress: true,
