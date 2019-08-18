@@ -162,6 +162,9 @@ class Home extends Component {
                   <li>
                     <Link to="/resume">My resume</Link>
                   </li>
+                  <li>
+                    <Link to="/poker-record">记牌器</Link>
+                  </li>
                 </ul>
               </div>
             </div>

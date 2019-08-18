@@ -26,6 +26,11 @@ const Resume = Loadable({
   loading: Loading
 });
 
+const PokerRecord = Loadable({
+  loader: () => import('@/pages/PokerRecord'),
+  loading: Loading
+});
+
 const App = () => (
   <Router>
     <Switch>
@@ -33,6 +38,7 @@ const App = () => (
       <Route path="/running-story" component={RunningStory} />
       <Route path="/been-places" component={BeenPlaces} />
       <Route path="/resume" component={Resume} />
+      <Route path="/poker-record" component={PokerRecord} />
     </Switch>
   </Router>
 );
